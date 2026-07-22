@@ -2,33 +2,40 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-zinc-200 dark:border-zinc-800">
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 px-6 py-12 md:flex-row md:justify-between">
-        <div>
-          <p className="text-lg font-semibold tracking-wide">Vinhos da Serra</p>
-          <p className="mt-2 max-w-xs text-sm text-zinc-500">
-            Vinhos que carregam a altitude, o clima e a história da serra em cada garrafa.
+    <footer className="bg-carvao text-areia">
+      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
+        <div className="max-w-xs">
+          <p className="font-serif text-2xl text-off-white">Vinhos na Serra</p>
+          <p className="mt-3 text-sm text-areia/80">
+            Da Serra para a taça — uma experiência construída entre a terra, o tempo e a paixão
+            pelo vinho brasileiro.
           </p>
         </div>
 
         <div className="flex flex-wrap gap-12 text-sm">
-          <div className="flex flex-col gap-2">
-            <span className="text-zinc-400">Navegue</span>
-            <Link href="/vinhos" className="text-zinc-600 dark:text-zinc-400">Vinhos</Link>
-            <Link href="/a-serra" className="text-zinc-600 dark:text-zinc-400">A Serra</Link>
-            <Link href="/nossa-historia" className="text-zinc-600 dark:text-zinc-400">Nossa História</Link>
-            <Link href="/confraria" className="text-zinc-600 dark:text-zinc-400">Confraria</Link>
+          <div className="flex flex-col gap-3">
+            <span className="text-xs tracking-widest text-dourado uppercase">Navegue</span>
+            <Link href="/nossa-historia" className="transition-colors hover:text-dourado">Nossa História</Link>
+            <Link href="/a-serra" className="transition-colors hover:text-dourado">A Serra</Link>
+            <Link href="/vinhos" className="transition-colors hover:text-dourado">Nossos Vinhos</Link>
+            <Link href="/experiencias" className="transition-colors hover:text-dourado">Experiências</Link>
+            <Link href="/confraria" className="transition-colors hover:text-dourado">Confraria</Link>
           </div>
-          <div className="flex flex-col gap-2">
-            <span className="text-zinc-400">Contato</span>
-            <Link href="/contato" className="text-zinc-600 dark:text-zinc-400">Fale conosco</Link>
-            <a href="#" className="text-zinc-600 dark:text-zinc-400">Instagram</a>
-            <a href="#" className="text-zinc-600 dark:text-zinc-400">WhatsApp</a>
+          <div className="flex flex-col gap-3">
+            <span className="text-xs tracking-widest text-dourado uppercase">Contato</span>
+            <Link href="/contato" className="transition-colors hover:text-dourado">Fale conosco</Link>
+            <a href="#" className="transition-colors hover:text-dourado">WhatsApp</a>
+            <a href="#" className="transition-colors hover:text-dourado">Instagram</a>
+            <a href="#" className="transition-colors hover:text-dourado">E-mail</a>
+          </div>
+          <div className="flex flex-col gap-3">
+            <span className="text-xs tracking-widest text-dourado uppercase">Endereço</span>
+            <p className="max-w-[16rem] text-areia/80">Estrada da Serra, km 12 — Serra Gaúcha, RS</p>
           </div>
         </div>
       </div>
-      <div className="border-t border-zinc-200 px-6 py-6 text-center text-xs text-zinc-400 dark:border-zinc-800">
-        © {new Date().getFullYear()} Vinhos da Serra. Todos os direitos reservados.
+      <div className="border-t border-off-white/10 px-6 py-6 text-center text-xs text-areia/60">
+        © {new Date().getFullYear()} Vinhos na Serra. Todos os direitos reservados.
       </div>
     </footer>
   );

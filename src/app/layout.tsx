@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Vinhos da Serra",
-  description: "Vinhos que carregam a altitude, o clima e a história da serra em cada garrafa.",
+  title: "Vinhos na Serra",
+  description: "Uma experiência construída entre a terra, o tempo e a paixão pelo vinho brasileiro.",
 };
 
 export default function RootLayout({
@@ -27,11 +28,11 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${cormorant.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-zinc-900 dark:bg-black dark:text-zinc-50">
+      <body className="flex min-h-full flex-col font-sans">
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pt-20">{children}</main>
         <Footer />
       </body>
     </html>

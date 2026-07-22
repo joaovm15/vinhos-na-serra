@@ -94,7 +94,27 @@ Tipografia: Cormorant Garamond (títulos) + Manrope (texto/interface). Conceito:
 **CTA:** sublinhado, cor Dourado Envelhecido sobre o fundo escuro.
 **Interação:** nenhuma além do CTA.
 **Animação:** parallax muito sutil (a imagem se move ~10–15% mais devagar que o scroll) — dá profundidade sem efeito "aplicativo de template".
-**Transição para próxima seção:** a imagem escurece na base, dissolvendo para o fundo Off-White de "Nossos Vinhos" — volta ao claro, terceiro grande contraste, agora saindo do território para o produto.
+**Transição para próxima seção:** a imagem escurece na base, dissolvendo para o fundo Verde Serra Profundo da seção "4ª Edição" — permanece escuro, mas muda de composição (de imersivo/full-bleed para estruturado/centralizado).
+
+---
+
+## 4.5. 4ª EDIÇÃO — ponte entre A Serra e Nossos Vinhos
+
+**Objetivo:** transformar conhecimento sobre o território em desejo de viver a experiência ao vivo — ponte emocional antes de apresentar o produto.
+**Hierarquia visual:** identificação pequena > título > texto de apoio > player de vídeo (elemento dominante) > texto de fechamento > CTA.
+**Conteúdo:**
+- Etiqueta: "4ª EDIÇÃO · VINHOS NA SERRA"
+- Título: "Uma experiência que merece ser vivida."
+- Texto: "Descubra os sabores, histórias e momentos que marcaram a 4ª edição da Vinhos na Serra."
+- Player de vídeo 16:9 (VSL/filme institucional)
+- Texto de fechamento: "Uma celebração do vinho, da Serra e das pessoas que fazem parte dessa história."
+- CTA: "QUERO VIVER ESSA EXPERIÊNCIA"
+**Layout:** fundo Verde Serra Profundo full-width, conteúdo centralizado em coluna (max-width ~900–1000px, não full-bleed como "A Serra") — muito espaço negativo nas laterais; player como elemento central com moldura sutil (borda finíssima em Dourado Envelhecido, cantos discretamente arredondados).
+**Imagem recomendada (capa do player):** still cinematográfico de um momento real do evento — mesa farta, taças, pessoas em celebração ao entardecer na Serra; placeholder facilmente substituível pelo material real.
+**CTA:** sublinhado em Bordô sobre o fundo verde-escuro — único ponto de cor saturada da seção.
+**Interação:** hover no player → leve zoom na imagem de capa + botão Play ganha destaque sutil; clique troca a capa pelo vídeo, sem autoplay com som.
+**Animação:** entrada em três estágios sequenciados (etiqueta → título → player), fade + leve escala, lenta (400–600ms), sem exagero.
+**Transição para próxima seção:** do Verde Serra Profundo denso para o Off-White de "Nossos Vinhos" — mesmo tipo de contraste escuro→claro do wireframe original, agora acontecendo depois de duas seções escuras em sequência (ambiente + objeto).
 
 ---
 
@@ -240,6 +260,8 @@ MANIFESTO       claro · só texto · silêncio
 NOSSA ESSÊNCIA  claro · split 50/50 · calor humano
   ↓ (corte claro → escuro)
 A SERRA         escuro · foto full-bleed · parallax · respiração
+  ↓ (mesmo escuro, imersivo → estruturado)
+4ª EDIÇÃO       escuro · vídeo centralizado · desejo/celebração
   ↓ (escurece → clareia)
 NOSSOS VINHOS   claro · grid editorial 2×2 · produto
   ↓ (corte claro → escuro mineral)

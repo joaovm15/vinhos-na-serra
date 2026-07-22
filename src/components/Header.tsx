@@ -1,59 +1,62 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useScrolled } from "@/hooks/useScrolled";
 
 const NAV_ITEMS = [
-  { href: "/vinhos", label: "Vinhos" },
-  { href: "/a-serra", label: "A Serra" },
   { href: "/nossa-historia", label: "Nossa História" },
-  { href: "/confraria", label: "Confraria" },
+  { href: "/a-serra", label: "A Serra" },
+  { href: "/vinhos", label: "Nossos Vinhos" },
   { href: "/experiencias", label: "Experiências" },
+  { href: "/confraria", label: "Confraria" },
   { href: "/contato", label: "Contato" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const scrolled = useScrolled(80);
+  const solid = pathname !== "/" || scrolled;
 
   return (
-    <header className="border-b border-zinc-200 dark:border-zinc-800">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" className="text-lg font-semibold tracking-wide">
-          Vinhos da Serra
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+        solid ? "bg-verde-serra" : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+        <Link href="/" className="font-serif text-2xl tracking-wide text-off-white">
+          Vinhos na Serra
         </Link>
 
-        <nav className="hidden gap-8 text-sm tracking-wide md:flex">
+        <nav className="hidden gap-8 text-xs tracking-widest text-off-white/90 uppercase md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-zinc-600 transition-colors hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-zinc-50"
+              className="transition-colors hover:text-dourado"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-5">
-          <button aria-label="Buscar" className="hidden text-zinc-500 md:block">
-            <SearchIcon />
-          </button>
-
-          <button
-            aria-label="Menu"
-            className="text-zinc-500 md:hidden"
-            onClick={() => setOpen(true)}
-          >
-            <MenuIcon />
-          </button>
-        </div>
+        <button
+          aria-label="Menu"
+          className="text-off-white md:hidden"
+          onClick={() => setOpen(true)}
+        >
+          <MenuIcon />
+        </button>
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-white dark:bg-black md:hidden">
-          <div className="flex items-center justify-between px-6 py-5">
-            <span className="text-lg font-semibold tracking-wide">Vinhos da Serra</span>
-            <button aria-label="Fechar menu" onClick={() => setOpen(false)} className="text-zinc-500">
+        <div className="fixed inset-0 z-50 flex flex-col bg-verde-serra md:hidden">
+          <div className="flex h-20 items-center justify-between px-6">
+            <span className="font-serif text-2xl text-off-white">Vinhos na Serra</span>
+            <button aria-label="Fechar menu" onClick={() => setOpen(false)} className="text-off-white">
               <CloseIcon />
             </button>
           </div>
@@ -63,7 +66,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="text-3xl font-light tracking-wide"
+                className="font-serif text-3xl text-off-white"
               >
                 {item.label}
               </Link>
@@ -72,15 +75,6 @@ export default function Header() {
         </div>
       )}
     </header>
-  );
-}
-
-function SearchIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <circle cx="11" cy="11" r="7" />
-      <line x1="21" y1="21" x2="16.65" y2="16.65" />
-    </svg>
   );
 }
 
