@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import EventVideoPlayer from "@/components/EventVideoPlayer";
+import InstagramEmbed from "@/components/InstagramEmbed";
 import { experiences } from "@/data/experiences";
+
+const EVENT_REEL_URL = "https://www.instagram.com/reel/Da6dK51RFtF/";
 
 const wineCategories = [
   {
@@ -149,7 +151,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={300} className="w-full">
-            <EventVideoPlayer title="4ª Edição Vinhos na Serra" />
+            <InstagramEmbed url={EVENT_REEL_URL} />
           </Reveal>
 
           <Reveal delay={150}>
