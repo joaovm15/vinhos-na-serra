@@ -1,9 +1,22 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import { experiences } from "@/data/experiences";
 
 const EVENT_REEL_URL = "https://www.instagram.com/reel/Da6dK51RFtF/";
+
+const galleryPhotos = [
+  "/images/evento/evento-01.jpg",
+  "/images/evento/evento-02.jpg",
+  "/images/evento/evento-03.jpg",
+  "/images/evento/evento-04.jpg",
+  "/images/evento/evento-05.jpg",
+  "/images/evento/evento-06.jpg",
+  "/images/evento/evento-07-rodrigo-feital.jpg",
+  "/images/evento/evento-08-adega.jpg",
+  "/images/evento/evento-09.jpg",
+];
 
 const wineCategories = [
   {
@@ -89,7 +102,13 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
           <Reveal>
             <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
-              <div className="h-full w-full bg-gradient-to-br from-dourado/40 to-verde-oliva/60 transition-transform duration-700 ease-out group-hover:scale-105" />
+              <Image
+                src="/images/socios.jpg"
+                alt="Os sócios da Vinhos na Serra"
+                width={800}
+                height={600}
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
             </div>
           </Reveal>
           <Reveal delay={150}>
@@ -287,10 +306,16 @@ export default function Home() {
             </h2>
           </Reveal>
           <Reveal delay={150}>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-              {Array.from({ length: 8 }).map((_, i) => (
-                <div key={i} className="group aspect-square overflow-hidden bg-areia">
-                  <div className="h-full w-full bg-gradient-to-br from-verde-oliva/50 to-dourado/30 transition-transform duration-500 ease-out group-hover:scale-105" />
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              {galleryPhotos.map((src, i) => (
+                <div key={src} className="group aspect-square overflow-hidden bg-areia">
+                  <Image
+                    src={src}
+                    alt={`Vinhos na Serra — registro do evento ${i + 1}`}
+                    width={400}
+                    height={400}
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                  />
                 </div>
               ))}
             </div>
