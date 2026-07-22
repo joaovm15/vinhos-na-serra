@@ -5,7 +5,6 @@ export type Wine = {
   grape: string;
   region: string;
   vintage: string;
-  price: number;
   description: string;
   tastingNotes: string;
   pairing: string;
@@ -21,7 +20,6 @@ export const wines: Wine[] = [
     grape: "Merlot",
     region: "Serra Gaúcha",
     vintage: "2021",
-    price: 189,
     description:
       "Colhido nas encostas mais altas da propriedade, este tinto passa 14 meses em barril de carvalho francês, resultando em um vinho de corpo firme e taninos macios.",
     tastingNotes: "Frutas negras maduras, notas de baunilha e especiarias, final longo e envolvente.",
@@ -36,7 +34,6 @@ export const wines: Wine[] = [
     grape: "Chardonnay",
     region: "Serra Gaúcha",
     vintage: "2023",
-    price: 142,
     description:
       "Uvas colhidas a mais de 900m de altitude, garantindo acidez vibrante e frescor mineral característicos do nosso terroir.",
     tastingNotes: "Frutas cítricas, maçã verde e um toque floral, acidez viva.",
@@ -51,7 +48,6 @@ export const wines: Wine[] = [
     grape: "Pinot Noir",
     region: "Serra Gaúcha",
     vintage: "2023",
-    price: 128,
     description:
       "Um rosé delicado, feito por sangria, que carrega a leveza e o frescor das manhãs frias da serra.",
     tastingNotes: "Morango silvestre, pétalas de rosa, final crocante.",
@@ -66,7 +62,6 @@ export const wines: Wine[] = [
     grape: "Chardonnay/Pinot Noir",
     region: "Serra Gaúcha",
     vintage: "2022",
-    price: 165,
     description:
       "Método tradicional, com segunda fermentação em garrafa e mínimo de 18 meses sobre borras finas.",
     tastingNotes: "Bolhas finas e persistentes, notas de pão fresco e maçã verde.",
@@ -81,7 +76,6 @@ export const wines: Wine[] = [
     grape: "Cabernet Sauvignon",
     region: "Serra Gaúcha",
     vintage: "2020",
-    price: 215,
     description:
       "Vinhas de baixo rendimento em solo pedregoso, resultando em um vinho estruturado e de grande potencial de guarda.",
     tastingNotes: "Cassis, pimentão verde maduro, taninos firmes e presentes.",

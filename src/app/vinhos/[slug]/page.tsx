@@ -52,13 +52,6 @@ export default async function WinePage({
             </div>
           </dl>
 
-          {/* 5. Preço + CTA de compra */}
-          <div className="mt-10 flex items-center gap-6 border-t border-zinc-200 pt-6 dark:border-zinc-800">
-            <p className="text-2xl">R$ {wine.price.toFixed(2)}</p>
-            <button className="border border-zinc-900 px-8 py-3 text-sm tracking-widest uppercase transition-colors hover:bg-zinc-900 hover:text-white dark:border-zinc-50 dark:hover:bg-zinc-50 dark:hover:text-black">
-              Adicionar ao carrinho
-            </button>
-          </div>
         </div>
       </div>
 

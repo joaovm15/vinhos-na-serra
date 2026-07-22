@@ -128,3 +128,15 @@ prioridade de conteúdo.
 O scaffold inicial (Next.js + TypeScript + Tailwind) já reflete o sitemap e a estrutura de
 conteúdo desta fase, com estilização provisória — a Fase 3 (wireframe) e uma Fase de identidade
 visual ainda devem refinar layout, espaçamento e estilo definitivos.
+
+## Atualização de escopo (pós Fase 3)
+
+O site **não é um e-commerce** — é institucional, focado em divulgar a imagem da marca, o
+trabalho e a história da vinícola. Isso muda alguns pontos do sitemap original:
+
+- **CARRINHO / CHECKOUT foi removida** — não existe fluxo de compra no site.
+- A página individual do vinho não tem preço nem CTA de compra — é apresentação/ficha técnica.
+- CONFRARIA não tem preços de planos nem CTA de adesão — apresenta a proposta e os níveis de
+  forma informativa.
+- EXPERIÊNCIAS não tem CTA de reserva — é uma listagem informativa de degustações/eventos.
+- O header não tem mais ícones de conta e carrinho (não fazem sentido sem e-commerce).

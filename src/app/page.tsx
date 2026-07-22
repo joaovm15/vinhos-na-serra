@@ -91,9 +91,9 @@ export default function Home() {
           </p>
           <Link
             href="/confraria"
-            className="mt-8 inline-block border border-white px-8 py-3 text-sm tracking-widest uppercase transition-colors hover:bg-white hover:text-zinc-950"
+            className="mt-8 inline-block text-sm underline underline-offset-4"
           >
-            Associe-se
+            Conheça a Confraria
           </Link>
         </div>
       </section>

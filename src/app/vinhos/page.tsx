@@ -18,15 +18,10 @@ export default function VinhosPage() {
             className={`group ${i % 5 === 0 ? "lg:col-span-2" : ""}`}
           >
             <div className="aspect-[3/4] w-full bg-zinc-100 transition-colors group-hover:bg-zinc-200 dark:bg-zinc-900 dark:group-hover:bg-zinc-800" />
-            <div className="mt-4 flex items-start justify-between">
-              <div>
-                <p className="text-base">{wine.name}</p>
-                <p className="text-sm text-zinc-500">
-                  {wine.type} · {wine.grape} · {wine.vintage}
-                </p>
-              </div>
-              <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                R$ {wine.price.toFixed(2)}
+            <div className="mt-4">
+              <p className="text-base">{wine.name}</p>
+              <p className="text-sm text-zinc-500">
+                {wine.type} · {wine.grape} · {wine.vintage}
               </p>
             </div>
             <span className="mt-2 inline-block text-xs uppercase tracking-widest text-zinc-500 underline underline-offset-4">
