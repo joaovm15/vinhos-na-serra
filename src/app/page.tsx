@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import Button from "@/components/Button";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import { experiences } from "@/data/experiences";
 
@@ -59,9 +60,7 @@ export default function Home() {
             <p className="text-xs tracking-[0.3em] text-areia uppercase">Vinhos na Serra</p>
           </Reveal>
           <Reveal delay={150}>
-            <h1 className="max-w-3xl font-serif text-5xl text-off-white md:text-7xl">
-              Da Serra para a Taça.
-            </h1>
+            <h1 className="text-h1 max-w-3xl font-serif text-off-white">Da Serra para a Taça.</h1>
           </Reveal>
           <Reveal delay={300}>
             <p className="max-w-md text-sm text-areia md:text-base">
@@ -69,12 +68,9 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={450}>
-            <Link
-              href="/nossa-historia"
-              className="mt-4 inline-block border-b border-dourado/60 pb-1 text-xs tracking-[0.2em] text-off-white uppercase transition-colors hover:border-dourado hover:text-dourado"
-            >
+            <Button href="/nossa-historia" variant="editorial" tone="off-white" className="mt-4">
               Conheça a Vinhos na Serra
-            </Link>
+            </Button>
           </Reveal>
         </div>
       </section>
@@ -82,9 +78,7 @@ export default function Home() {
       {/* 2. MANIFESTO — IDENTIDADE */}
       <section className="px-6 py-32">
         <Reveal className="mx-auto max-w-xl text-center">
-          <h2 className="font-serif text-3xl text-verde-serra md:text-4xl">
-            O vinho começa muito antes da taça.
-          </h2>
+          <h2 className="text-h2 font-serif text-verde-serra">O vinho começa muito antes da taça.</h2>
           <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
             Começa na <span className="text-dourado">terra</span> que sustenta a videira, no{" "}
             <span className="text-dourado">clima</span> que impõe seu próprio ritmo, no{" "}
@@ -107,24 +101,21 @@ export default function Home() {
                 alt="Os sócios da Vinhos na Serra"
                 width={800}
                 height={600}
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <h2 className="font-serif text-3xl text-verde-serra md:text-4xl">
+            <h2 className="text-h3 font-serif text-verde-serra">
               Mais do que vinho. Uma forma de viver a Serra.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
               Somos uma família que aprendeu, safra após safra, a traduzir a serra em vinho — sem
               pressa, sem atalhos, sem perder o que a torna única.
             </p>
-            <Link
-              href="/nossa-historia"
-              className="mt-6 inline-block border-b border-verde-serra/40 pb-1 text-xs tracking-[0.2em] text-verde-serra uppercase transition-colors hover:border-dourado hover:text-dourado"
-            >
+            <Button href="/nossa-historia" variant="editorial" tone="verde-serra" className="mt-6">
               Conheça nossa história
-            </Link>
+            </Button>
           </Reveal>
         </div>
       </section>
@@ -135,19 +126,14 @@ export default function Home() {
         <div className="absolute inset-0 bg-verde-serra/30" />
 
         <Reveal className="relative z-10 flex max-w-2xl flex-col items-center gap-6">
-          <h2 className="font-serif text-4xl text-off-white md:text-5xl">
-            Onde a terra encontra o vinho.
-          </h2>
+          <h2 className="text-h2 font-serif text-off-white">Onde a terra encontra o vinho.</h2>
           <p className="text-areia">
             A mais de 900 metros de altitude, clima e solo se combinam para dar aos nossos vinhos
             uma identidade que não se repete em nenhum outro lugar.
           </p>
-          <Link
-            href="/a-serra"
-            className="mt-2 inline-block border-b border-dourado/60 pb-1 text-xs tracking-[0.2em] text-dourado uppercase transition-colors hover:border-dourado"
-          >
+          <Button href="/a-serra" variant="editorial" tone="dourado" className="mt-2">
             Descubra a Serra
-          </Link>
+          </Button>
         </Reveal>
       </section>
 
@@ -160,7 +146,7 @@ export default function Home() {
             </p>
           </Reveal>
           <Reveal delay={150}>
-            <h2 className="font-serif text-4xl text-off-white md:text-5xl">
+            <h2 className="text-h2 font-serif text-off-white">
               Uma experiência que merece ser vivida.
             </h2>
             <p className="mt-4 text-areia">
@@ -177,12 +163,9 @@ export default function Home() {
             <p className="max-w-xl text-sm text-areia/90">
               Uma celebração do vinho, da Serra e das pessoas que fazem parte dessa história.
             </p>
-            <Link
-              href="/contato"
-              className="mt-4 inline-block border-b border-bordo/70 pb-1 text-xs tracking-[0.2em] text-bordo uppercase transition-colors hover:border-bordo"
-            >
+            <Button href="/contato" variant="editorial" tone="bordo" className="mt-4">
               Quero viver essa experiência
-            </Link>
+            </Button>
           </Reveal>
         </div>
       </section>
@@ -191,7 +174,7 @@ export default function Home() {
       <section className="px-6 py-32">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <h2 className="mb-16 text-center font-serif text-3xl text-verde-serra md:text-4xl">
+            <h2 className="text-h2 mb-16 text-center font-serif text-verde-serra">
               Uma seleção para descobrir.
             </h2>
           </Reveal>
@@ -200,7 +183,7 @@ export default function Home() {
               <Reveal key={cat.name} delay={i * 100}>
                 <Link href="/vinhos" className="group block">
                   <div className="aspect-[4/3] w-full overflow-hidden bg-areia">
-                    <div className="h-full w-full bg-gradient-to-br from-verde-oliva/70 to-dourado/40 transition-transform duration-700 ease-out group-hover:scale-105" />
+                    <div className="h-full w-full bg-gradient-to-br from-verde-oliva/70 to-dourado/40 transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
                   </div>
                   <p className="mt-5 font-serif text-2xl text-verde-serra">{cat.name}</p>
                   <p className="mt-2 text-sm text-verde-serra/70">{cat.description}</p>
@@ -218,7 +201,7 @@ export default function Home() {
       <section className="bg-verde-oliva px-6 py-32">
         <div className="mx-auto max-w-5xl">
           <Reveal>
-            <h2 className="mb-16 text-center font-serif text-3xl text-off-white md:text-4xl">
+            <h2 className="text-h2 mb-16 text-center font-serif text-off-white">
               Cada vinho tem uma história.
             </h2>
           </Reveal>
@@ -238,23 +221,20 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
           <Reveal>
             <div className="group aspect-[4/3] w-full overflow-hidden bg-verde-oliva/20">
-              <div className="h-full w-full bg-gradient-to-br from-verde-serra/70 to-dourado/40 transition-transform duration-700 ease-out group-hover:scale-105" />
+              <div className="h-full w-full bg-gradient-to-br from-verde-serra/70 to-dourado/40 transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <h2 className="font-serif text-3xl text-verde-serra md:text-4xl">
+            <h2 className="text-h3 font-serif text-verde-serra">
               O vinho também é sobre estar junto.
             </h2>
             <p className="mt-6 text-verde-serra/80">
               Degustações, eventos e harmonizações que aproximam quem bebe de quem faz — como a
               próxima: <span className="text-dourado">{nextExperience.name}</span>.
             </p>
-            <Link
-              href="/experiencias"
-              className="mt-6 inline-block border-b border-verde-serra/40 pb-1 text-xs tracking-[0.2em] text-verde-serra uppercase transition-colors hover:border-dourado hover:text-dourado"
-            >
+            <Button href="/experiencias" variant="editorial" tone="verde-serra" className="mt-6">
               Conheça nossas experiências
-            </Link>
+            </Button>
           </Reveal>
         </div>
       </section>
@@ -262,38 +242,28 @@ export default function Home() {
       {/* 8. CONFRARIA */}
       <section className="bg-bordo px-6 py-32 text-center">
         <Reveal className="mx-auto max-w-xl">
-          <h2 className="font-serif text-4xl text-off-white md:text-5xl">
-            Faça parte da nossa mesa.
-          </h2>
+          <h2 className="text-h2 font-serif text-off-white">Faça parte da nossa mesa.</h2>
           <p className="mt-6 text-areia">
             A Confraria é o convite para viver a Vinhos na Serra por dentro — novidades,
             bastidores e uma relação direta com quem faz o vinho.
           </p>
-          <Link
-            href="/confraria"
-            className="mt-8 inline-block border-b border-dourado/70 pb-1 text-xs tracking-[0.2em] text-dourado uppercase transition-colors hover:border-dourado"
-          >
+          <Button href="/confraria" variant="editorial" tone="dourado" className="mt-8">
             Conhecer a Confraria
-          </Link>
+          </Button>
         </Reveal>
       </section>
 
       {/* 9. NOSSA HISTÓRIA — fechamento narrativo */}
       <section className="px-6 py-32">
         <Reveal className="mx-auto max-w-xl text-center">
-          <h2 className="font-serif text-3xl text-verde-serra md:text-4xl">
-            Uma história que começa na Serra.
-          </h2>
+          <h2 className="text-h2 font-serif text-verde-serra">Uma história que começa na Serra.</h2>
           <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
             Três gerações de uma mesma família, uma paixão que começou pequena e virou tradição —
             uma história que ainda está sendo escrita a cada colheita.
           </p>
-          <Link
-            href="/nossa-historia"
-            className="mt-6 inline-block border-b border-verde-serra/40 pb-1 text-xs tracking-[0.2em] text-verde-serra uppercase transition-colors hover:border-dourado hover:text-dourado"
-          >
+          <Button href="/nossa-historia" variant="editorial" tone="verde-serra" className="mt-6">
             Ler nossa história completa
-          </Link>
+          </Button>
         </Reveal>
       </section>
 
@@ -301,7 +271,7 @@ export default function Home() {
       <section className="px-6 pb-32">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <h2 className="mb-10 text-center font-serif text-3xl text-verde-serra md:text-4xl">
+            <h2 className="text-h2 mb-10 text-center font-serif text-verde-serra">
               Acompanhe a nossa jornada.
             </h2>
           </Reveal>
@@ -314,18 +284,15 @@ export default function Home() {
                     alt={`Vinhos na Serra — registro do evento ${i + 1}`}
                     width={400}
                     height={400}
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
                   />
                 </div>
               ))}
             </div>
             <div className="mt-8 text-center">
-              <a
-                href="#"
-                className="inline-block border-b border-verde-serra/40 pb-1 text-xs tracking-[0.2em] text-verde-serra uppercase transition-colors hover:border-dourado hover:text-dourado"
-              >
+              <Button href="#" variant="editorial" tone="verde-serra">
                 Seguir no Instagram
-              </a>
+              </Button>
             </div>
           </Reveal>
         </div>
@@ -337,21 +304,15 @@ export default function Home() {
         <div className="absolute inset-0 bg-verde-serra/30" />
 
         <Reveal className="relative z-10 flex flex-col items-center gap-6">
-          <h2 className="font-serif text-4xl text-off-white md:text-6xl">Da Serra para a Taça.</h2>
+          <h2 className="text-h1 font-serif text-off-white">Da Serra para a Taça.</h2>
           <p className="text-areia">Descubra a Vinhos na Serra.</p>
           <div className="mt-2 flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
-            <Link
-              href="/contato"
-              className="border-b border-dourado/70 pb-1 text-xs tracking-[0.2em] text-dourado uppercase transition-colors hover:border-dourado"
-            >
+            <Button href="/contato" variant="editorial" tone="dourado">
               Fale conosco
-            </Link>
-            <Link
-              href="/nossa-historia"
-              className="border-b border-off-white/40 pb-1 text-xs tracking-[0.2em] text-off-white uppercase transition-colors hover:border-off-white"
-            >
+            </Button>
+            <Button href="/nossa-historia" variant="editorial" tone="off-white">
               Siga nossa história
-            </Link>
+            </Button>
           </div>
         </Reveal>
       </section>

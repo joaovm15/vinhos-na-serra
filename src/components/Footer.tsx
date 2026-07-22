@@ -1,5 +1,28 @@
 import Link from "next/link";
 
+function FooterLink({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
+  const className = "group relative inline-block w-fit py-0.5 transition-colors hover:text-dourado";
+  const underline = (
+    <span className="absolute bottom-0 left-0 h-px w-0 bg-dourado transition-all duration-300 ease-out group-hover:w-full" />
+  );
+
+  if (external) {
+    return (
+      <a href={href} className={className}>
+        {children}
+        {underline}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {children}
+      {underline}
+    </Link>
+  );
+}
+
 export default function Footer() {
   return (
     <footer className="bg-carvao text-areia">
@@ -15,18 +38,18 @@ export default function Footer() {
         <div className="flex flex-wrap gap-12 text-sm">
           <div className="flex flex-col gap-3">
             <span className="text-xs tracking-widest text-dourado uppercase">Navegue</span>
-            <Link href="/nossa-historia" className="transition-colors hover:text-dourado">Nossa História</Link>
-            <Link href="/a-serra" className="transition-colors hover:text-dourado">A Serra</Link>
-            <Link href="/vinhos" className="transition-colors hover:text-dourado">Nossos Vinhos</Link>
-            <Link href="/experiencias" className="transition-colors hover:text-dourado">Experiências</Link>
-            <Link href="/confraria" className="transition-colors hover:text-dourado">Confraria</Link>
+            <FooterLink href="/nossa-historia">Nossa História</FooterLink>
+            <FooterLink href="/a-serra">A Serra</FooterLink>
+            <FooterLink href="/vinhos">Nossos Vinhos</FooterLink>
+            <FooterLink href="/experiencias">Experiências</FooterLink>
+            <FooterLink href="/confraria">Confraria</FooterLink>
           </div>
           <div className="flex flex-col gap-3">
             <span className="text-xs tracking-widest text-dourado uppercase">Contato</span>
-            <Link href="/contato" className="transition-colors hover:text-dourado">Fale conosco</Link>
-            <a href="#" className="transition-colors hover:text-dourado">WhatsApp</a>
-            <a href="#" className="transition-colors hover:text-dourado">Instagram</a>
-            <a href="#" className="transition-colors hover:text-dourado">E-mail</a>
+            <FooterLink href="/contato">Fale conosco</FooterLink>
+            <FooterLink href="#" external>WhatsApp</FooterLink>
+            <FooterLink href="#" external>Instagram</FooterLink>
+            <FooterLink href="#" external>E-mail</FooterLink>
           </div>
           <div className="flex flex-col gap-3">
             <span className="text-xs tracking-widest text-dourado uppercase">Endereço</span>

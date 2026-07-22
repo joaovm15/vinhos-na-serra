@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Reveal from "@/components/Reveal";
 import { wines } from "@/data/wines";
 
 export function generateStaticParams() {
@@ -19,55 +20,58 @@ export default async function WinePage({
   const related = wines.filter((w) => w.slug !== wine.slug).slice(0, 2);
 
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-        {/* 1. Foto grande do rótulo */}
-        <div className="aspect-[3/4] w-full bg-zinc-100 dark:bg-zinc-900" />
-
-        <div>
-          {/* 2. Nome, tipo, uva, região, safra */}
-          <h1 className="text-3xl font-light">{wine.name}</h1>
-          <p className="mt-2 text-sm text-zinc-500">
-            {wine.type} · {wine.grape} · {wine.region} · {wine.vintage}
-          </p>
-
-          {/* 3. Texto de apresentação */}
-          <p className="mt-8 text-lg leading-relaxed text-zinc-700 dark:text-zinc-300">
-            {wine.description}
-          </p>
-
-          {/* 4. Ficha técnica */}
-          <dl className="mt-10 space-y-3 border-t border-zinc-200 pt-6 text-sm dark:border-zinc-800">
-            <div className="flex justify-between">
-              <dt className="text-zinc-500">Notas de degustação</dt>
-              <dd className="max-w-[60%] text-right">{wine.tastingNotes}</dd>
+    <div className="bg-off-white px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
+          <Reveal>
+            <div className="aspect-[3/4] w-full overflow-hidden bg-areia">
+              <div className="h-full w-full bg-gradient-to-b from-verde-oliva/60 via-verde-serra to-carvao" />
             </div>
-            <div className="flex justify-between">
-              <dt className="text-zinc-500">Harmonização</dt>
-              <dd className="max-w-[60%] text-right">{wine.pairing}</dd>
-            </div>
-            <div className="flex justify-between">
-              <dt className="text-zinc-500">Temperatura de serviço</dt>
-              <dd>{wine.servingTemp}</dd>
-            </div>
-          </dl>
+          </Reveal>
 
+          <Reveal delay={150}>
+            <p className="text-xs tracking-[0.2em] text-dourado uppercase">{wine.type}</p>
+            <h1 className="text-h2 mt-3 font-serif text-verde-serra">{wine.name}</h1>
+            <p className="mt-2 text-sm text-verde-serra/60">
+              {wine.grape} · {wine.region} · {wine.vintage}
+            </p>
+
+            <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">{wine.description}</p>
+
+            <dl className="mt-10 space-y-3 border-t border-verde-serra/15 pt-6 text-sm">
+              <div className="flex justify-between gap-6">
+                <dt className="text-verde-serra/50">Notas de degustação</dt>
+                <dd className="max-w-[60%] text-right text-verde-serra/80">{wine.tastingNotes}</dd>
+              </div>
+              <div className="flex justify-between gap-6">
+                <dt className="text-verde-serra/50">Harmonização</dt>
+                <dd className="max-w-[60%] text-right text-verde-serra/80">{wine.pairing}</dd>
+              </div>
+              <div className="flex justify-between gap-6">
+                <dt className="text-verde-serra/50">Temperatura de serviço</dt>
+                <dd className="text-verde-serra/80">{wine.servingTemp}</dd>
+              </div>
+            </dl>
+          </Reveal>
         </div>
-      </div>
 
-      {/* 6. Vinhos relacionados */}
-      <div className="mt-24 border-t border-zinc-200 pt-16 dark:border-zinc-800">
-        <h2 className="mb-8 text-sm uppercase tracking-widest text-zinc-500">
-          Vinhos relacionados
-        </h2>
-        <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
-          {related.map((r) => (
-            <Link key={r.slug} href={`/vinhos/${r.slug}`} className="group">
-              <div className="aspect-[3/4] w-full bg-zinc-100 transition-colors group-hover:bg-zinc-200 dark:bg-zinc-900 dark:group-hover:bg-zinc-800" />
-              <p className="mt-4 text-base">{r.name}</p>
-              <p className="text-sm text-zinc-500">{r.type} · {r.vintage}</p>
-            </Link>
-          ))}
+        <div className="mt-24 border-t border-verde-serra/15 pt-16">
+          <p className="mb-8 text-xs tracking-[0.2em] text-dourado uppercase">
+            Vinhos relacionados
+          </p>
+          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
+            {related.map((r, i) => (
+              <Reveal key={r.slug} delay={i * 100}>
+                <Link href={`/vinhos/${r.slug}`} className="group block">
+                  <div className="aspect-[3/4] w-full overflow-hidden bg-areia">
+                    <div className="h-full w-full bg-gradient-to-b from-verde-oliva/50 via-verde-serra/90 to-carvao transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
+                  </div>
+                  <p className="mt-4 font-serif text-xl text-verde-serra">{r.name}</p>
+                  <p className="text-sm text-verde-serra/60">{r.type} · {r.vintage}</p>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </div>
     </div>

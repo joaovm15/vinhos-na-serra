@@ -22,8 +22,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
-        solid ? "bg-verde-serra" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
+        solid ? "border-dourado/25 bg-verde-serra" : "border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
@@ -33,12 +33,9 @@ export default function Header() {
 
         <nav className="hidden gap-8 text-xs tracking-widest text-off-white/90 uppercase md:flex">
           {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="transition-colors hover:text-dourado"
-            >
+            <Link key={item.href} href={item.href} className="group relative py-1 transition-colors hover:text-dourado">
               {item.label}
+              <span className="absolute bottom-0 left-0 h-px w-0 bg-dourado transition-all duration-300 ease-out group-hover:w-full" />
             </Link>
           ))}
         </nav>

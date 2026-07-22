@@ -26,6 +26,26 @@ body {
   color: var(--foreground);
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-dourado);
+  outline-offset: 2px;
+}
+
+.text-h1 {
+  font-size: clamp(2.5rem, 1.6rem + 4vw, 5rem);
+  line-height: 1.1;
+}
+
+.text-h2 {
+  font-size: clamp(1.875rem, 1.35rem + 2.6vw, 3.75rem);
+  line-height: 1.15;
+}
+
+.text-h3 {
+  font-size: clamp(1.5rem, 1.2rem + 1.5vw, 2.25rem);
+  line-height: 1.2;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -48,4 +68,19 @@ body {
 
 .animate-ken-burns {
   animation: ken-burns 25s ease-out forwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 400ms ease-out;
 }

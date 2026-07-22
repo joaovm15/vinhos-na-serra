@@ -1,34 +1,24 @@
-import Link from "next/link";
+import WineCarousel from "@/components/WineCarousel";
 import { wines } from "@/data/wines";
 
 export const metadata = {
-  title: "Vinhos | Vinhos da Serra",
+  title: "Nossos Vinhos | Vinhos na Serra",
 };
 
 export default function VinhosPage() {
   return (
-    <div className="mx-auto max-w-6xl px-6 py-20">
-      <h1 className="mb-16 text-3xl font-light">Vinhos</h1>
+    <div className="px-6 py-24">
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="text-xs tracking-[0.3em] text-dourado uppercase">Nossos Vinhos</p>
+        <h1 className="text-h2 mt-4 font-serif text-verde-serra">Uma curadoria para descobrir.</h1>
+        <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
+          Arraste, deslize ou use as setas para conhecer cada rótulo — sua história, seu terroir
+          e o que o torna único.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2 lg:grid-cols-3">
-        {wines.map((wine, i) => (
-          <Link
-            key={wine.slug}
-            href={`/vinhos/${wine.slug}`}
-            className={`group ${i % 5 === 0 ? "lg:col-span-2" : ""}`}
-          >
-            <div className="aspect-[3/4] w-full bg-zinc-100 transition-colors group-hover:bg-zinc-200 dark:bg-zinc-900 dark:group-hover:bg-zinc-800" />
-            <div className="mt-4">
-              <p className="text-base">{wine.name}</p>
-              <p className="text-sm text-zinc-500">
-                {wine.type} · {wine.grape} · {wine.vintage}
-              </p>
-            </div>
-            <span className="mt-2 inline-block text-xs uppercase tracking-widest text-zinc-500 underline underline-offset-4">
-              Ver detalhes
-            </span>
-          </Link>
-        ))}
+      <div className="mx-auto mt-20 max-w-4xl">
+        <WineCarousel wines={wines} />
       </div>
     </div>
   );
