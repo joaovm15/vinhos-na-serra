@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState, ReactNode } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 interface ScrollExpandMediaProps {
   mediaType?: "video" | "image";
@@ -131,27 +130,23 @@ const ScrollExpandMedia = ({
 
   return (
     <div ref={sectionRef} className="overflow-x-hidden transition-colors duration-700 ease-in-out">
-      <section className="relative flex min-h-[100dvh] flex-col items-center justify-start">
-        <div className="relative flex min-h-[100dvh] w-full flex-col items-center">
-          <motion.div
-            className="absolute inset-0 z-0 h-full"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 - scrollProgress }}
-            transition={{ duration: 0.1 }}
-          >
+      <section className="relative flex min-h-screen flex-col items-center justify-start">
+        <div className="relative flex min-h-screen w-full flex-col items-center">
+          <div className="absolute inset-0 z-0 h-full" style={{ opacity: 1 - scrollProgress }}>
             <Image
               src={bgImageSrc}
               alt="Vinhedos da Serra"
               fill
               sizes="100vw"
+              quality={90}
               className="object-cover object-center"
               priority
             />
             <div className="absolute inset-0 bg-verde-serra/30" />
-          </motion.div>
+          </div>
 
           <div className="container relative z-10 mx-auto flex flex-col items-center justify-start">
-            <div className="relative flex h-[100dvh] w-full flex-col items-center justify-center">
+            <div className="relative flex h-screen w-full flex-col items-center justify-center">
               <div
                 className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform overflow-hidden rounded-2xl transition-none"
                 style={{
@@ -177,11 +172,9 @@ const ScrollExpandMedia = ({
                       disablePictureInPicture
                       disableRemotePlayback
                     />
-                    <motion.div
+                    <div
                       className="absolute inset-0 rounded-xl bg-verde-serra/40"
-                      initial={{ opacity: 0.7 }}
-                      animate={{ opacity: 0.5 - scrollProgress * 0.3 }}
-                      transition={{ duration: 0.2 }}
+                      style={{ opacity: 0.5 - scrollProgress * 0.3 }}
                     />
                   </div>
                 ) : (
@@ -190,14 +183,13 @@ const ScrollExpandMedia = ({
                       src={mediaSrc}
                       alt={title || "Vinhos na Serra"}
                       fill
-                      sizes="95vw"
+                      sizes="(max-width: 768px) 95vw, 60vw"
+                      quality={90}
                       className="rounded-xl object-cover"
                     />
-                    <motion.div
+                    <div
                       className="absolute inset-0 rounded-xl bg-verde-serra/50"
-                      initial={{ opacity: 0.7 }}
-                      animate={{ opacity: 0.7 - scrollProgress * 0.3 }}
-                      transition={{ duration: 0.2 }}
+                      style={{ opacity: 0.7 - scrollProgress * 0.3 }}
                     />
                   </div>
                 )}
@@ -227,29 +219,28 @@ const ScrollExpandMedia = ({
                   textBlend ? "mix-blend-difference" : "mix-blend-normal"
                 }`}
               >
-                <motion.h2
+                <h2
                   className="font-serif text-4xl text-off-white transition-none md:text-6xl lg:text-7xl"
                   style={{ transform: `translateX(-${textTranslateX}vw)` }}
                 >
                   {firstWord}
-                </motion.h2>
-                <motion.h2
+                </h2>
+                <h2
                   className="text-center font-serif text-4xl text-off-white transition-none md:text-6xl lg:text-7xl"
                   style={{ transform: `translateX(${textTranslateX}vw)` }}
                 >
                   {restOfTitle}
-                </motion.h2>
+                </h2>
               </div>
             </div>
 
-            <motion.section
-              className="flex w-full flex-col px-8 py-10 md:px-16 lg:py-20"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: showContent ? 1 : 0 }}
-              transition={{ duration: 0.7 }}
+            <section
+              className={`flex w-full flex-col px-8 py-10 transition-opacity duration-700 ease-out md:px-16 lg:py-20 ${
+                showContent ? "opacity-100" : "opacity-0"
+              }`}
             >
               {children}
-            </motion.section>
+            </section>
           </div>
         </div>
       </section>

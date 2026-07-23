@@ -55,8 +55,8 @@ export default function Home() {
       <div className="-mt-20">
         <ScrollExpandMedia
           mediaType="image"
-          mediaSrc="/images/evento/evento-06.jpg"
-          bgImageSrc="/images/evento/evento-03.jpg"
+          mediaSrc="/images/hero/degustacao.jpg"
+          bgImageSrc="/images/hero/vista-serra.jpg"
           title="Da Serra para a Taça"
           date="Vinhos na Serra"
           scrollToExpand="Role para expandir"
