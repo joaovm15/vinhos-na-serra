@@ -18,7 +18,7 @@ export const wines: Wine[] = [
     name: "Encosta Tinto Reserva",
     type: "Tinto",
     grape: "Merlot",
-    region: "Serra Gaúcha",
+    region: "Serra dos Órgãos, RJ",
     vintage: "2021",
     description:
       "Colhido nas encostas mais altas da propriedade, este tinto passa 14 meses em barril de carvalho francês, resultando em um vinho de corpo firme e taninos macios.",
@@ -32,7 +32,7 @@ export const wines: Wine[] = [
     name: "Vale Branco Altitude",
     type: "Branco",
     grape: "Chardonnay",
-    region: "Serra Gaúcha",
+    region: "Serra dos Órgãos, RJ",
     vintage: "2023",
     description:
       "Uvas colhidas a mais de 900m de altitude, garantindo acidez vibrante e frescor mineral característicos do nosso terroir.",
@@ -46,7 +46,7 @@ export const wines: Wine[] = [
     name: "Rosé da Serra",
     type: "Rosé",
     grape: "Pinot Noir",
-    region: "Serra Gaúcha",
+    region: "Serra dos Órgãos, RJ",
     vintage: "2023",
     description:
       "Um rosé delicado, feito por sangria, que carrega a leveza e o frescor das manhãs frias da serra.",
@@ -60,7 +60,7 @@ export const wines: Wine[] = [
     name: "Cume Espumante Brut",
     type: "Espumante",
     grape: "Chardonnay/Pinot Noir",
-    region: "Serra Gaúcha",
+    region: "Serra dos Órgãos, RJ",
     vintage: "2022",
     description:
       "Método tradicional, com segunda fermentação em garrafa e mínimo de 18 meses sobre borras finas.",
@@ -74,7 +74,7 @@ export const wines: Wine[] = [
     name: "Terra Alta Cabernet Sauvignon",
     type: "Tinto",
     grape: "Cabernet Sauvignon",
-    region: "Serra Gaúcha",
+    region: "Serra dos Órgãos, RJ",
     vintage: "2020",
     description:
       "Vinhas de baixo rendimento em solo pedregoso, resultando em um vinho estruturado e de grande potencial de guarda.",
