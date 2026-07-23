@@ -52,7 +52,6 @@ export default function Footer() {
             <FooterLink href="/contato">Fale conosco</FooterLink>
             <FooterLink href={whatsappUrl()} external>WhatsApp</FooterLink>
             <FooterLink href={INSTAGRAM_URL} external>Instagram</FooterLink>
-            <FooterLink href="#" external>E-mail</FooterLink>
           </div>
           <div className="flex flex-col gap-3">
             <span className="text-xs tracking-widest text-dourado uppercase">Endereço</span>

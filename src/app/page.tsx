@@ -42,7 +42,7 @@ const wineCategories = [
 
 const pillars = [
   { label: "Origem", text: "Cada rótulo carrega o lugar exato de onde vem." },
-  { label: "Qualidade", text: "Colheita, tempo e técnica sem atalhos." },
+  { label: "Qualidade", text: "Curadoria criteriosa, sem atalhos, rótulo por rótulo." },
   { label: "Identidade", text: "Vinhos que não imitam — que têm voz própria." },
   { label: "Experiência", text: "O vinho como convite a estar presente." },
 ];
@@ -79,13 +79,13 @@ export default function Home() {
         <Reveal className="mx-auto max-w-xl text-center">
           <h2 className="text-h2 font-serif text-verde-serra">O vinho começa muito antes da taça.</h2>
           <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
-            Começa na <span className="text-dourado">terra</span> que sustenta a videira, no{" "}
+            Começa na <span className="text-dourado">terra</span> de cada vinícola parceira, no{" "}
             <span className="text-dourado">clima</span> que impõe seu próprio ritmo, no{" "}
             <span className="text-dourado">tempo</span> que ninguém consegue apressar.
           </p>
           <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
-            Começa nas pessoas que aprenderam a ouvir a serra, e nas histórias que cada colheita
-            carrega até chegar à sua mesa.
+            Começa nas pessoas que aprenderam a reconhecer os melhores rótulos brasileiros, e nas
+            histórias que cada garrafa carrega até chegar à sua mesa.
           </p>
         </Reveal>
       </section>
@@ -127,11 +127,11 @@ export default function Home() {
 
         <Reveal className="relative z-10 flex max-w-2xl flex-col items-center gap-6">
           <h2 className="text-h2 font-serif text-off-white">
-            Onde a terra encontra o vinho.
+            Onde a diversidade do Brasil encontra o vinho.
           </h2>
           <p className="text-areia">
-            A mais de 900 metros de altitude, clima e solo se combinam para dar aos nossos vinhos
-            uma identidade que não se repete em nenhum outro lugar.
+            De vinhedos de altitude a diferentes solos e climas, cada região do país imprime sua
+            própria identidade nos rótulos que selecionamos para você.
           </p>
           <Button href="/a-serra" variant="editorial" tone="dourado" className="mt-2">
             Descubra a Serra
@@ -258,10 +258,11 @@ export default function Home() {
       {/* 9. NOSSA HISTÓRIA — fechamento narrativo */}
       <section className="px-6 py-32">
         <Reveal className="mx-auto max-w-xl text-center">
-          <h2 className="text-h2 font-serif text-verde-serra">Uma história que começa na Serra.</h2>
+          <h2 className="text-h2 font-serif text-verde-serra">Uma história que começou em 2019.</h2>
           <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
-            Três gerações de uma mesma família, uma paixão que começou pequena e virou tradição —
-            uma história que ainda está sendo escrita a cada colheita.
+            De uma paixão compartilhada por três sócios ao centro de Teresópolis, construímos a
+            maior confraria de vinhos brasileiros do país — uma história que ainda está sendo
+            escrita a cada novo rótulo.
           </p>
           <Button href="/nossa-historia" variant="editorial" tone="verde-serra" className="mt-6">
             Ler nossa história completa

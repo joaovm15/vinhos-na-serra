@@ -5,16 +5,16 @@ export const metadata = {
 };
 
 const benefits = [
-  "Acesso antecipado a novidades sobre safras limitadas",
+  "Acesso antecipado a rótulos e safras limitadas",
   "Convites exclusivos para degustações e eventos",
-  "Conteúdo e bastidores direto do vinicultor",
-  "Uma relação mais próxima com quem faz o vinho",
+  "Conteúdo e bastidores direto dos produtores parceiros",
+  "Uma relação mais próxima com quem faz o vinho brasileiro",
 ];
 
 const plans = [
   { name: "Encosta", detail: "Acompanhe as novidades e eventos abertos." },
-  { name: "Vinhedo", detail: "Convites prioritários para degustações." },
-  { name: "Reserva", detail: "Acesso completo, incluindo bastidores de colheita." },
+  { name: "Terroir", detail: "Convites prioritários para degustações." },
+  { name: "Reserva", detail: "Acesso completo, incluindo bastidores da curadoria." },
 ];
 
 export default function ConfrariaPage() {
@@ -25,8 +25,8 @@ export default function ConfrariaPage() {
           <p className="text-xs tracking-[0.3em] text-areia uppercase">Confraria</p>
           <h1 className="text-h1 mt-4 font-serif text-off-white">Faça parte da nossa mesa.</h1>
           <p className="mt-6 text-areia">
-            Um clube para quem quer estar mais perto do que fazemos — acesso a novidades e uma
-            relação direta com a vinícola.
+            Um clube para quem quer estar mais perto do universo do vinho brasileiro — acesso a
+            novidades e uma relação direta com os produtores que selecionamos.
           </p>
         </Reveal>
       </section>

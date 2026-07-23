@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
+import ContactForm from "@/components/ContactForm";
 import { WHATSAPP_DISPLAY, whatsappUrl } from "@/lib/whatsapp";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/social";
 import { ADDRESS } from "@/lib/address";
@@ -17,47 +18,7 @@ export default function ContatoPage() {
       </Reveal>
 
       <Reveal delay={150} className="mx-auto mt-20 grid max-w-4xl grid-cols-1 gap-16 md:grid-cols-2">
-        <form className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <label htmlFor="name" className="text-xs tracking-[0.15em] text-verde-serra/60 uppercase">
-              Nome
-            </label>
-            <input
-              id="name"
-              name="name"
-              type="text"
-              className="border-b border-verde-serra/25 bg-transparent py-2 text-verde-serra outline-none focus:border-dourado"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="email" className="text-xs tracking-[0.15em] text-verde-serra/60 uppercase">
-              E-mail
-            </label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              className="border-b border-verde-serra/25 bg-transparent py-2 text-verde-serra outline-none focus:border-dourado"
-            />
-          </div>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="message" className="text-xs tracking-[0.15em] text-verde-serra/60 uppercase">
-              Mensagem
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows={5}
-              className="border-b border-verde-serra/25 bg-transparent py-2 text-verde-serra outline-none focus:border-dourado"
-            />
-          </div>
-          <button
-            type="submit"
-            className="mt-4 w-fit rounded-[2px] bg-bordo px-8 py-3.5 text-xs tracking-[0.2em] text-off-white uppercase transition-colors hover:bg-carvao"
-          >
-            Enviar
-          </button>
-        </form>
+        <ContactForm />
 
         <div className="space-y-8 text-verde-serra/80">
           <div>
