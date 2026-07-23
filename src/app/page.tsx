@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import InstagramEmbed from "@/components/InstagramEmbed";
+import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
 import { experiences } from "@/data/experiences";
 
 const EVENT_REEL_URL = "https://www.instagram.com/reel/Da6dK51RFtF/";
@@ -50,30 +51,27 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-off-white">
-      {/* 1. HERO — IMPACTO */}
-      <section className="relative -mt-20 flex min-h-screen flex-col items-center justify-end overflow-hidden pb-24 text-center">
-        <div className="animate-ken-burns absolute inset-0 bg-gradient-to-br from-areia via-verde-oliva to-verde-serra" />
-        <div className="absolute inset-0 bg-gradient-to-t from-verde-serra via-verde-serra/40 to-transparent" />
-
-        <div className="relative z-10 flex flex-col items-center gap-6 px-6">
-          <Reveal>
-            <p className="text-xs tracking-[0.3em] text-areia uppercase">Vinhos na Serra</p>
-          </Reveal>
-          <Reveal delay={150}>
-            <h1 className="text-h1 max-w-3xl font-serif text-off-white">Da Serra para a Taça.</h1>
-          </Reveal>
-          <Reveal delay={300}>
-            <p className="max-w-md text-sm text-areia md:text-base">
-              Uma experiência construída entre a terra, o tempo e a paixão pelo vinho brasileiro.
+      {/* 1. HERO — IMPACTO (scroll-to-expand) */}
+      <div className="-mt-20">
+        <ScrollExpandMedia
+          mediaType="image"
+          mediaSrc="/images/evento/evento-06.jpg"
+          bgImageSrc="/images/evento/evento-03.jpg"
+          title="Da Serra para a Taça"
+          date="Vinhos na Serra"
+          scrollToExpand="Role para expandir"
+        >
+          <div className="mx-auto flex max-w-xl flex-col items-center gap-6 text-center">
+            <p className="text-lg leading-relaxed text-verde-serra/80">
+              Uma experiência construída entre a terra, o tempo e a paixão pelo vinho
+              brasileiro — e vivida junto de quem faz parte da nossa Confraria.
             </p>
-          </Reveal>
-          <Reveal delay={450}>
-            <Button href="/nossa-historia" variant="editorial" tone="off-white" className="mt-4">
-              Conheça a Vinhos na Serra
+            <Button href="/confraria" variant="editorial" tone="bordo">
+              Conheça a Confraria
             </Button>
-          </Reveal>
-        </div>
-      </section>
+          </div>
+        </ScrollExpandMedia>
+      </div>
 
       {/* 2. MANIFESTO — IDENTIDADE */}
       <section className="px-6 py-32">

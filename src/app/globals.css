@@ -57,19 +57,6 @@ body {
   }
 }
 
-@keyframes ken-burns {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.06);
-  }
-}
-
-.animate-ken-burns {
-  animation: ken-burns 25s ease-out forwards;
-}
-
 @keyframes fade-in {
   from {
     opacity: 0;
