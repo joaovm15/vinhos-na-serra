@@ -106,11 +106,12 @@ export default function Home() {
           </Reveal>
           <Reveal delay={150}>
             <h2 className="text-h3 font-serif text-verde-serra">
-              Mais do que vinho. Uma forma de viver a Serra.
+              Mais do que uma adega. A maior confraria de vinhos brasileiros do país.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
-              Somos uma família que aprendeu, safra após safra, a traduzir a serra em vinho — sem
-              pressa, sem atalhos, sem perder o que a torna única.
+              Desde 2019, em Teresópolis, reunimos mais de 1.300 rótulos de mais de 130 vinícolas
+              brasileiras — um espaço dedicado a valorizar a vitivinicultura nacional e aproximar
+              quem ama vinho de quem o faz.
             </p>
             <Button href="/nossa-historia" variant="editorial" tone="verde-serra" className="mt-6">
               Conheça nossa história

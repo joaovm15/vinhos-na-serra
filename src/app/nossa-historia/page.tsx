@@ -4,11 +4,25 @@ export const metadata = {
   title: "Nossa História | Vinhos na Serra",
 };
 
+const stats = [
+  { number: "1.300+", label: "Rótulos" },
+  { number: "130+", label: "Vinícolas brasileiras" },
+  { number: "2019", label: "Fundação, em Teresópolis" },
+];
+
 const timeline = [
-  { year: "1978", text: "Meu avô planta as primeiras videiras na encosta que hoje leva nosso nome." },
-  { year: "1995", text: "A família constrói a primeira cave, ainda artesanal, para os vinhos de consumo próprio." },
-  { year: "2010", text: "Primeira safra comercial, vendida diretamente para restaurantes da região." },
-  { year: "2026", text: "Hoje, a terceira geração segue cuidando das mesmas encostas, com o mesmo cuidado." },
+  {
+    year: "2019",
+    text: "Rafael Feital, Rodrigo Feital e Leonardo Claussen fundam a Confraria Vinhos na Serra, no centro de Teresópolis — um espaço criado para valorizar a vitivinicultura brasileira e aproximar o público dos produtores nacionais, através de degustações, harmonizações e encontros entre apreciadores.",
+  },
+  {
+    year: "Ao longo dos anos",
+    text: "A confraria cresce de forma consistente e passa a reunir mais de 1.300 rótulos de mais de 130 vinícolas brasileiras, tornando-se uma das maiores referências especializadas exclusivamente em vinhos nacionais no estado do Rio de Janeiro.",
+  },
+  {
+    year: "2024",
+    text: "A proximidade construída ao longo dos anos com produtores e enólogos dá origem ao evento Vinhos na Serra, em maio — uma celebração da cultura e da produção vinícola brasileira.",
+  },
 ];
 
 export default function NossaHistoriaPage() {
@@ -17,16 +31,30 @@ export default function NossaHistoriaPage() {
       <Reveal className="mx-auto max-w-2xl text-center">
         <p className="text-xs tracking-[0.3em] text-dourado uppercase">Nossa História</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
-          Uma história que começa na Serra.
+          Uma paixão que virou a maior confraria de vinhos brasileiros do país.
         </h1>
       </Reveal>
 
       <Reveal delay={150} className="mx-auto mt-16 max-w-2xl text-center">
         <p className="text-lg leading-relaxed text-verde-serra/80">
-          Não somos uma vinícola grande, e nunca quisemos ser. Somos uma família que, há três
-          gerações, cultiva as mesmas encostas e aprende, safra após safra, a ouvir o que a serra
-          tem a dizer sobre o vinho que ela é capaz de dar.
+          Somos a maior adega e confraria especializada em vinhos brasileiros do país. Rafael
+          Feital, Rodrigo Feital e Leonardo Claussen já compartilhavam o interesse pelo universo
+          do vinho quando decidiram se aprofundar na vitivinicultura brasileira. Ao descobrir a
+          diversidade de terroirs, produtores, castas e a qualidade dos rótulos elaborados em
+          diferentes regiões do país, fizeram uma escolha que mudaria suas trajetórias: dedicar-se
+          exclusivamente aos vinhos brasileiros.
         </p>
+      </Reveal>
+
+      <Reveal delay={250} className="mx-auto mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-dourado/30 pt-10">
+        {stats.map((stat) => (
+          <div key={stat.label} className="text-center">
+            <p className="font-serif text-3xl text-dourado md:text-4xl">{stat.number}</p>
+            <p className="mt-2 text-xs tracking-[0.1em] text-verde-serra/70 uppercase">
+              {stat.label}
+            </p>
+          </div>
+        ))}
       </Reveal>
 
       <div className="mx-auto mt-20 max-w-xl space-y-12 border-l border-verde-serra/15 pl-8">
@@ -37,6 +65,14 @@ export default function NossaHistoriaPage() {
           </Reveal>
         ))}
       </div>
+
+      <Reveal delay={150} className="mx-auto mt-20 max-w-2xl text-center">
+        <p className="text-lg leading-relaxed text-verde-serra/80">
+          Mais do que uma adega, a Vinhos na Serra se consolidou como um espaço de experiências,
+          conhecimento e valorização da produção nacional — um ponto de encontro entre quem ama
+          vinho e quem o faz.
+        </p>
+      </Reveal>
     </div>
   );
 }
