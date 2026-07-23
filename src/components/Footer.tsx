@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { INSTAGRAM_URL } from "@/lib/social";
+import { ADDRESS } from "@/lib/address";
 
 function FooterLink({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
   const className = "group relative inline-block w-fit py-0.5 transition-colors hover:text-dourado";
@@ -55,7 +56,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col gap-3">
             <span className="text-xs tracking-widest text-dourado uppercase">Endereço</span>
-            <p className="max-w-[16rem] text-areia/80">Estrada da Serra, km 12 — Serra Gaúcha, RS</p>
+            <p className="max-w-[16rem] text-areia/80">{ADDRESS}</p>
           </div>
         </div>
       </div>

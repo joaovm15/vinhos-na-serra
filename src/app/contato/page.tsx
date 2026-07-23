@@ -2,6 +2,7 @@ import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import { WHATSAPP_DISPLAY, whatsappUrl } from "@/lib/whatsapp";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/social";
+import { ADDRESS } from "@/lib/address";
 
 export const metadata = {
   title: "Contato | Vinhos na Serra",
@@ -61,7 +62,7 @@ export default function ContatoPage() {
         <div className="space-y-8 text-verde-serra/80">
           <div>
             <p className="text-xs tracking-[0.15em] text-dourado uppercase">Endereço</p>
-            <p className="mt-1">Estrada da Serra, km 12 — Serra Gaúcha, RS</p>
+            <p className="mt-1">{ADDRESS}</p>
           </div>
           <div>
             <p className="text-xs tracking-[0.15em] text-dourado uppercase">WhatsApp</p>
