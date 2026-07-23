@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { whatsappUrl } from "@/lib/whatsapp";
 
 function FooterLink({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
   const className = "group relative inline-block w-fit py-0.5 transition-colors hover:text-dourado";
@@ -47,7 +48,7 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <span className="text-xs tracking-widest text-dourado uppercase">Contato</span>
             <FooterLink href="/contato">Fale conosco</FooterLink>
-            <FooterLink href="#" external>WhatsApp</FooterLink>
+            <FooterLink href={whatsappUrl()} external>WhatsApp</FooterLink>
             <FooterLink href="#" external>Instagram</FooterLink>
             <FooterLink href="#" external>E-mail</FooterLink>
           </div>

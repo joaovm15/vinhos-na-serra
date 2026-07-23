@@ -1,4 +1,6 @@
 import Reveal from "@/components/Reveal";
+import Button from "@/components/Button";
+import { WHATSAPP_DISPLAY, whatsappUrl } from "@/lib/whatsapp";
 
 export const metadata = {
   title: "Contato | Vinhos na Serra",
@@ -62,7 +64,10 @@ export default function ContatoPage() {
           </div>
           <div>
             <p className="text-xs tracking-[0.15em] text-dourado uppercase">WhatsApp</p>
-            <p className="mt-1">+55 (54) 99999-0000</p>
+            <p className="mt-1">{WHATSAPP_DISPLAY}</p>
+            <Button href={whatsappUrl()} variant="editorial" tone="bordo" className="mt-2">
+              Falar no WhatsApp
+            </Button>
           </div>
           <div>
             <p className="text-xs tracking-[0.15em] text-dourado uppercase">Redes sociais</p>

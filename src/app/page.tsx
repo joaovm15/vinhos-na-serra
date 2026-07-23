@@ -126,7 +126,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-verde-serra/30" />
 
         <Reveal className="relative z-10 flex max-w-2xl flex-col items-center gap-6">
-          <h2 className="text-h2 font-serif text-off-white">Onde a terra encontra o vinho.</h2>
+          <h2 className="text-h2 font-serif text-off-white">
+            Cultivados nas alturas, desenhados pelo frio, apreciados na alma.
+          </h2>
           <p className="text-areia">
             A mais de 900 metros de altitude, clima e solo se combinam para dar aos nossos vinhos
             uma identidade que não se repete em nenhum outro lugar.

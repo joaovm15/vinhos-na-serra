@@ -27,9 +27,12 @@ type Props = {
 };
 
 export default function Button({ href, children, variant = "editorial", tone = "bordo", className = "" }: Props) {
+  const external = href.startsWith("http");
+  const externalProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
   if (variant === "editorial") {
     return (
-      <Link href={href} className={`${variantClasses.editorial} ${toneClasses[tone]} ${className}`}>
+      <Link href={href} className={`${variantClasses.editorial} ${toneClasses[tone]} ${className}`} {...externalProps}>
         <span>{children}</span>
         <span
           aria-hidden
@@ -44,7 +47,7 @@ export default function Button({ href, children, variant = "editorial", tone = "
   const toneText = variant === "secondary" ? toneClasses[tone].split(" ")[0] : "";
 
   return (
-    <Link href={href} className={`${variantClasses[variant]} ${toneText} ${className}`}>
+    <Link href={href} className={`${variantClasses[variant]} ${toneText} ${className}`} {...externalProps}>
       {children}
     </Link>
   );

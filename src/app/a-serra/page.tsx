@@ -28,7 +28,7 @@ export default function ASerraPage() {
       <Reveal className="mx-auto max-w-2xl text-center">
         <p className="text-xs tracking-[0.3em] text-dourado uppercase">A Serra</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
-          Onde a terra encontra o vinho.
+          Cultivados nas alturas, desenhados pelo frio, apreciados na alma.
         </h1>
       </Reveal>
 
