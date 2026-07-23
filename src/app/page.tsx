@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import InstagramEmbed from "@/components/InstagramEmbed";
 import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
 import { experiences } from "@/data/experiences";
+import { INSTAGRAM_URL } from "@/lib/social";
 
 const EVENT_REEL_URL = "https://www.instagram.com/reel/Da6dK51RFtF/";
 
@@ -290,7 +291,7 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 text-center">
-              <Button href="#" variant="editorial" tone="verde-serra">
+              <Button href={INSTAGRAM_URL} variant="editorial" tone="verde-serra">
                 Seguir no Instagram
               </Button>
             </div>

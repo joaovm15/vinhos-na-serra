@@ -1,6 +1,7 @@
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import { WHATSAPP_DISPLAY, whatsappUrl } from "@/lib/whatsapp";
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/social";
 
 export const metadata = {
   title: "Contato | Vinhos na Serra",
@@ -71,7 +72,9 @@ export default function ContatoPage() {
           </div>
           <div>
             <p className="text-xs tracking-[0.15em] text-dourado uppercase">Redes sociais</p>
-            <p className="mt-1">Instagram</p>
+            <Button href={INSTAGRAM_URL} variant="editorial" tone="verde-serra" className="mt-1">
+              {INSTAGRAM_HANDLE}
+            </Button>
           </div>
         </div>
       </Reveal>
