@@ -215,18 +215,18 @@ const ScrollExpandMedia = ({
               </div>
 
               <div
-                className={`relative z-10 flex w-full flex-col items-center justify-center gap-4 text-center transition-none ${
+                className={`relative z-10 flex w-full flex-col items-center justify-center gap-2 px-6 text-center transition-none ${
                   textBlend ? "mix-blend-difference" : "mix-blend-normal"
                 }`}
               >
                 <h2
-                  className="font-serif text-4xl text-off-white transition-transform duration-150 ease-out md:text-6xl lg:text-7xl"
+                  className="font-serif text-3xl text-off-white transition-transform duration-150 ease-out md:text-5xl lg:text-6xl"
                   style={{ transform: `translateX(-${textTranslateX}vw)` }}
                 >
                   {firstWord}
                 </h2>
                 <h2
-                  className="text-center font-serif text-4xl text-off-white transition-transform duration-150 ease-out md:text-6xl lg:text-7xl"
+                  className="max-w-3xl text-center font-serif text-3xl text-off-white transition-transform duration-150 ease-out md:text-5xl lg:text-6xl"
                   style={{ transform: `translateX(${textTranslateX}vw)` }}
                 >
                   {restOfTitle}
