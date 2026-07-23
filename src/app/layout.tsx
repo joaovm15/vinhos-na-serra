@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Playfair_Display, Manrope } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const manrope = Manrope({
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${cormorant.variable} ${manrope.variable} h-full antialiased`}
+      className={`${playfair.variable} ${manrope.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <Header />
