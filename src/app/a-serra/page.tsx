@@ -7,17 +7,17 @@ export const metadata = {
 const blocks = [
   {
     label: "Altitude",
-    text: "Nossos vinhedos estão plantados a mais de 900 metros acima do nível do mar. A altitude prolonga o ciclo de maturação das uvas, preservando acidez e complexidade aromática.",
+    text: "Do Rio Grande do Sul a Minas Gerais, selecionamos rótulos nascidos em vinhedos de altitude, muitos acima de 900 metros — condição que prolonga o ciclo de maturação das uvas e preserva acidez e complexidade aromática.",
     image: true,
   },
   {
     label: "Clima",
-    text: "Invernos rigorosos e verões amenos, com grande amplitude térmica entre o dia e a noite — condição essencial para uvas de clima frio.",
+    text: "Cada vinícola parceira enfrenta seu próprio clima — de invernos rigorosos a amplitudes térmicas marcantes entre dia e noite — e é exatamente essa diversidade de climas brasileiros que buscamos representar em nossa seleção.",
     image: false,
   },
   {
     label: "Solo",
-    text: "Solos basálticos e pedregosos, de baixa fertilidade, forçam as raízes a buscar profundidade — resultando em uvas de menor volume e maior concentração.",
+    text: "Solos basálticos, graníticos e pedregosos: cada região do Brasil imprime sua própria assinatura nos vinhos que curamos, resultando em rótulos de personalidade e concentração únicas.",
     image: true,
   },
 ];
@@ -28,7 +28,7 @@ export default function ASerraPage() {
       <Reveal className="mx-auto max-w-2xl text-center">
         <p className="text-xs tracking-[0.3em] text-dourado uppercase">A Serra</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
-          Onde a terra encontra o vinho.
+          Onde a diversidade do Brasil encontra o vinho.
         </h1>
       </Reveal>
 
