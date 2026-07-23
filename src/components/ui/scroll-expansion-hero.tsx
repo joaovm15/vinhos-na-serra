@@ -41,7 +41,7 @@ const ScrollExpandMedia = ({
         e.preventDefault();
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
-        const scrollDelta = e.deltaY * 0.0009;
+        const scrollDelta = e.deltaY * 0.0018;
         const newProgress = Math.min(Math.max(scrollProgress + scrollDelta, 0), 1);
         setScrollProgress(newProgress);
 
@@ -69,7 +69,7 @@ const ScrollExpandMedia = ({
         e.preventDefault();
       } else if (!mediaFullyExpanded) {
         e.preventDefault();
-        const scrollFactor = deltaY < 0 ? 0.008 : 0.005;
+        const scrollFactor = deltaY < 0 ? 0.014 : 0.01;
         const scrollDelta = deltaY * scrollFactor;
         const newProgress = Math.min(Math.max(scrollProgress + scrollDelta, 0), 1);
         setScrollProgress(newProgress);
@@ -148,7 +148,7 @@ const ScrollExpandMedia = ({
           <div className="container relative z-10 mx-auto flex flex-col items-center justify-start">
             <div className="relative flex h-screen w-full flex-col items-center justify-center">
               <div
-                className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform overflow-hidden rounded-2xl transition-none"
+                className="absolute top-1/2 left-1/2 z-0 -translate-x-1/2 -translate-y-1/2 transform overflow-hidden rounded-2xl transition-[width,height] duration-150 ease-out"
                 style={{
                   width: `${mediaWidth}px`,
                   height: `${mediaHeight}px`,
@@ -197,7 +197,7 @@ const ScrollExpandMedia = ({
                 <div className="relative z-10 mt-4 flex flex-col items-center text-center transition-none">
                   {date && (
                     <p
-                      className="text-lg text-areia"
+                      className="text-lg text-areia transition-transform duration-150 ease-out"
                       style={{ transform: `translateX(-${textTranslateX}vw)` }}
                     >
                       {date}
@@ -205,7 +205,7 @@ const ScrollExpandMedia = ({
                   )}
                   {scrollToExpand && (
                     <p
-                      className="text-center text-xs tracking-[0.2em] text-areia uppercase"
+                      className="text-center text-xs tracking-[0.2em] text-areia uppercase transition-transform duration-150 ease-out"
                       style={{ transform: `translateX(${textTranslateX}vw)` }}
                     >
                       {scrollToExpand}
@@ -220,13 +220,13 @@ const ScrollExpandMedia = ({
                 }`}
               >
                 <h2
-                  className="font-serif text-4xl text-off-white transition-none md:text-6xl lg:text-7xl"
+                  className="font-serif text-4xl text-off-white transition-transform duration-150 ease-out md:text-6xl lg:text-7xl"
                   style={{ transform: `translateX(-${textTranslateX}vw)` }}
                 >
                   {firstWord}
                 </h2>
                 <h2
-                  className="text-center font-serif text-4xl text-off-white transition-none md:text-6xl lg:text-7xl"
+                  className="text-center font-serif text-4xl text-off-white transition-transform duration-150 ease-out md:text-6xl lg:text-7xl"
                   style={{ transform: `translateX(${textTranslateX}vw)` }}
                 >
                   {restOfTitle}
