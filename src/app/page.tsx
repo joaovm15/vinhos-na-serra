@@ -58,7 +58,7 @@ export default function Home() {
           mediaType="image"
           mediaSrc="/images/hero/degustacao.jpg"
           bgImageSrc="/images/hero/vista-serra.jpg"
-          title="Da Serra para a Taça"
+          title="Cultivados nas alturas, desenhados pelo frio, apreciados na alma."
           date="Vinhos na Serra"
           scrollToExpand="Role para expandir"
         >
@@ -126,7 +126,7 @@ export default function Home() {
 
         <Reveal className="relative z-10 flex max-w-2xl flex-col items-center gap-6">
           <h2 className="text-h2 font-serif text-off-white">
-            Cultivados nas alturas, desenhados pelo frio, apreciados na alma.
+            Onde a terra encontra o vinho.
           </h2>
           <p className="text-areia">
             A mais de 900 metros de altitude, clima e solo se combinam para dar aos nossos vinhos
