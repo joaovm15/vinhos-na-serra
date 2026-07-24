@@ -18,6 +18,9 @@ const galleryPhotos = [
   "/images/evento/evento-07-rodrigo-feital.jpg",
   "/images/evento/evento-08-adega.jpg",
   "/images/evento/evento-09.jpg",
+  "/images/evento/evento-10.jpg",
+  "/images/evento/evento-11.jpg",
+  "/images/evento/evento-12.jpg",
 ];
 
 const pillars = [

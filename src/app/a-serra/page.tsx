@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
@@ -8,17 +9,19 @@ const blocks = [
   {
     label: "Altitude",
     text: "Do Rio Grande do Sul a Minas Gerais, selecionamos rótulos nascidos em vinhedos de altitude, muitos acima de 900 metros — condição que prolonga o ciclo de maturação das uvas e preserva acidez e complexidade aromática.",
-    image: true,
+    image: "/images/evento/evento-08-adega.jpg",
+    alt: "Prateleiras da adega Vinhos na Serra com centenas de rótulos brasileiros",
   },
   {
     label: "Clima",
     text: "Cada vinícola parceira enfrenta seu próprio clima — de invernos rigorosos a amplitudes térmicas marcantes entre dia e noite — e é exatamente essa diversidade de climas brasileiros que buscamos representar em nossa seleção.",
-    image: false,
+    image: null,
   },
   {
     label: "Solo",
     text: "Solos basálticos, graníticos e pedregosos: cada região do Brasil imprime sua própria assinatura nos vinhos que curamos, resultando em rótulos de personalidade e concentração únicas.",
-    image: true,
+    image: "/images/adega/detalhe-taca.jpg",
+    alt: "Taça sendo servida ao lado de rótulos Vinhos na Serra",
   },
 ];
 
@@ -37,7 +40,13 @@ export default function ASerraPage() {
           <Reveal key={block.label}>
             {block.image && (
               <div className="mb-8 aspect-video w-full overflow-hidden bg-areia">
-                <div className="h-full w-full bg-gradient-to-br from-verde-oliva/60 to-dourado/30" />
+                <Image
+                  src={block.image}
+                  alt={block.alt ?? ""}
+                  width={1200}
+                  height={675}
+                  className="h-full w-full object-cover"
+                />
               </div>
             )}
             <h2 className="text-xs tracking-[0.2em] text-dourado uppercase">{block.label}</h2>
