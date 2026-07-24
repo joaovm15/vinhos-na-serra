@@ -171,6 +171,8 @@ export default function Home() {
         </div>
       </section>
 
+      <PhotoDivider src="/images/evento/evento-02.jpg" alt="" />
+
       {/* 6. EXPERIÊNCIAS */}
       <section className="bg-areia px-6 py-32">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
