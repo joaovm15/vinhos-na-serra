@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import VineCorner from "@/components/VineCorner";
 
 export const metadata = {
   title: "Nossa História | Vinhos na Serra",
@@ -28,7 +29,9 @@ const timeline = [
 
 export default function NossaHistoriaPage() {
   return (
-    <div className="bg-off-white px-6 py-24">
+    <div className="relative overflow-hidden bg-off-white px-6 py-24">
+      <VineCorner position="top-left" tone="light" />
+      <VineCorner position="top-right" tone="light" />
       <Reveal className="mx-auto max-w-2xl text-center">
         <p className="text-sm tracking-[0.3em] text-dourado uppercase">Nossa História</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">

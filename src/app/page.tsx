@@ -2,6 +2,7 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import EventVideoPlayer from "@/components/EventVideoPlayer";
+import VineCorner from "@/components/VineCorner";
 import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
 import { experiences } from "@/data/experiences";
 import { INSTAGRAM_URL } from "@/lib/social";
@@ -72,7 +73,8 @@ export default function Home() {
       </section>
 
       {/* 3. NOSSA ESSÊNCIA — IDENTIDADE */}
-      <section className="px-6 pb-32">
+      <section className="relative overflow-hidden px-6 pb-32">
+        <VineCorner position="top-right" tone="light" />
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
           <Reveal>
             <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
@@ -109,7 +111,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-verde-oliva via-verde-serra to-carvao" />
         <div
           className="absolute inset-0 opacity-[0.08]"
-          style={{ backgroundImage: "url(/patterns/vinha.svg)", backgroundSize: "420px 420px" }}
+          style={{ backgroundImage: "url(/patterns/vinha-textura-dark.svg)", backgroundSize: "480px 480px" }}
         />
         <div className="absolute inset-0 bg-verde-serra/30" />
 
@@ -207,7 +209,9 @@ export default function Home() {
       <div className="h-20 bg-gradient-to-b from-areia to-bordo" aria-hidden />
 
       {/* 7. CONFRARIA */}
-      <section className="bg-bordo px-6 py-32 text-center">
+      <section className="relative overflow-hidden bg-bordo px-6 py-32 text-center">
+        <VineCorner position="top-left" tone="dark" />
+        <VineCorner position="bottom-right" tone="dark" />
         <Reveal className="mx-auto max-w-xl">
           <h2 className="text-h2 font-serif text-off-white">Faça parte da nossa mesa.</h2>
           <p className="mt-6 text-areia">

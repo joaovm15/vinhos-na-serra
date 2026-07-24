@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import VineCorner from "@/components/VineCorner";
 
 export const metadata = {
   title: "Confraria | Vinhos na Serra",
@@ -20,7 +21,9 @@ const plans = [
 export default function ConfrariaPage() {
   return (
     <div className="bg-off-white">
-      <section className="bg-bordo px-6 py-24 text-center">
+      <section className="relative overflow-hidden bg-bordo px-6 py-24 text-center">
+        <VineCorner position="top-left" tone="dark" />
+        <VineCorner position="top-right" tone="dark" />
         <Reveal className="mx-auto max-w-xl">
           <p className="text-sm tracking-[0.3em] text-areia uppercase">Confraria</p>
           <h1 className="text-h1 mt-4 font-serif text-off-white">Faça parte da nossa mesa.</h1>
