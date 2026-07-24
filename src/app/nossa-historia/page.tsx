@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 export const metadata = {
@@ -55,6 +56,21 @@ export default function NossaHistoriaPage() {
             </p>
           </div>
         ))}
+      </Reveal>
+
+      <Reveal delay={150} className="mx-auto mt-20 max-w-3xl">
+        <div className="aspect-[3/2] w-full overflow-hidden bg-areia">
+          <Image
+            src="/images/socios-brinde.jpg"
+            alt="Rafael Feital, Rodrigo Feital e Leonardo Claussen brindando na adega"
+            width={1200}
+            height={800}
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <p className="mt-4 text-center text-xs tracking-[0.15em] text-verde-serra/60 uppercase">
+          Rafael Feital, Rodrigo Feital e Leonardo Claussen
+        </p>
       </Reveal>
 
       <div className="mx-auto mt-20 max-w-xl space-y-12 border-l border-verde-serra/15 pl-8">
