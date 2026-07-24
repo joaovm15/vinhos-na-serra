@@ -1,0 +1,17 @@
+export const fourthEditionWineries: string[] = [
+  "Aurora",
+  "Casa Ottone",
+  "Casa Valduga",
+  "Dom Bernardo",
+  "Dom Cândido",
+  "Don Laurindo",
+  "Foppa & Ambrosi",
+  "Iribarrem",
+  "Larentis",
+  "Lídio Carraro",
+  "Miolo",
+  "Peculiare",
+  "Pizzato",
+  "Terragnolo",
+  "Valhalla",
+];
