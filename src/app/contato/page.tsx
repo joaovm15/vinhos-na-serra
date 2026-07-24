@@ -13,7 +13,7 @@ export default function ContatoPage() {
   return (
     <div className="bg-off-white px-6 py-24">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <p className="text-xs tracking-[0.3em] text-dourado uppercase">Contato</p>
+        <p className="text-sm tracking-[0.3em] text-dourado uppercase">Contato</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">Fale com a gente.</h1>
       </Reveal>
 
@@ -22,18 +22,18 @@ export default function ContatoPage() {
 
         <div className="space-y-8 text-verde-serra/80">
           <div>
-            <p className="text-xs tracking-[0.15em] text-dourado uppercase">Endereço</p>
+            <p className="text-sm tracking-[0.15em] text-dourado uppercase">Endereço</p>
             <p className="mt-1">{ADDRESS}</p>
           </div>
           <div>
-            <p className="text-xs tracking-[0.15em] text-dourado uppercase">WhatsApp</p>
+            <p className="text-sm tracking-[0.15em] text-dourado uppercase">WhatsApp</p>
             <p className="mt-1">{WHATSAPP_DISPLAY}</p>
             <Button href={whatsappUrl()} variant="editorial" tone="bordo" className="mt-2">
               Falar no WhatsApp
             </Button>
           </div>
           <div>
-            <p className="text-xs tracking-[0.15em] text-dourado uppercase">Redes sociais</p>
+            <p className="text-sm tracking-[0.15em] text-dourado uppercase">Redes sociais</p>
             <Button href={INSTAGRAM_URL} variant="editorial" tone="verde-serra" className="mt-1">
               {INSTAGRAM_HANDLE}
             </Button>
