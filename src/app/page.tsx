@@ -171,7 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      <PhotoDivider src="/images/evento/evento-02.jpg" alt="" />
+      <PhotoDivider src="/images/evento/evento-03.jpg" alt="" />
 
       {/* 6. EXPERIÊNCIAS */}
       <section className="bg-areia px-6 py-32">
