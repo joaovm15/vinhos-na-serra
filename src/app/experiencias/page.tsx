@@ -71,7 +71,7 @@ export default function ExperienciasPage() {
             backgroundSize: "480px 480px",
           }}
         >
-          <div className="absolute inset-0 bg-verde-oliva/[0.92]" />
+          <div className="absolute inset-0 bg-verde-oliva/[0.86]" />
           <div className="relative mx-auto max-w-5xl">
             <Reveal>
               <h2 className="text-h3 mb-14 text-center font-serif text-off-white">

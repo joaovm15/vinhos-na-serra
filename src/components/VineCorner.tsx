@@ -10,7 +10,7 @@ const POSITION_CLASSES = {
 export default function VineCorner({
   position,
   tone = "dark",
-  opacity = 0.12,
+  opacity = 0.2,
   className = "",
 }: {
   position: keyof typeof POSITION_CLASSES;
