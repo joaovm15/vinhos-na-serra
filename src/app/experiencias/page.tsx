@@ -63,7 +63,6 @@ export default function ExperienciasPage() {
       </div>
 
       <div className="-mx-6 mt-32">
-        <div className="h-20 bg-gradient-to-b from-off-white to-verde-oliva" aria-hidden />
         <div
           className="relative bg-verde-oliva px-6 py-24"
           style={{
@@ -88,7 +87,6 @@ export default function ExperienciasPage() {
             </div>
           </div>
         </div>
-        <div className="h-20 bg-gradient-to-b from-verde-oliva to-off-white" aria-hidden />
       </div>
 
       <div className="mx-auto mt-32 max-w-4xl">
