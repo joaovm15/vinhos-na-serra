@@ -1,12 +1,10 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
-import InstagramEmbed from "@/components/InstagramEmbed";
+import EventVideoPlayer from "@/components/EventVideoPlayer";
 import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
 import { experiences } from "@/data/experiences";
 import { INSTAGRAM_URL } from "@/lib/social";
-
-const EVENT_REEL_URL = "https://www.instagram.com/reel/Da6dK51RFtF/";
 
 const galleryPhotos = [
   "/images/evento/evento-01.jpg",
@@ -125,14 +123,20 @@ export default function Home() {
 
       {/* 4.5. 4ª EDIÇÃO — evento */}
       <section className="bg-verde-serra px-6 py-32">
-        <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center">
-          <Reveal>
+        <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-[2fr_3fr]">
+          <Reveal className="mx-auto w-full max-w-xs md:max-w-none">
+            <EventVideoPlayer
+              src="/videos/evento-4a-edicao.mp4"
+              poster="/images/evento/evento-01.jpg"
+              className="aspect-[9/16] w-full"
+            />
+          </Reveal>
+
+          <Reveal delay={150}>
             <p className="text-xs tracking-[0.3em] text-areia uppercase">
               4ª Edição · Vinhos na Serra
             </p>
-          </Reveal>
-          <Reveal delay={150}>
-            <h2 className="text-h2 font-serif text-off-white">
+            <h2 className="text-h2 mt-4 font-serif text-off-white">
               Nascemos como um encontro. Hoje caminhamos para ser um movimento.
             </h2>
             <p className="mt-4 text-areia">
@@ -140,15 +144,8 @@ export default function Home() {
               produtores nacionais e cria experiências capazes de conectar pessoas, marcas e
               territórios.
             </p>
-          </Reveal>
-
-          <Reveal delay={300} className="w-full">
-            <InstagramEmbed url={EVENT_REEL_URL} />
-          </Reveal>
-
-          <Reveal delay={150}>
-            <p className="max-w-xl text-sm text-areia/90 italic">Cultura em estado líquido.</p>
-            <Button href="/contato" variant="editorial" tone="bordo" className="mt-4">
+            <p className="mt-4 text-sm text-areia/90 italic">Cultura em estado líquido.</p>
+            <Button href="/contato" variant="editorial" tone="bordo" className="mt-6">
               Quero viver essa experiência
             </Button>
           </Reveal>
