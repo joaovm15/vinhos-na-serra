@@ -50,7 +50,6 @@ export default function Footer() {
             <span className="text-xs tracking-widest text-dourado uppercase">Navegue</span>
             <FooterLink href="/nossa-historia">Nossa História</FooterLink>
             <FooterLink href="/a-serra">A Serra</FooterLink>
-            <FooterLink href="/vinhos">Nossos Vinhos</FooterLink>
             <FooterLink href="/experiencias">Experiências</FooterLink>
             <FooterLink href="/confraria">Confraria</FooterLink>
           </div>

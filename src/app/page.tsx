@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import InstagramEmbed from "@/components/InstagramEmbed";
@@ -19,25 +18,6 @@ const galleryPhotos = [
   "/images/evento/evento-07-rodrigo-feital.jpg",
   "/images/evento/evento-08-adega.jpg",
   "/images/evento/evento-09.jpg",
-];
-
-const wineCategories = [
-  {
-    name: "Tintos",
-    description: "Corpo firme, taninos macios, a marca da altitude na garrafa.",
-  },
-  {
-    name: "Brancos",
-    description: "Frescor mineral e acidez vibrante das encostas mais altas.",
-  },
-  {
-    name: "Rosés",
-    description: "Leveza e delicadeza das manhãs frias da serra.",
-  },
-  {
-    name: "Espumantes",
-    description: "Método tradicional, bolhas finas, para celebrar.",
-  },
 ];
 
 const pillars = [
@@ -105,7 +85,8 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <h2 className="text-h3 font-serif text-verde-serra">
+            <p className="text-xs tracking-[0.3em] text-dourado uppercase">A casa do vinho brasileiro</p>
+            <h2 className="text-h3 mt-4 font-serif text-verde-serra">
               Mais do que uma adega. A maior confraria de vinhos brasileiros do país.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
@@ -139,7 +120,7 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* 4.5. 4ª EDIÇÃO — ponte entre A Serra e Nossos Vinhos */}
+      {/* 4.5. 4ª EDIÇÃO — evento */}
       <section className="bg-verde-serra px-6 py-32">
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 text-center">
           <Reveal>
@@ -149,11 +130,12 @@ export default function Home() {
           </Reveal>
           <Reveal delay={150}>
             <h2 className="text-h2 font-serif text-off-white">
-              Uma experiência que merece ser vivida.
+              Nascemos como um encontro. Hoje caminhamos para ser um movimento.
             </h2>
             <p className="mt-4 text-areia">
-              Descubra os sabores, histórias e momentos que marcaram a 4ª edição da Vinhos na
-              Serra.
+              Um movimento que valoriza o vinho brasileiro como patrimônio cultural, fortalece
+              produtores nacionais e cria experiências capazes de conectar pessoas, marcas e
+              territórios.
             </p>
           </Reveal>
 
@@ -162,9 +144,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={150}>
-            <p className="max-w-xl text-sm text-areia/90">
-              Uma celebração do vinho, da Serra e das pessoas que fazem parte dessa história.
-            </p>
+            <p className="max-w-xl text-sm text-areia/90 italic">Cultura em estado líquido.</p>
             <Button href="/contato" variant="editorial" tone="bordo" className="mt-4">
               Quero viver essa experiência
             </Button>
@@ -172,34 +152,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. NOSSOS VINHOS — VINHOS */}
-      <section className="px-6 py-32">
-        <div className="mx-auto max-w-6xl">
-          <Reveal>
-            <h2 className="text-h2 mb-16 text-center font-serif text-verde-serra">
-              Uma seleção para descobrir.
-            </h2>
-          </Reveal>
-          <div className="grid grid-cols-1 gap-x-10 gap-y-16 sm:grid-cols-2">
-            {wineCategories.map((cat, i) => (
-              <Reveal key={cat.name} delay={i * 100}>
-                <Link href="/vinhos" className="group block">
-                  <div className="aspect-[4/3] w-full overflow-hidden bg-areia">
-                    <div className="h-full w-full bg-gradient-to-br from-verde-oliva/70 to-dourado/40 transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
-                  </div>
-                  <p className="mt-5 font-serif text-2xl text-verde-serra">{cat.name}</p>
-                  <p className="mt-2 text-sm text-verde-serra/70">{cat.description}</p>
-                  <span className="mt-3 inline-block border-b border-verde-serra/30 pb-1 text-xs tracking-[0.2em] text-verde-serra uppercase transition-colors group-hover:border-dourado group-hover:text-dourado">
-                    Conhecer seleção
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 6. CURADORIA — VINHOS (aprofundamento) */}
+      {/* 5. CURADORIA — VALORES */}
       <section className="bg-verde-oliva px-6 py-32">
         <div className="mx-auto max-w-5xl">
           <Reveal>
@@ -218,7 +171,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 7. EXPERIÊNCIAS */}
+      {/* 6. EXPERIÊNCIAS */}
       <section className="bg-areia px-6 py-32">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
           <Reveal>
@@ -241,7 +194,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. CONFRARIA */}
+      {/* 7. CONFRARIA */}
       <section className="bg-bordo px-6 py-32 text-center">
         <Reveal className="mx-auto max-w-xl">
           <h2 className="text-h2 font-serif text-off-white">Faça parte da nossa mesa.</h2>
@@ -255,7 +208,7 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* 9. NOSSA HISTÓRIA — fechamento narrativo */}
+      {/* 8. NOSSA HISTÓRIA — fechamento narrativo */}
       <section className="px-6 py-32">
         <Reveal className="mx-auto max-w-xl text-center">
           <h2 className="text-h2 font-serif text-verde-serra">Uma história que começou em 2019.</h2>
@@ -270,7 +223,7 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* 10. INSTAGRAM */}
+      {/* 9. INSTAGRAM */}
       <section className="px-6 pb-32">
         <div className="mx-auto max-w-6xl">
           <Reveal>
@@ -301,7 +254,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 11. CTA FINAL — eco do Hero */}
+      {/* 10. CTA FINAL — eco do Hero */}
       <section className="relative flex min-h-[70vh] flex-col items-center justify-center gap-6 overflow-hidden px-6 text-center">
         <div className="absolute inset-0 bg-gradient-to-tr from-carvao via-verde-serra to-verde-oliva" />
         <div className="absolute inset-0 bg-verde-serra/30" />
