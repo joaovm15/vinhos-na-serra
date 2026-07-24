@@ -3,7 +3,8 @@ import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import EventVideoPlayer from "@/components/EventVideoPlayer";
 import VineCorner from "@/components/VineCorner";
-import ScrollExpandMedia from "@/components/ui/scroll-expansion-hero";
+import FadeHero from "@/components/FadeHero";
+import PhotoDivider from "@/components/PhotoDivider";
 import { experiences } from "@/data/experiences";
 import { INSTAGRAM_URL } from "@/lib/social";
 
@@ -34,26 +35,17 @@ export default function Home() {
 
   return (
     <div className="flex flex-col bg-off-white">
-      {/* 1. HERO — IMPACTO (scroll-to-expand) */}
+      {/* 1. HERO — IMPACTO */}
       <div className="-mt-20">
-        <ScrollExpandMedia
-          mediaType="image"
-          mediaSrc="/images/evento/evento-08-adega.jpg"
+        <FadeHero
           bgImageSrc="/images/hero/vista-serra.jpg"
+          eyebrow="Vinhos na Serra"
           title="Cultivados nas alturas, desenhados pelo frio, apreciados na alma."
-          date="Vinhos na Serra"
-          scrollToExpand="Role para expandir"
         >
-          <div className="mx-auto flex max-w-xl flex-col items-center gap-6 text-center">
-            <p className="text-lg leading-relaxed text-verde-serra/80">
-              Uma experiência construída entre a terra, o tempo e a paixão pelo vinho
-              brasileiro — e vivida junto de quem faz parte da nossa Confraria.
-            </p>
-            <Button href="/confraria" variant="editorial" tone="bordo">
-              Conheça a Confraria
-            </Button>
-          </div>
-        </ScrollExpandMedia>
+          <Button href="/confraria" variant="editorial" tone="off-white" className="mt-2">
+            Conheça a Confraria
+          </Button>
+        </FadeHero>
       </div>
 
       {/* 2. MANIFESTO — IDENTIDADE */}
@@ -104,7 +96,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-20 bg-gradient-to-b from-off-white to-verde-serra" aria-hidden />
+      <PhotoDivider src="/images/evento/evento-06.jpg" alt="" />
 
       {/* 4. A SERRA — ORIGEM */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-verde-serra px-6 text-center">
@@ -160,8 +152,6 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-20 bg-gradient-to-b from-verde-serra to-verde-oliva" aria-hidden />
-
       {/* 5. CURADORIA — VALORES */}
       <section className="bg-verde-oliva px-6 py-32">
         <div className="mx-auto max-w-5xl">
@@ -181,14 +171,18 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-20 bg-gradient-to-b from-verde-oliva to-areia" aria-hidden />
-
       {/* 6. EXPERIÊNCIAS */}
       <section className="bg-areia px-6 py-32">
         <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
           <Reveal>
-            <div className="group aspect-[4/3] w-full overflow-hidden bg-verde-oliva/20">
-              <div className="h-full w-full bg-gradient-to-br from-verde-serra/70 to-dourado/40 transition-transform duration-700 ease-out group-hover:scale-[1.03]" />
+            <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
+              <Image
+                src="/images/evento/evento-04.jpg"
+                alt="Convidados reunidos em um evento da Vinhos na Serra"
+                width={900}
+                height={675}
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              />
             </div>
           </Reveal>
           <Reveal delay={150}>
@@ -206,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="h-20 bg-gradient-to-b from-areia to-bordo" aria-hidden />
+      <PhotoDivider src="/images/evento/evento-09.jpg" alt="" />
 
       {/* 7. CONFRARIA */}
       <section className="relative overflow-hidden bg-bordo px-6 py-32 text-center">
@@ -223,8 +217,6 @@ export default function Home() {
           </Button>
         </Reveal>
       </section>
-
-      <div className="h-20 bg-gradient-to-b from-bordo to-off-white" aria-hidden />
 
       {/* 8. NOSSA HISTÓRIA — fechamento narrativo */}
       <section className="px-6 py-32">
