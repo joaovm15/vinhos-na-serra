@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="420" viewBox="0 0 420 420">
+  <g fill="none" stroke="#fffdeb" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="1">
+    <!-- tendril, top-left to bottom-right diagonal spine -->
+    <path d="M-10 40 C 40 20, 70 70, 120 55 S 190 10, 230 60 S 300 120, 340 90 S 400 40, 430 70" />
+
+    <!-- leaf cluster 1 -->
+    <g transform="translate(70,90) rotate(-12)">
+      <path d="M0 0 C -22 -6, -34 10, -30 28 C -26 46, -6 52, 8 42 C 14 58, 34 60, 44 46 C 54 32, 46 12, 28 8 C 34 -8, 20 -24, 0 -18 C -4 -10, -2 -4, 0 0 Z" />
+      <path d="M0 0 L 10 26 M 8 42 L -6 20 M 28 8 L 14 24 M -4 -10 L 2 6" />
+    </g>
+
+    <!-- grape cluster 1 -->
+    <g transform="translate(150,140)">
+      <circle cx="0" cy="0" r="7" />
+      <circle cx="13" cy="6" r="7" />
+      <circle cx="-11" cy="10" r="7" />
+      <circle cx="2" cy="18" r="7" />
+      <circle cx="15" cy="22" r="7" />
+      <circle cx="-9" cy="26" r="7" />
+      <circle cx="4" cy="34" r="7" />
+      <path d="M0 -7 C 4 -20, -2 -30, 4 -40" />
+    </g>
+
+    <!-- leaf cluster 2, larger, mirrored -->
+    <g transform="translate(300,170) rotate(20) scale(-1,1)">
+      <path d="M0 0 C -26 -8, -40 12, -35 33 C -30 54, -6 61, 10 49 C 17 68, 40 71, 52 55 C 63 39, 54 15, 33 10 C 40 -9, 24 -28, 0 -22 C -5 -12, -2 -5, 0 0 Z" />
+      <path d="M0 0 L 12 30 M 10 49 L -7 24 M 33 10 L 16 28 M -5 -12 L 2 7" />
+    </g>
+
+    <!-- grape cluster 2 -->
+    <g transform="translate(70,260)">
+      <circle cx="0" cy="0" r="8" />
+      <circle cx="15" cy="7" r="8" />
+      <circle cx="-13" cy="11" r="8" />
+      <circle cx="2" cy="20" r="8" />
+      <circle cx="17" cy="25" r="8" />
+      <circle cx="-11" cy="29" r="8" />
+      <circle cx="4" cy="38" r="8" />
+      <circle cx="19" cy="43" r="8" />
+      <path d="M0 -8 C 5 -22, -3 -34, 5 -46" />
+    </g>
+
+    <!-- second tendril spine, lower -->
+    <path d="M-10 260 C 30 240, 60 290, 110 275 S 180 230, 230 280 S 300 330, 350 300 S 400 260, 430 290" />
+
+    <!-- small leaf accents scattered -->
+    <g transform="translate(250,320) rotate(-30)">
+      <path d="M0 0 C -18 -5, -28 8, -25 23 C -22 38, -5 43, 7 34 C 12 47, 28 49, 37 37 C 46 25, 39 8, 22 5 C 27 -8, 15 -20, 0 -15 C -3 -8, -1 -3, 0 0 Z" />
+    </g>
+
+    <g transform="translate(370,60) rotate(45) scale(0.8)">
+      <path d="M0 0 C -18 -5, -28 8, -25 23 C -22 38, -5 43, 7 34 C 12 47, 28 49, 37 37 C 46 25, 39 8, 22 5 C 27 -8, 15 -20, 0 -15 C -3 -8, -1 -3, 0 0 Z" />
+    </g>
+
+    <g transform="translate(20,380) rotate(10) scale(0.85)">
+      <path d="M0 0 C -18 -5, -28 8, -25 23 C -22 38, -5 43, 7 34 C 12 47, 28 49, 37 37 C 46 25, 39 8, 22 5 C 27 -8, 15 -20, 0 -15 C -3 -8, -1 -3, 0 0 Z" />
+    </g>
+  </g>
+</svg>

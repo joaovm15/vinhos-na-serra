@@ -107,6 +107,10 @@ export default function Home() {
       {/* 4. A SERRA — ORIGEM */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-verde-serra px-6 text-center">
         <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-verde-oliva via-verde-serra to-carvao" />
+        <div
+          className="absolute inset-0 opacity-[0.08]"
+          style={{ backgroundImage: "url(/patterns/vinha.svg)", backgroundSize: "420px 420px" }}
+        />
         <div className="absolute inset-0 bg-verde-serra/30" />
 
         <Reveal className="relative z-10 flex max-w-2xl flex-col items-center gap-6">
