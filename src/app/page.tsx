@@ -37,7 +37,7 @@ export default function Home() {
       <div className="-mt-20">
         <ScrollExpandMedia
           mediaType="image"
-          mediaSrc="/images/hero/degustacao.jpg"
+          mediaSrc="/images/evento/evento-08-adega.jpg"
           bgImageSrc="/images/hero/vista-serra.jpg"
           title="Cultivados nas alturas, desenhados pelo frio, apreciados na alma."
           date="Vinhos na Serra"
@@ -86,7 +86,7 @@ export default function Home() {
             </div>
           </Reveal>
           <Reveal delay={150}>
-            <p className="text-xs tracking-[0.3em] text-dourado uppercase">A casa do vinho brasileiro</p>
+            <p className="text-sm tracking-[0.3em] text-dourado uppercase">A casa do vinho brasileiro</p>
             <h2 className="text-h3 mt-4 font-serif text-verde-serra">
               Mais do que uma adega. A maior confraria de vinhos brasileiros do país.
             </h2>
@@ -101,6 +101,8 @@ export default function Home() {
           </Reveal>
         </div>
       </section>
+
+      <div className="h-20 bg-gradient-to-b from-off-white to-verde-serra" aria-hidden />
 
       {/* 4. A SERRA — ORIGEM */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-verde-serra px-6 text-center">
@@ -133,7 +135,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={150}>
-            <p className="text-xs tracking-[0.3em] text-areia uppercase">
+            <p className="text-sm tracking-[0.3em] text-areia uppercase">
               4ª Edição · Vinhos na Serra
             </p>
             <h2 className="text-h2 mt-4 font-serif text-off-white">
@@ -145,12 +147,14 @@ export default function Home() {
               territórios.
             </p>
             <p className="mt-4 text-sm text-areia/90 italic">Cultura em estado líquido.</p>
-            <Button href="/contato" variant="editorial" tone="bordo" className="mt-6">
+            <Button href="/contato" variant="editorial" tone="off-white" className="mt-6">
               Quero viver essa experiência
             </Button>
           </Reveal>
         </div>
       </section>
+
+      <div className="h-20 bg-gradient-to-b from-verde-serra to-verde-oliva" aria-hidden />
 
       {/* 5. CURADORIA — VALORES */}
       <section className="bg-verde-oliva px-6 py-32">
@@ -163,13 +167,15 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {pillars.map((pillar, i) => (
               <Reveal key={pillar.label} delay={i * 100} className="border-t border-dourado/30 pt-6">
-                <p className="font-serif text-xl text-dourado">{pillar.label}</p>
+                <p className="font-serif text-xl text-dourado-claro">{pillar.label}</p>
                 <p className="mt-3 text-sm text-areia/90">{pillar.text}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
+
+      <div className="h-20 bg-gradient-to-b from-verde-oliva to-areia" aria-hidden />
 
       {/* 6. EXPERIÊNCIAS */}
       <section className="bg-areia px-6 py-32">
@@ -194,6 +200,8 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="h-20 bg-gradient-to-b from-areia to-bordo" aria-hidden />
+
       {/* 7. CONFRARIA */}
       <section className="bg-bordo px-6 py-32 text-center">
         <Reveal className="mx-auto max-w-xl">
@@ -202,11 +210,13 @@ export default function Home() {
             A Confraria é o convite para viver a Vinhos na Serra por dentro — novidades,
             bastidores e uma relação direta com quem faz o vinho.
           </p>
-          <Button href="/confraria" variant="editorial" tone="dourado" className="mt-8">
+          <Button href="/confraria" variant="editorial" tone="off-white" className="mt-8">
             Conhecer a Confraria
           </Button>
         </Reveal>
       </section>
+
+      <div className="h-20 bg-gradient-to-b from-bordo to-off-white" aria-hidden />
 
       {/* 8. NOSSA HISTÓRIA — fechamento narrativo */}
       <section className="px-6 py-32">

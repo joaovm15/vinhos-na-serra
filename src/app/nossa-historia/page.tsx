@@ -30,7 +30,7 @@ export default function NossaHistoriaPage() {
   return (
     <div className="bg-off-white px-6 py-24">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <p className="text-xs tracking-[0.3em] text-dourado uppercase">Nossa História</p>
+        <p className="text-sm tracking-[0.3em] text-dourado uppercase">Nossa História</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
           Uma paixão que virou a maior confraria de vinhos brasileiros do país.
         </h1>
@@ -50,8 +50,8 @@ export default function NossaHistoriaPage() {
       <Reveal delay={250} className="mx-auto mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-dourado/30 pt-10">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
-            <p className="font-serif text-3xl text-dourado md:text-4xl">{stat.number}</p>
-            <p className="mt-2 text-xs tracking-[0.1em] text-verde-serra/70 uppercase">
+            <p className="font-serif text-4xl font-bold text-dourado md:text-5xl">{stat.number}</p>
+            <p className="mt-2 text-sm tracking-[0.1em] text-verde-serra/70 uppercase">
               {stat.label}
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function NossaHistoriaPage() {
             className="h-full w-full object-cover"
           />
         </div>
-        <p className="mt-4 text-center text-xs tracking-[0.15em] text-verde-serra/60 uppercase">
+        <p className="mt-4 text-center text-sm tracking-[0.15em] text-verde-serra/60 uppercase">
           Rafael Feital, Rodrigo Feital e Leonardo Claussen
         </p>
       </Reveal>
@@ -76,7 +76,7 @@ export default function NossaHistoriaPage() {
       <div className="mx-auto mt-20 max-w-xl space-y-12 border-l border-verde-serra/15 pl-8">
         {timeline.map((item, i) => (
           <Reveal key={item.year} delay={i * 100}>
-            <p className="text-xs tracking-[0.2em] text-dourado uppercase">{item.year}</p>
+            <p className="text-sm tracking-[0.2em] text-dourado uppercase">{item.year}</p>
             <p className="mt-2 text-lg leading-relaxed text-verde-serra/80">{item.text}</p>
           </Reveal>
         ))}

@@ -22,7 +22,7 @@ export default function ConfrariaPage() {
     <div className="bg-off-white">
       <section className="bg-bordo px-6 py-24 text-center">
         <Reveal className="mx-auto max-w-xl">
-          <p className="text-xs tracking-[0.3em] text-areia uppercase">Confraria</p>
+          <p className="text-sm tracking-[0.3em] text-areia uppercase">Confraria</p>
           <h1 className="text-h1 mt-4 font-serif text-off-white">Faça parte da nossa mesa.</h1>
           <p className="mt-6 text-areia">
             Um clube para quem quer estar mais perto do universo do vinho brasileiro — acesso a
@@ -34,7 +34,7 @@ export default function ConfrariaPage() {
       <section className="px-6 py-24">
         <div className="mx-auto max-w-4xl">
           <Reveal>
-            <h2 className="text-xs tracking-[0.2em] text-dourado uppercase">Benefícios</h2>
+            <h2 className="text-sm tracking-[0.2em] text-dourado uppercase">Benefícios</h2>
             <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {benefits.map((b) => (
                 <li key={b} className="border-t border-verde-serra/15 pt-4 text-verde-serra/80">
@@ -45,7 +45,7 @@ export default function ConfrariaPage() {
           </Reveal>
 
           <Reveal delay={150} className="mt-20">
-            <h2 className="text-xs tracking-[0.2em] text-dourado uppercase">Níveis</h2>
+            <h2 className="text-sm tracking-[0.2em] text-dourado uppercase">Níveis</h2>
             <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
               {plans.map((plan) => (
                 <div key={plan.name} className="border-t border-dourado/30 pt-6">

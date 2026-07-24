@@ -39,9 +39,9 @@ export default function Header() {
 
         <nav className="hidden gap-8 text-xs tracking-widest text-off-white/90 uppercase md:flex">
           {NAV_ITEMS.map((item) => (
-            <Link key={item.href} href={item.href} className="group relative py-1 transition-colors hover:text-dourado">
+            <Link key={item.href} href={item.href} className="group relative py-1 transition-colors hover:text-dourado-claro">
               {item.label}
-              <span className="absolute bottom-0 left-0 h-px w-0 bg-dourado transition-all duration-300 ease-out group-hover:w-full" />
+              <span className="absolute bottom-0 left-0 h-px w-0 bg-dourado-claro transition-all duration-300 ease-out group-hover:w-full" />
             </Link>
           ))}
         </nav>

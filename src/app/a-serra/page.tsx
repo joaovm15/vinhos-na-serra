@@ -29,7 +29,7 @@ export default function ASerraPage() {
   return (
     <div className="bg-off-white px-6 py-24">
       <Reveal className="mx-auto max-w-2xl text-center">
-        <p className="text-xs tracking-[0.3em] text-dourado uppercase">A Serra</p>
+        <p className="text-sm tracking-[0.3em] text-dourado uppercase">A Serra</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
           Onde a diversidade do Brasil encontra o vinho.
         </h1>
@@ -49,7 +49,7 @@ export default function ASerraPage() {
                 />
               </div>
             )}
-            <h2 className="text-xs tracking-[0.2em] text-dourado uppercase">{block.label}</h2>
+            <h2 className="text-sm tracking-[0.2em] text-dourado uppercase">{block.label}</h2>
             <p className="mt-3 text-lg leading-relaxed text-verde-serra/80">{block.text}</p>
           </Reveal>
         ))}

@@ -5,12 +5,12 @@ type Tone = "bordo" | "dourado" | "verde-serra" | "off-white";
 
 const toneClasses: Record<Tone, string> = {
   bordo: "text-bordo border-bordo/70 hover:text-dourado hover:border-dourado",
-  dourado: "text-dourado border-dourado/60 hover:border-dourado",
+  dourado: "text-dourado-claro border-dourado-claro/60 hover:border-dourado-claro",
   "verde-serra": "text-verde-serra border-verde-serra/40 hover:text-dourado hover:border-dourado",
   "off-white": "text-off-white border-off-white/40 hover:border-off-white",
 };
 
-const base = "inline-flex items-center justify-center text-xs tracking-[0.2em] uppercase transition-colors";
+const base = "inline-flex items-center justify-center text-sm tracking-[0.2em] uppercase transition-colors";
 
 const variantClasses: Record<Variant, string> = {
   primary: `${base} rounded-[2px] bg-bordo px-8 py-3.5 text-off-white hover:bg-carvao`,

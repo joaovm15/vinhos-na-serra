@@ -124,6 +124,7 @@ const ScrollExpandMedia = ({
   const mediaWidth = 300 + scrollProgress * (isMobileState ? 650 : 1250);
   const mediaHeight = 400 + scrollProgress * (isMobileState ? 200 : 400);
   const textTranslateX = scrollProgress * (isMobileState ? 180 : 150);
+  const titleOpacity = Math.max(0, 1 - scrollProgress * 1.6);
 
   const firstWord = title ? title.split(" ")[0] : "";
   const restOfTitle = title ? title.split(" ").slice(1).join(" ") : "";
@@ -198,7 +199,7 @@ const ScrollExpandMedia = ({
                   {date && (
                     <p
                       className="text-lg text-areia transition-transform duration-150 ease-out"
-                      style={{ transform: `translateX(-${textTranslateX}vw)` }}
+                      style={{ transform: `translateX(-${textTranslateX}vw)`, opacity: titleOpacity }}
                     >
                       {date}
                     </p>
@@ -206,7 +207,7 @@ const ScrollExpandMedia = ({
                   {scrollToExpand && (
                     <p
                       className="text-center text-xs tracking-[0.2em] text-areia uppercase transition-transform duration-150 ease-out"
-                      style={{ transform: `translateX(${textTranslateX}vw)` }}
+                      style={{ transform: `translateX(${textTranslateX}vw)`, opacity: titleOpacity }}
                     >
                       {scrollToExpand}
                     </p>
@@ -220,14 +221,14 @@ const ScrollExpandMedia = ({
                 }`}
               >
                 <h2
-                  className="font-serif text-3xl text-off-white transition-transform duration-150 ease-out md:text-5xl lg:text-6xl"
-                  style={{ transform: `translateX(-${textTranslateX}vw)` }}
+                  className="font-serif text-3xl text-off-white transition-transform duration-150 ease-out [text-shadow:0_2px_16px_rgba(0,0,0,0.45)] md:text-5xl lg:text-6xl"
+                  style={{ transform: `translateX(-${textTranslateX}vw)`, opacity: titleOpacity }}
                 >
                   {firstWord}
                 </h2>
                 <h2
-                  className="max-w-3xl text-center font-serif text-3xl text-off-white transition-transform duration-150 ease-out md:text-5xl lg:text-6xl"
-                  style={{ transform: `translateX(${textTranslateX}vw)` }}
+                  className="max-w-3xl text-center font-serif text-3xl text-off-white transition-transform duration-150 ease-out [text-shadow:0_2px_16px_rgba(0,0,0,0.45)] md:text-5xl lg:text-6xl"
+                  style={{ transform: `translateX(${textTranslateX}vw)`, opacity: titleOpacity }}
                 >
                   {restOfTitle}
                 </h2>

@@ -5,9 +5,9 @@ import { ADDRESS } from "@/lib/address";
 import TacaIcon from "@/components/TacaIcon";
 
 function FooterLink({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
-  const className = "group relative inline-block w-fit py-0.5 transition-colors hover:text-dourado";
+  const className = "group relative inline-block w-fit py-0.5 transition-colors hover:text-dourado-claro";
   const underline = (
-    <span className="absolute bottom-0 left-0 h-px w-0 bg-dourado transition-all duration-300 ease-out group-hover:w-full" />
+    <span className="absolute bottom-0 left-0 h-px w-0 bg-dourado-claro transition-all duration-300 ease-out group-hover:w-full" />
   );
 
   if (external) {
@@ -47,20 +47,20 @@ export default function Footer() {
 
         <div className="flex flex-wrap gap-12 text-sm">
           <div className="flex flex-col gap-3">
-            <span className="text-xs tracking-widest text-dourado uppercase">Navegue</span>
+            <span className="text-sm tracking-widest text-dourado-claro uppercase">Navegue</span>
             <FooterLink href="/nossa-historia">Nossa História</FooterLink>
             <FooterLink href="/a-serra">A Serra</FooterLink>
             <FooterLink href="/experiencias">Experiências</FooterLink>
             <FooterLink href="/confraria">Confraria</FooterLink>
           </div>
           <div className="flex flex-col gap-3">
-            <span className="text-xs tracking-widest text-dourado uppercase">Contato</span>
+            <span className="text-sm tracking-widest text-dourado-claro uppercase">Contato</span>
             <FooterLink href="/contato">Fale conosco</FooterLink>
             <FooterLink href={whatsappUrl()} external>WhatsApp</FooterLink>
             <FooterLink href={INSTAGRAM_URL} external>Instagram</FooterLink>
           </div>
           <div className="flex flex-col gap-3">
-            <span className="text-xs tracking-widest text-dourado uppercase">Endereço</span>
+            <span className="text-sm tracking-widest text-dourado-claro uppercase">Endereço</span>
             <p className="max-w-[16rem] text-areia/80">{ADDRESS}</p>
           </div>
         </div>
