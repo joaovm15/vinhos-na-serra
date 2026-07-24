@@ -2,6 +2,7 @@ import Link from "next/link";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { INSTAGRAM_URL } from "@/lib/social";
 import { ADDRESS } from "@/lib/address";
+import TacaIcon from "@/components/TacaIcon";
 
 function FooterLink({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
   const className = "group relative inline-block w-fit py-0.5 transition-colors hover:text-dourado";
@@ -31,8 +32,14 @@ export default function Footer() {
     <footer className="bg-carvao text-areia">
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
         <div className="max-w-xs">
-          <p className="font-serif text-2xl text-off-white">Vinhos na Serra</p>
-          <p className="mt-3 text-sm text-areia/80">
+          <p className="flex items-center gap-2.5 text-off-white">
+            <TacaIcon className="h-4 w-4 text-bordo" />
+            <span className="font-serif text-2xl">Vinhos na Serra</span>
+          </p>
+          <p className="mt-1 pl-[1.65rem] text-[0.6rem] tracking-[0.25em] text-areia/60 uppercase">
+            Adega e Confraria
+          </p>
+          <p className="mt-4 text-sm text-areia/80">
             Da Serra para a taça — uma experiência construída entre a terra, o tempo e a paixão
             pelo vinho brasileiro.
           </p>

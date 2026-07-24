@@ -1,21 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f3efe6;
-  --foreground: #1b2418;
+  --background: #fffdeb;
+  --foreground: #353411;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-verde-serra: #1b2418;
-  --color-verde-oliva: #343b28;
-  --color-bordo: #8e2638;
-  --color-off-white: #f3efe6;
+  /* Paleta oficial da identidade visual (D-Olej Studio) */
+  --color-verde-serra: #353411;
+  --color-verde-oliva: #454420;
+  --color-bordo: #b10736;
+  --color-off-white: #fffdeb;
   --color-areia: #d8cebb;
-  --color-dourado: #b09a68;
-  --color-carvao: #171815;
+  --color-dourado: #b10736;
+  --color-carvao: #000000;
 
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-playfair);
