@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/components/Reveal";
 
 export default function PhotoDivider({
   src,
@@ -10,15 +11,16 @@ export default function PhotoDivider({
   height?: string;
 }) {
   return (
-    <div className={`relative w-full overflow-hidden ${height}`}>
+    <Reveal className={`relative w-full overflow-hidden ${height}`}>
       <Image
         src={src}
         alt={alt}
         fill
         sizes="100vw"
+        quality={85}
         className="object-cover grayscale"
       />
       <div className="absolute inset-0 bg-verde-serra/35" />
-    </div>
+    </Reveal>
   );
 }
