@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import VineCorner from "@/components/VineCorner";
 import { experiences } from "@/data/experiences";
 import { fourthEditionWineries } from "@/data/wineries";
 
@@ -24,7 +25,8 @@ const pilares = [
 
 export default function ExperienciasPage() {
   return (
-    <div className="bg-off-white px-6 py-24">
+    <div className="relative overflow-hidden bg-off-white px-6 py-24">
+      <VineCorner position="top-right" tone="light" />
       <Reveal className="mx-auto max-w-2xl text-center">
         <p className="text-sm tracking-[0.3em] text-dourado uppercase">Experiências</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
@@ -62,8 +64,15 @@ export default function ExperienciasPage() {
 
       <div className="-mx-6 mt-32">
         <div className="h-20 bg-gradient-to-b from-off-white to-verde-oliva" aria-hidden />
-        <div className="bg-verde-oliva px-6 py-24">
-          <div className="mx-auto max-w-5xl">
+        <div
+          className="relative bg-verde-oliva px-6 py-24"
+          style={{
+            backgroundImage: "url(/patterns/vinha-textura-dark.svg)",
+            backgroundSize: "480px 480px",
+          }}
+        >
+          <div className="absolute inset-0 bg-verde-oliva/[0.92]" />
+          <div className="relative mx-auto max-w-5xl">
             <Reveal>
               <h2 className="text-h3 mb-14 text-center font-serif text-off-white">
                 Nossos pilares.
