@@ -21,10 +21,16 @@ export default function FadeHero({
   useEffect(() => {
     const timer = setTimeout(() => setMounted(true), 50);
 
+    let ticking = false;
     const handleScroll = () => {
-      const height = sectionRef.current?.offsetHeight ?? window.innerHeight;
-      const progress = Math.min(Math.max(window.scrollY / (height * 0.7), 0), 1);
-      setScrollFade(progress);
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const height = sectionRef.current?.offsetHeight ?? window.innerHeight;
+        const progress = Math.min(Math.max(window.scrollY / (height * 0.7), 0), 1);
+        setScrollFade(progress);
+        ticking = false;
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -50,10 +56,11 @@ export default function FadeHero({
       <div className="absolute inset-0 bg-verde-serra/40" />
 
       <div
-        className="relative z-10 flex flex-col items-center gap-6 px-6 text-center transition-opacity duration-700 ease-out"
+        className="relative z-10 flex flex-col items-center gap-6 px-6 text-center transition-[opacity,transform] duration-150 ease-out will-change-[opacity,transform]"
         style={{
           opacity,
           transform: `translateY(${(1 - opacity) * -24}px)`,
+          transitionDuration: mounted && scrollFade === 0 ? "700ms" : "150ms",
         }}
       >
         {eyebrow && (
@@ -66,7 +73,7 @@ export default function FadeHero({
       </div>
 
       <div
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-xs tracking-[0.2em] text-areia uppercase transition-opacity duration-700"
+        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-xs tracking-[0.2em] text-areia uppercase transition-opacity duration-150"
         style={{ opacity }}
       >
         Role para descobrir
