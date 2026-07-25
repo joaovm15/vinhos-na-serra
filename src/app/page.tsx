@@ -153,7 +153,9 @@ export default function Home() {
       </section>
 
       {/* 5. CURADORIA — VALORES */}
-      <section className="bg-verde-serra px-6 py-32">
+      <section className="relative overflow-hidden bg-verde-serra px-6 py-32">
+        <VineCorner position="top-left" tone="dark" />
+        <VineCorner position="top-right" tone="dark" />
         <div className="mx-auto max-w-5xl">
           <Reveal>
             <h2 className="text-h2 mb-16 text-center font-serif text-off-white">
