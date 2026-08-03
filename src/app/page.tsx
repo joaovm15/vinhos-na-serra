@@ -37,11 +37,7 @@ export default function Home() {
     <div className="flex flex-col bg-off-white">
       {/* 1. HERO — IMPACTO */}
       <div className="-mt-20">
-        <FadeHero
-          bgImageSrc="/images/hero/vista-serra.jpg"
-          eyebrow="Vinhos na Serra"
-          title="Cultivados nas alturas, desenhados pelo frio, apreciados na alma."
-        >
+        <FadeHero>
           <Button href="/confraria" variant="editorial" tone="off-white" className="mt-2">
             Conheça a Confraria
           </Button>
@@ -145,9 +141,14 @@ export default function Home() {
               territórios.
             </p>
             <p className="mt-4 text-sm text-areia/90 italic">Cultura em estado líquido.</p>
-            <Button href="/contato" variant="editorial" tone="off-white" className="mt-6">
-              Quero viver essa experiência
-            </Button>
+            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
+              <Button href="/evento" variant="editorial" tone="dourado">
+                Conheça o evento
+              </Button>
+              <Button href="/contato" variant="editorial" tone="off-white">
+                Quero viver essa experiência
+              </Button>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -259,7 +260,10 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 text-center">
+            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-8">
+              <Button href="/galeria" variant="editorial" tone="verde-serra">
+                Ver galeria completa
+              </Button>
               <Button href={INSTAGRAM_URL} variant="editorial" tone="verde-serra">
                 Seguir no Instagram
               </Button>
