@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import ThreeTacaIcon from "@/components/ThreeTacaIcon";
 
-export default function FadeHero({ children }: { children?: React.ReactNode }) {
+export default function FadeHero() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
   const [scrollFade, setScrollFade] = useState(0);
@@ -37,21 +37,20 @@ export default function FadeHero({ children }: { children?: React.ReactNode }) {
       ref={sectionRef}
       className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-[#2c3117]"
     >
-      {/* padrão botânico — só nas laterais, nunca no centro */}
+      {/* padrão botânico — cobre o fundo inteiro, bem sutil, sem competir com o texto */}
       <div
-        className="absolute inset-y-0 left-0 hidden w-40 opacity-[0.1] sm:block md:w-64"
+        className="absolute inset-0 opacity-[0.16]"
         style={{
-          backgroundImage: "url(/patterns/vinha-textura-light.svg)",
+          backgroundImage: "url(/patterns/vinha-textura-dark.svg)",
           backgroundSize: "420px 420px",
           backgroundRepeat: "repeat",
         }}
       />
       <div
-        className="absolute inset-y-0 right-0 hidden w-40 -scale-x-100 opacity-[0.1] sm:block md:w-64"
+        className="absolute inset-0"
         style={{
-          backgroundImage: "url(/patterns/vinha-textura-light.svg)",
-          backgroundSize: "420px 420px",
-          backgroundRepeat: "repeat",
+          background:
+            "radial-gradient(ellipse at center, rgba(44,49,23,0.85) 0%, rgba(44,49,23,0.4) 60%, rgba(44,49,23,0) 100%)",
         }}
       />
 
@@ -78,14 +77,6 @@ export default function FadeHero({ children }: { children?: React.ReactNode }) {
         <p className="text-xs font-bold tracking-[0.15em] text-off-white uppercase sm:text-sm sm:tracking-[0.25em]">
           A casa do vinho brasileiro
         </p>
-
-        <div className="h-px w-16 bg-off-white/60" />
-
-        <p className="max-w-md text-sm text-off-white sm:text-base">
-          Onde o vinho brasileiro encontra sua maior expressão
-        </p>
-
-        {children}
       </div>
 
       <div
