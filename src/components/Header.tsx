@@ -8,9 +8,10 @@ import TacaIcon from "@/components/TacaIcon";
 
 const NAV_ITEMS = [
   { href: "/nossa-historia", label: "Nossa História" },
-  { href: "/a-serra", label: "A Serra" },
-  { href: "/experiencias", label: "Experiências" },
   { href: "/confraria", label: "Confraria" },
+  { href: "/experiencias", label: "Experiências" },
+  { href: "/evento", label: "Evento" },
+  { href: "/galeria", label: "Galeria" },
   { href: "/contato", label: "Contato" },
 ];
 

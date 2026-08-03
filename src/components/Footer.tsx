@@ -49,9 +49,10 @@ export default function Footer() {
           <div className="flex flex-col gap-3">
             <span className="text-sm tracking-widest text-dourado-claro uppercase">Navegue</span>
             <FooterLink href="/nossa-historia">Nossa História</FooterLink>
-            <FooterLink href="/a-serra">A Serra</FooterLink>
-            <FooterLink href="/experiencias">Experiências</FooterLink>
             <FooterLink href="/confraria">Confraria</FooterLink>
+            <FooterLink href="/experiencias">Experiências</FooterLink>
+            <FooterLink href="/evento">Evento</FooterLink>
+            <FooterLink href="/galeria">Galeria</FooterLink>
           </div>
           <div className="flex flex-col gap-3">
             <span className="text-sm tracking-widest text-dourado-claro uppercase">Contato</span>

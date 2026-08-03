@@ -1,7 +1,6 @@
 import Reveal from "@/components/Reveal";
 import VineCorner from "@/components/VineCorner";
 import { experiences } from "@/data/experiences";
-import { fourthEditionWineries } from "@/data/wineries";
 
 export const metadata = {
   title: "Experiências | Vinhos na Serra",
@@ -87,30 +86,6 @@ export default function ExperienciasPage() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="mx-auto mt-32 max-w-4xl">
-        <Reveal className="text-center">
-          <p className="text-sm tracking-[0.3em] text-dourado uppercase">4ª Edição</p>
-          <h2 className="text-h3 mt-4 font-serif text-verde-serra">Vinícolas confirmadas.</h2>
-          <p className="mt-4 text-verde-serra/80">
-            Os produtores brasileiros que já confirmaram presença na 4ª edição do evento
-            Vinhos na Serra.
-          </p>
-        </Reveal>
-
-        <Reveal delay={150} className="mt-14 border-t border-dourado/30">
-          <ul className="grid grid-cols-2 gap-x-8 gap-y-5 pt-10 sm:grid-cols-3">
-            {fourthEditionWineries.map((winery) => (
-              <li
-                key={winery}
-                className="font-serif text-lg text-verde-serra sm:text-xl"
-              >
-                {winery}
-              </li>
-            ))}
-          </ul>
-        </Reveal>
       </div>
     </div>
   );
