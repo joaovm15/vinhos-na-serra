@@ -37,11 +37,7 @@ export default function Home() {
     <div className="flex flex-col bg-off-white">
       {/* 1. HERO — IMPACTO */}
       <div className="-mt-20">
-        <FadeHero>
-          <Button href="/confraria" variant="editorial" tone="off-white" className="mt-2">
-            Conheça a Confraria
-          </Button>
-        </FadeHero>
+        <FadeHero />
       </div>
 
       {/* 2. MANIFESTO — IDENTIDADE */}
