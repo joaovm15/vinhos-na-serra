@@ -32,10 +32,10 @@ export default function EventoPage() {
         <Reveal className="mx-auto max-w-2xl">
           <p className="text-sm tracking-[0.3em] text-areia uppercase">Evento</p>
           <h1 className="text-h1 mt-4 font-serif text-off-white">
-            3º Encontro de Vinhos Brasileiros
+            4º Encontro de Vinhos Brasileiros
           </h1>
           <p className="mt-6 text-areia">
-            20 de junho de 2026, no Ville Verte, em Teresópolis — um espaço afinado com a
+            29 de agosto de 2026, no Ville Verte, em Teresópolis — um espaço afinado com a
             proposta do evento e com o perfil de quem ama vinho brasileiro.
           </p>
         </Reveal>
@@ -60,7 +60,7 @@ export default function EventoPage() {
                 </li>
               ))}
             </ul>
-            <Button href={whatsappUrl("Olá! Quero saber mais sobre o 3º Encontro de Vinhos Brasileiros.")} variant="editorial" tone="bordo" className="mt-8">
+            <Button href={whatsappUrl("Olá! Quero saber mais sobre o 4º Encontro de Vinhos Brasileiros.")} variant="editorial" tone="bordo" className="mt-8">
               Quero participar
             </Button>
           </Reveal>
