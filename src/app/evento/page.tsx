@@ -85,7 +85,9 @@ export default function EventoPage() {
           <div className="mt-14 grid grid-cols-2 gap-10 lg:grid-cols-4">
             {resultados.map((r, i) => (
               <Reveal key={r.label} delay={i * 100} className="border-t border-dourado/30 pt-6 text-center">
-                <p className="font-serif text-3xl font-bold text-dourado-claro md:text-4xl">{r.number}</p>
+                <p className="font-sans text-4xl font-medium tracking-tight text-dourado-claro tabular-nums md:text-5xl">
+                  {r.number}
+                </p>
                 <p className="mt-2 text-sm text-areia/90">{r.label}</p>
               </Reveal>
             ))}

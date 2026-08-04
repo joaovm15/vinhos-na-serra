@@ -7,8 +7,11 @@ type Tone = "bordo" | "dourado" | "verde-serra" | "off-white";
 /* ——— Linguagem compartilhada por TODOS os elementos clicáveis do site ———
    mesma tipografia, mesmo tracking, mesmo raio, mesma duração de animação.
    Header, Footer, CTAs e formulário derivam daqui. */
+/* Sem `gap` aqui de propósito: o espaçamento do ornamento é feito por
+   margem dentro do próprio wrapper que colapsa, para que a pílula em
+   repouso acompanhe exatamente a largura do texto. */
 export const CLICAVEL_BASE =
-  "group inline-flex w-fit items-center justify-center gap-2 rounded-full text-xs tracking-[0.18em] uppercase transition-all duration-300 ease-out";
+  "group inline-flex w-fit items-center justify-center rounded-full text-xs tracking-[0.18em] uppercase transition-all duration-300 ease-out";
 
 /** Preenchimento sólido — ação principal. */
 export const CLICAVEL_SOLIDO = `${CLICAVEL_BASE} bg-bordo px-7 py-3 text-off-white hover:bg-verde-profundo active:scale-[0.98]`;
@@ -42,8 +45,9 @@ export default function Button({
   const externalProps = external ? { target: "_blank", rel: "noopener noreferrer" } : {};
 
   /* Botão editorial — o CTA padrão do site. Pílula contornada, na mesma
-     linguagem do header e do rodapé, com a folha de videira da marca
-     ocupando espaço fixo (nada "pula" quando ela aparece no hover). */
+     linguagem do header e do rodapé. Em repouso a pílula acompanha exatamente
+     a largura do texto; no hover ela se expande para acolher a folha de
+     videira da marca, que entra deslizando. */
   if (variant === "editorial") {
     return (
       <Link
@@ -52,7 +56,12 @@ export default function Button({
         {...externalProps}
       >
         <span>{children}</span>
-        <LeafMark className="h-3 w-3 shrink-0 -translate-x-1 opacity-0 transition-all duration-300 ease-out group-hover:translate-x-0 group-hover:opacity-100" />
+        <span
+          aria-hidden
+          className="inline-flex max-w-0 items-center overflow-hidden opacity-0 transition-all duration-300 ease-out group-hover:max-w-5 group-hover:opacity-100"
+        >
+          <LeafMark className="ml-2 h-3 w-3 shrink-0" />
+        </span>
       </Link>
     );
   }
