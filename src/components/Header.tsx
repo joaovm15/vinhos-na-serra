@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useScrolled } from "@/hooks/useScrolled";
-import TacaIcon from "@/components/TacaIcon";
+import MonogramaVS from "@/components/MonogramaVS";
 import { CLICAVEL_CONTORNO } from "@/components/Button";
 
 const NAV_ITEMS = [
@@ -29,13 +29,10 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-2.5 text-off-white">
-          <TacaIcon className="h-5 w-5" />
-          <span className="flex flex-col leading-none">
-            <span className="font-serif text-2xl tracking-wide">Vinhos na Serra</span>
-            <span className="mt-1 text-[0.6rem] tracking-[0.25em] text-off-white/70 uppercase">
-              Adega e Confraria
-            </span>
+        <Link href="/" className="flex flex-col items-start leading-none text-off-white">
+          <MonogramaVS className="h-11 w-auto" />
+          <span className="mt-2 text-[0.6rem] tracking-[0.25em] text-off-white/70 uppercase">
+            Adega e Confraria
           </span>
         </Link>
 
@@ -63,10 +60,7 @@ export default function Header() {
       {open && (
         <div className="fixed inset-0 z-50 flex flex-col bg-verde-serra md:hidden">
           <div className="flex h-20 items-center justify-between px-6">
-            <span className="flex items-center gap-2.5 text-off-white">
-              <TacaIcon className="h-5 w-5" />
-              <span className="font-serif text-2xl">Vinhos na Serra</span>
-            </span>
+            <MonogramaVS className="h-11 w-auto text-off-white" />
             <button aria-label="Fechar menu" onClick={() => setOpen(false)} className="text-off-white">
               <CloseIcon />
             </button>

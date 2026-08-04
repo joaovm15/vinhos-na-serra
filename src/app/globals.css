@@ -27,6 +27,11 @@
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-playfair);
 
+  /* Título da Hero. A DIN Condensed vem primeiro na pilha: se um dia o
+     arquivo licenciado for adicionado, ela assume sozinha. Até lá cai na
+     Barlow Condensed Light, a substituta livre mais próxima. */
+  --font-titulo: "DIN Condensed", "DIN Condensed Light", var(--font-barlow-condensed), sans-serif;
+
   /* ——— Linguagem compartilhada dos elementos clicáveis ——— */
   --tracking-marca: 0.18em;
   --duracao-marca: 300ms;

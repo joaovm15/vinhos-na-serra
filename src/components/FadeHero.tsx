@@ -64,7 +64,7 @@ export default function FadeHero() {
       >
         <ThreeTacaIcon className="mb-3 h-auto w-56 text-off-white sm:w-80 md:w-96" />
 
-        <h1 className="font-serif text-3xl font-light tracking-[0.12em] text-off-white uppercase sm:text-5xl sm:tracking-[0.25em] md:text-6xl">
+        <h1 className="font-titulo text-4xl font-light tracking-[0.16em] text-off-white uppercase sm:text-6xl sm:tracking-[0.3em] md:text-7xl">
           Vinhos na Serra
         </h1>
 
