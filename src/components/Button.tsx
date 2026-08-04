@@ -9,9 +9,12 @@ type Tone = "bordo" | "dourado" | "verde-serra" | "off-white";
    Header, Footer, CTAs e formulário derivam daqui. */
 /* Sem `gap` aqui de propósito: o espaçamento do ornamento é feito por
    margem dentro do próprio wrapper que colapsa, para que a pílula em
-   repouso acompanhe exatamente a largura do texto. */
+   repouso acompanhe exatamente a largura do texto.
+   Sem `w-fit` pelo mesmo motivo: quem precisa encolher dentro de um
+   flex-col declara explicitamente, e assim os grupos de CTA conseguem
+   igualar as larguras no mobile sem disputar o mesmo utilitário. */
 export const CLICAVEL_BASE =
-  "group inline-flex w-fit items-center justify-center rounded-full text-xs tracking-[0.18em] uppercase transition-all duration-300 ease-out";
+  "group inline-flex items-center justify-center rounded-full text-xs tracking-[0.18em] uppercase transition-all duration-300 ease-out";
 
 /** Preenchimento sólido — ação principal. */
 export const CLICAVEL_SOLIDO = `${CLICAVEL_BASE} bg-bordo px-7 py-3 text-off-white hover:bg-verde-profundo active:scale-[0.98]`;

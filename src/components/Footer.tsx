@@ -7,7 +7,7 @@ import SectionTexture from "@/components/SectionTexture";
 import { CLICAVEL_CONTORNO } from "@/components/Button";
 
 function FooterLink({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
-  const className = `${CLICAVEL_CONTORNO} border-areia/30 text-areia hover:border-off-white hover:bg-off-white/10 hover:text-off-white`;
+  const className = `${CLICAVEL_CONTORNO} w-fit border-areia/30 text-areia hover:border-off-white hover:bg-off-white/10 hover:text-off-white`;
 
   if (external) {
     return (

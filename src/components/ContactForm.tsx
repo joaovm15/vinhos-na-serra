@@ -60,7 +60,7 @@ export default function ContactForm() {
           className="border-b border-verde-serra/25 bg-transparent py-2 text-verde-serra outline-none focus:border-dourado"
         />
       </div>
-      <button type="submit" className={`${CLICAVEL_SOLIDO} mt-4`}>
+      <button type="submit" className={`${CLICAVEL_SOLIDO} mt-4 w-fit`}>
         Enviar pelo WhatsApp
       </button>
     </form>

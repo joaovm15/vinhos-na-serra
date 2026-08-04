@@ -138,7 +138,7 @@ export default function Home() {
               territórios.
             </p>
             <p className="mt-4 text-sm text-areia/90 italic">Cultura em estado líquido.</p>
-            <div className="mt-6 flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
+            <div className="mt-6 grid grid-cols-[max-content] justify-center gap-4 [&>a]:w-full sm:flex sm:flex-row sm:items-center sm:gap-8 sm:[&>a]:w-auto">
               <Button href="/evento" variant="editorial" tone="dourado">
                 Conheça o evento
               </Button>
@@ -262,7 +262,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center sm:gap-8">
+            <div className="mt-8 grid grid-cols-[max-content] justify-center gap-4 [&>a]:w-full sm:flex sm:flex-row sm:items-center sm:gap-8 sm:[&>a]:w-auto">
               <Button href="/galeria" variant="editorial" tone="verde-serra">
                 Ver galeria completa
               </Button>
@@ -283,7 +283,7 @@ export default function Home() {
         <Reveal className="relative z-10 flex flex-col items-center gap-6">
           <h2 className="text-h1 font-serif text-off-white">Da Serra para a Taça.</h2>
           <p className="text-areia">Descubra a Vinhos na Serra.</p>
-          <div className="mt-2 flex flex-col items-center gap-4 sm:flex-row sm:gap-8">
+          <div className="mt-2 grid grid-cols-[max-content] justify-center gap-4 [&>a]:w-full sm:flex sm:flex-row sm:items-center sm:gap-8 sm:[&>a]:w-auto">
             <Button href="/contato" variant="editorial" tone="dourado">
               Fale conosco
             </Button>
