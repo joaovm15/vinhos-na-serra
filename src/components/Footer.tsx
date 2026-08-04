@@ -5,16 +5,13 @@ import { ADDRESS } from "@/lib/address";
 import TacaIcon from "@/components/TacaIcon";
 
 function FooterLink({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
-  const className = "group relative inline-block w-fit py-0.5 transition-colors hover:text-dourado-claro";
-  const underline = (
-    <span className="absolute bottom-0 left-0 h-px w-0 bg-dourado-claro transition-all duration-300 ease-out group-hover:w-full" />
-  );
+  const className =
+    "inline-block w-fit rounded-full border border-areia/25 px-4 py-1.5 text-sm transition-colors hover:border-dourado-claro hover:text-dourado-claro";
 
   if (external) {
     return (
-      <a href={href} className={className}>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
         {children}
-        {underline}
       </a>
     );
   }
@@ -22,7 +19,6 @@ function FooterLink({ href, children, external = false }: { href: string; childr
   return (
     <Link href={href} className={className}>
       {children}
-      {underline}
     </Link>
   );
 }
@@ -33,7 +29,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
         <div className="max-w-xs">
           <p className="flex items-center gap-2.5 text-off-white">
-            <TacaIcon className="h-4 w-4 text-bordo" />
+            <TacaIcon className="h-5 w-5 text-dourado-claro" />
             <span className="font-serif text-2xl">Vinhos na Serra</span>
           </p>
           <p className="mt-1 pl-[1.65rem] text-[0.6rem] tracking-[0.25em] text-areia/60 uppercase">

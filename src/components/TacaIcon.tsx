@@ -6,8 +6,10 @@ export default function TacaIcon({ className = "" }: { className?: string }) {
       className={className}
       aria-hidden
     >
-      <path d="M6 4h12a6 6 0 0 1-12 0Z" fill="currentColor" />
-      <line x1="12" y1="4" x2="12" y2="19" stroke="currentColor" strokeWidth="1" />
+      <circle cx="12" cy="8" r="5" stroke="currentColor" strokeWidth="1.3" />
+      <circle cx="12" cy="11" r="5" fill="currentColor" />
+      <line x1="12" y1="16" x2="12" y2="21" stroke="currentColor" strokeWidth="1.3" />
+      <line x1="8" y1="21" x2="16" y2="21" stroke="currentColor" strokeWidth="1.3" />
     </svg>
   );
 }

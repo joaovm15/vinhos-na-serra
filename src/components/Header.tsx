@@ -24,12 +24,12 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
-        solid ? "border-dourado/25 bg-verde-serra" : "border-transparent bg-transparent"
+        solid ? "border-dourado/25 bg-verde-hero" : "border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2.5 text-off-white">
-          <TacaIcon className="h-4 w-4 text-bordo" />
+          <TacaIcon className="h-5 w-5 text-dourado-claro" />
           <span className="flex flex-col leading-none">
             <span className="font-serif text-2xl tracking-wide">Vinhos na Serra</span>
             <span className="mt-1 text-[0.6rem] tracking-[0.25em] text-off-white/70 uppercase">
@@ -38,11 +38,14 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden gap-8 text-xs tracking-widest text-off-white/90 uppercase md:flex">
+        <nav className="hidden gap-3 text-xs tracking-widest text-off-white/90 uppercase md:flex">
           {NAV_ITEMS.map((item) => (
-            <Link key={item.href} href={item.href} className="group relative py-1 transition-colors hover:text-dourado-claro">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-full border border-off-white/25 px-4 py-1.5 transition-colors hover:border-dourado-claro hover:bg-off-white/10 hover:text-dourado-claro"
+            >
               {item.label}
-              <span className="absolute bottom-0 left-0 h-px w-0 bg-dourado-claro transition-all duration-300 ease-out group-hover:w-full" />
             </Link>
           ))}
         </nav>
@@ -57,23 +60,23 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-verde-serra md:hidden">
+        <div className="fixed inset-0 z-50 flex flex-col bg-verde-hero md:hidden">
           <div className="flex h-20 items-center justify-between px-6">
             <span className="flex items-center gap-2.5 text-off-white">
-              <TacaIcon className="h-4 w-4 text-bordo" />
+              <TacaIcon className="h-5 w-5 text-dourado-claro" />
               <span className="font-serif text-2xl">Vinhos na Serra</span>
             </span>
             <button aria-label="Fechar menu" onClick={() => setOpen(false)} className="text-off-white">
               <CloseIcon />
             </button>
           </div>
-          <nav className="flex flex-1 flex-col items-start justify-center gap-8 px-10">
+          <nav className="flex flex-1 flex-col items-start justify-center gap-4 px-10">
             {NAV_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="font-serif text-3xl text-off-white"
+                className="w-full rounded-full border border-off-white/25 px-6 py-3 font-serif text-xl text-off-white transition-colors hover:border-dourado-claro hover:text-dourado-claro"
               >
                 {item.label}
               </Link>

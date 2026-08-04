@@ -62,7 +62,7 @@ export default function FadeHero() {
           transitionDuration: mounted && scrollFade === 0 ? "700ms" : "150ms",
         }}
       >
-        <ThreeTacaIcon className="h-6 w-auto text-off-white sm:h-8" />
+        <ThreeTacaIcon className="mb-3 h-auto w-56 text-off-white sm:w-80 md:w-96" />
 
         <h1 className="font-serif text-3xl font-light tracking-[0.12em] text-off-white uppercase sm:text-5xl sm:tracking-[0.25em] md:text-6xl">
           Vinhos na Serra
