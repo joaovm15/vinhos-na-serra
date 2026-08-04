@@ -2,17 +2,21 @@
 
 :root {
   --background: #fffdeb;
-  --foreground: #353411;
+  --foreground: #2c3117;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Paleta oficial da identidade visual (D-Olej Studio) */
-  --color-verde-serra: #353411;
-  --color-verde-hero: #2c3117;
-  --color-verde-oliva: #454420;
+  /* ——— Paleta oficial da identidade visual (D-Olej Studio) ———
+     Uma única família de verdes, ancorada no verde da Hero.
+     As variações existem apenas para dar profundidade — nunca
+     para criar seções com identidades diferentes. */
+  --color-verde-serra: #2c3117; /* verde principal — o mesmo da Hero */
+  --color-verde-oliva: #373d1e; /* variação clara, para respiro entre blocos escuros */
+  --color-verde-profundo: #1e2210; /* variação escura, para rodapé e fechamentos */
+
   --color-bordo: #b10736;
   --color-off-white: #fffdeb;
   --color-areia: #d8cebb;
@@ -22,6 +26,10 @@
 
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-playfair);
+
+  /* ——— Linguagem compartilhada dos elementos clicáveis ——— */
+  --tracking-marca: 0.18em;
+  --duracao-marca: 300ms;
 }
 
 body {
@@ -29,9 +37,12 @@ body {
   color: var(--foreground);
 }
 
+/* Foco herda a cor do próprio elemento, então funciona igual
+   em fundo claro e escuro sem precisar de exceções. */
 :focus-visible {
-  outline: 2px solid var(--color-dourado);
-  outline-offset: 2px;
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+  border-radius: 2px;
 }
 
 .text-h1 {

@@ -3,10 +3,11 @@ import { whatsappUrl } from "@/lib/whatsapp";
 import { INSTAGRAM_URL } from "@/lib/social";
 import { ADDRESS } from "@/lib/address";
 import TacaIcon from "@/components/TacaIcon";
+import SectionTexture from "@/components/SectionTexture";
+import { CLICAVEL_CONTORNO } from "@/components/Button";
 
 function FooterLink({ href, children, external = false }: { href: string; children: React.ReactNode; external?: boolean }) {
-  const className =
-    "inline-block w-fit rounded-full border border-areia/25 px-4 py-1.5 text-sm transition-colors hover:border-dourado-claro hover:text-dourado-claro";
+  const className = `${CLICAVEL_CONTORNO} border-areia/30 text-areia hover:border-off-white hover:bg-off-white/10 hover:text-off-white`;
 
   if (external) {
     return (
@@ -25,8 +26,9 @@ function FooterLink({ href, children, external = false }: { href: string; childr
 
 export default function Footer() {
   return (
-    <footer className="bg-carvao text-areia">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
+    <footer className="relative overflow-hidden bg-verde-profundo text-areia">
+      <SectionTexture tone="dark" opacity={0.08} />
+      <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
         <div className="max-w-xs">
           <p className="flex items-center gap-2.5 text-off-white">
             <TacaIcon className="h-5 w-5" />
@@ -62,7 +64,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="border-t border-off-white/10 px-6 py-6 text-center text-xs text-areia/60">
+      <div className="relative border-t border-off-white/10 px-6 py-6 text-center text-xs text-areia/60">
         © {new Date().getFullYear()} Vinhos na Serra. Todos os direitos reservados.
       </div>
     </footer>

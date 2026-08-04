@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import VineCorner from "@/components/VineCorner";
+import SectionTexture from "@/components/SectionTexture";
 import { experiences } from "@/data/experiences";
 
 export const metadata = {
@@ -25,8 +26,9 @@ const pilares = [
 export default function ExperienciasPage() {
   return (
     <div className="relative overflow-hidden bg-off-white px-6 py-24">
+      <SectionTexture tone="light" />
       <VineCorner position="top-right" tone="light" />
-      <Reveal className="mx-auto max-w-2xl text-center">
+      <Reveal className="relative mx-auto max-w-2xl text-center">
         <p className="text-sm tracking-[0.3em] text-dourado uppercase">Experiências</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
           O vinho também é sobre estar junto.
@@ -62,14 +64,8 @@ export default function ExperienciasPage() {
       </div>
 
       <div className="-mx-6 mt-32">
-        <div
-          className="relative bg-verde-oliva px-6 py-24"
-          style={{
-            backgroundImage: "url(/patterns/vinha-textura-dark.svg)",
-            backgroundSize: "480px 480px",
-          }}
-        >
-          <div className="absolute inset-0 bg-verde-oliva/[0.86]" />
+        <div className="relative overflow-hidden bg-verde-oliva px-6 py-24">
+          <SectionTexture tone="dark" />
           <div className="relative mx-auto max-w-5xl">
             <Reveal>
               <h2 className="text-h3 mb-14 text-center font-serif text-off-white">

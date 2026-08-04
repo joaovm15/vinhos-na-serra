@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import SectionTexture from "@/components/SectionTexture";
 
 export const metadata = {
   title: "A Serra | Vinhos na Serra",
@@ -27,15 +28,16 @@ const blocks = [
 
 export default function ASerraPage() {
   return (
-    <div className="bg-off-white px-6 py-24">
-      <Reveal className="mx-auto max-w-2xl text-center">
+    <div className="relative overflow-hidden bg-off-white px-6 py-24">
+      <SectionTexture tone="light" />
+      <Reveal className="relative mx-auto max-w-2xl text-center">
         <p className="text-sm tracking-[0.3em] text-dourado uppercase">A Serra</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
           Onde a diversidade do Brasil encontra o vinho.
         </h1>
       </Reveal>
 
-      <div className="mx-auto mt-24 max-w-3xl space-y-24">
+      <div className="relative mx-auto mt-24 max-w-3xl space-y-24">
         {blocks.map((block) => (
           <Reveal key={block.label}>
             {block.image && (

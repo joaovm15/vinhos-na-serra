@@ -5,6 +5,7 @@ import EventVideoPlayer from "@/components/EventVideoPlayer";
 import VineCorner from "@/components/VineCorner";
 import FadeHero from "@/components/FadeHero";
 import PhotoDivider from "@/components/PhotoDivider";
+import SectionTexture from "@/components/SectionTexture";
 import { experiences } from "@/data/experiences";
 import { INSTAGRAM_URL } from "@/lib/social";
 
@@ -41,8 +42,9 @@ export default function Home() {
       </div>
 
       {/* 2. MANIFESTO — IDENTIDADE */}
-      <section className="px-6 py-32">
-        <Reveal className="mx-auto max-w-xl text-center">
+      <section className="relative overflow-hidden px-6 py-32">
+        <SectionTexture tone="light" />
+        <Reveal className="relative mx-auto max-w-xl text-center">
           <h2 className="text-h2 font-serif text-verde-serra">O vinho começa muito antes da taça.</h2>
           <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
             Começa na <span className="text-dourado">terra</span> de cada vinícola parceira, no{" "}
@@ -58,8 +60,9 @@ export default function Home() {
 
       {/* 3. NOSSA ESSÊNCIA — IDENTIDADE */}
       <section className="relative overflow-hidden px-6 pb-32">
+        <SectionTexture tone="light" />
         <VineCorner position="top-right" tone="light" />
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
+        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
           <Reveal>
             <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
               <Image
@@ -92,11 +95,8 @@ export default function Home() {
 
       {/* 4. A SERRA — ORIGEM */}
       <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-verde-serra px-6 text-center">
-        <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-verde-oliva via-verde-serra to-carvao" />
-        <div
-          className="absolute inset-0 opacity-[0.14]"
-          style={{ backgroundImage: "url(/patterns/vinha-textura-dark.svg)", backgroundSize: "480px 480px" }}
-        />
+        <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-verde-oliva via-verde-serra to-verde-profundo" />
+        <SectionTexture tone="dark" />
         <div className="absolute inset-0 bg-verde-serra/30" />
 
         <Reveal className="relative z-10 flex max-w-2xl flex-col items-center gap-6">
@@ -114,8 +114,9 @@ export default function Home() {
       </section>
 
       {/* 4.5. 4ª EDIÇÃO — evento */}
-      <section className="bg-verde-serra px-6 py-32">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-[2fr_3fr]">
+      <section className="relative overflow-hidden bg-verde-serra px-6 py-32">
+        <SectionTexture tone="dark" />
+        <div className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-[2fr_3fr]">
           <Reveal className="mx-auto w-full max-w-xs md:max-w-none">
             <EventVideoPlayer
               src="/videos/evento-4a-edicao.mp4"
@@ -150,10 +151,11 @@ export default function Home() {
       </section>
 
       {/* 5. CURADORIA — VALORES */}
-      <section className="relative overflow-hidden bg-verde-serra px-6 py-32">
+      <section className="relative overflow-hidden bg-verde-oliva px-6 py-32">
+        <SectionTexture tone="dark" />
         <VineCorner position="top-left" tone="dark" />
         <VineCorner position="top-right" tone="dark" />
-        <div className="mx-auto max-w-5xl">
+        <div className="relative mx-auto max-w-5xl">
           <Reveal>
             <h2 className="text-h2 mb-16 text-center font-serif text-off-white">
               Cada vinho tem uma história.
@@ -173,8 +175,9 @@ export default function Home() {
       <PhotoDivider src="/images/evento/evento-03.jpg" alt="" />
 
       {/* 6. EXPERIÊNCIAS */}
-      <section className="bg-areia px-6 py-32">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
+      <section className="relative overflow-hidden bg-off-white px-6 py-32">
+        <SectionTexture tone="light" />
+        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
           <Reveal>
             <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
               <Image
@@ -205,9 +208,10 @@ export default function Home() {
 
       {/* 7. CONFRARIA */}
       <section className="relative overflow-hidden bg-bordo px-6 py-32 text-center">
+        <SectionTexture tone="dark" opacity={0.1} />
         <VineCorner position="top-left" tone="dark" />
         <VineCorner position="bottom-right" tone="dark" />
-        <Reveal className="mx-auto max-w-xl">
+        <Reveal className="relative mx-auto max-w-xl">
           <h2 className="text-h2 font-serif text-off-white">Faça parte da nossa mesa.</h2>
           <p className="mt-6 text-areia">
             A Confraria é o convite para viver a Vinhos na Serra por dentro — novidades,
@@ -220,8 +224,9 @@ export default function Home() {
       </section>
 
       {/* 8. NOSSA HISTÓRIA — fechamento narrativo */}
-      <section className="px-6 py-32">
-        <Reveal className="mx-auto max-w-xl text-center">
+      <section className="relative overflow-hidden px-6 py-32">
+        <SectionTexture tone="light" />
+        <Reveal className="relative mx-auto max-w-xl text-center">
           <h2 className="text-h2 font-serif text-verde-serra">Uma história que começou em 2019.</h2>
           <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
             De uma paixão compartilhada por três sócios ao centro de Teresópolis, construímos a
@@ -235,8 +240,9 @@ export default function Home() {
       </section>
 
       {/* 9. INSTAGRAM */}
-      <section className="px-6 pb-32">
-        <div className="mx-auto max-w-6xl">
+      <section className="relative overflow-hidden px-6 pb-32">
+        <SectionTexture tone="light" />
+        <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <h2 className="text-h2 mb-10 text-center font-serif text-verde-serra">
               Acompanhe a nossa jornada.
@@ -270,7 +276,8 @@ export default function Home() {
 
       {/* 10. CTA FINAL — eco do Hero */}
       <section className="relative flex min-h-[70vh] flex-col items-center justify-center gap-6 overflow-hidden px-6 text-center">
-        <div className="absolute inset-0 bg-gradient-to-tr from-carvao via-verde-serra to-verde-oliva" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-verde-profundo via-verde-serra to-verde-oliva" />
+        <SectionTexture tone="dark" />
         <div className="absolute inset-0 bg-verde-serra/30" />
 
         <Reveal className="relative z-10 flex flex-col items-center gap-6">

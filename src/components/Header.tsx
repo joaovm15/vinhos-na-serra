@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { useScrolled } from "@/hooks/useScrolled";
 import TacaIcon from "@/components/TacaIcon";
+import { CLICAVEL_CONTORNO } from "@/components/Button";
 
 const NAV_ITEMS = [
   { href: "/nossa-historia", label: "Nossa História" },
@@ -24,7 +25,7 @@ export default function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
-        solid ? "border-dourado/25 bg-verde-hero" : "border-transparent bg-transparent"
+        solid ? "border-off-white/15 bg-verde-serra" : "border-transparent bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
@@ -38,12 +39,12 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden gap-3 text-xs tracking-widest text-off-white/90 uppercase md:flex">
+        <nav className="hidden gap-2.5 md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full border border-off-white/25 px-4 py-1.5 transition-colors hover:border-dourado-claro hover:bg-off-white/10 hover:text-dourado-claro"
+              className={`${CLICAVEL_CONTORNO} border-off-white/30 text-off-white hover:border-off-white hover:bg-off-white/10`}
             >
               {item.label}
             </Link>
@@ -60,7 +61,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-verde-hero md:hidden">
+        <div className="fixed inset-0 z-50 flex flex-col bg-verde-serra md:hidden">
           <div className="flex h-20 items-center justify-between px-6">
             <span className="flex items-center gap-2.5 text-off-white">
               <TacaIcon className="h-5 w-5" />
@@ -76,7 +77,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="w-full rounded-full border border-off-white/25 px-6 py-3 font-serif text-xl text-off-white transition-colors hover:border-dourado-claro hover:text-dourado-claro"
+                className={`${CLICAVEL_CONTORNO} w-full justify-start border-off-white/30 px-6 py-3 text-sm text-off-white hover:border-off-white hover:bg-off-white/10`}
               >
                 {item.label}
               </Link>

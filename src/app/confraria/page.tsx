@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import VineCorner from "@/components/VineCorner";
+import SectionTexture from "@/components/SectionTexture";
 
 export const metadata = {
   title: "Confraria | Vinhos na Serra",
@@ -22,9 +23,10 @@ export default function ConfrariaPage() {
   return (
     <div className="bg-off-white">
       <section className="relative overflow-hidden bg-bordo px-6 py-24 text-center">
+        <SectionTexture tone="dark" opacity={0.1} />
         <VineCorner position="top-left" tone="dark" />
         <VineCorner position="top-right" tone="dark" />
-        <Reveal className="mx-auto max-w-xl">
+        <Reveal className="relative mx-auto max-w-xl">
           <p className="text-sm tracking-[0.3em] text-areia uppercase">Confraria</p>
           <h1 className="text-h1 mt-4 font-serif text-off-white">Faça parte da nossa mesa.</h1>
           <p className="mt-6 text-areia">
@@ -34,8 +36,9 @@ export default function ConfrariaPage() {
         </Reveal>
       </section>
 
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-4xl">
+      <section className="relative overflow-hidden px-6 py-24">
+        <SectionTexture tone="light" />
+        <div className="relative mx-auto max-w-4xl">
           <Reveal>
             <h2 className="text-sm tracking-[0.2em] text-dourado uppercase">Benefícios</h2>
             <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">

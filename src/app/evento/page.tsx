@@ -2,6 +2,7 @@ import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import VineCorner from "@/components/VineCorner";
 import EventVideoPlayer from "@/components/EventVideoPlayer";
+import SectionTexture from "@/components/SectionTexture";
 import { fourthEditionWineries } from "@/data/wineries";
 import { whatsappUrl } from "@/lib/whatsapp";
 
@@ -27,9 +28,10 @@ export default function EventoPage() {
   return (
     <div className="bg-off-white">
       <section className="relative overflow-hidden bg-verde-serra px-6 py-24 text-center">
+        <SectionTexture tone="dark" />
         <VineCorner position="top-left" tone="dark" />
         <VineCorner position="top-right" tone="dark" />
-        <Reveal className="mx-auto max-w-2xl">
+        <Reveal className="relative mx-auto max-w-2xl">
           <p className="text-sm tracking-[0.3em] text-areia uppercase">Evento</p>
           <h1 className="text-h1 mt-4 font-serif text-off-white">
             4º Encontro de Vinhos Brasileiros
@@ -41,8 +43,9 @@ export default function EventoPage() {
         </Reveal>
       </section>
 
-      <section className="px-6 py-24">
-        <div className="mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-[2fr_3fr]">
+      <section className="relative overflow-hidden px-6 py-24">
+        <SectionTexture tone="light" />
+        <div className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-[2fr_3fr]">
           <Reveal className="mx-auto w-full max-w-xs md:max-w-none">
             <EventVideoPlayer
               src="/videos/evento-4a-edicao.mp4"
@@ -67,14 +70,8 @@ export default function EventoPage() {
         </div>
       </section>
 
-      <div
-        className="relative bg-verde-oliva px-6 py-24"
-        style={{
-          backgroundImage: "url(/patterns/vinha-textura-dark.svg)",
-          backgroundSize: "480px 480px",
-        }}
-      >
-        <div className="absolute inset-0 bg-verde-oliva/[0.86]" />
+      <div className="relative overflow-hidden bg-verde-oliva px-6 py-24">
+        <SectionTexture tone="dark" />
         <div className="relative mx-auto max-w-5xl">
           <Reveal>
             <h2 className="text-h3 mb-4 text-center font-serif text-off-white">
@@ -96,8 +93,9 @@ export default function EventoPage() {
         </div>
       </div>
 
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-4xl">
+      <section className="relative overflow-hidden px-6 py-24">
+        <SectionTexture tone="light" />
+        <div className="relative mx-auto max-w-4xl">
           <Reveal className="text-center">
             <p className="text-sm tracking-[0.3em] text-dourado uppercase">Vinícolas confirmadas</p>
             <h2 className="text-h3 mt-4 font-serif text-verde-serra">

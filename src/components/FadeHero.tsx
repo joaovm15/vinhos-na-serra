@@ -35,7 +35,7 @@ export default function FadeHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-[#2c3117]"
+      className="relative flex h-screen w-full items-center justify-center overflow-hidden bg-verde-serra"
     >
       {/* padrão botânico — cobre o fundo inteiro, bem sutil, sem competir com o texto */}
       <div

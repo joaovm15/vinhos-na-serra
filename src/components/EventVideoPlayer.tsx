@@ -20,7 +20,7 @@ export default function EventVideoPlayer({
   };
 
   return (
-    <div className={`group relative overflow-hidden bg-carvao ${className}`}>
+    <div className={`group relative overflow-hidden bg-verde-profundo ${className}`}>
       <video
         ref={videoRef}
         src={src}

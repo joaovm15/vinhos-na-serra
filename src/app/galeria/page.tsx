@@ -2,6 +2,7 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import Button from "@/components/Button";
 import VineCorner from "@/components/VineCorner";
+import SectionTexture from "@/components/SectionTexture";
 import { galeriaFotos } from "@/data/galeria";
 import { INSTAGRAM_URL } from "@/lib/social";
 
@@ -12,8 +13,9 @@ export const metadata = {
 export default function GaleriaPage() {
   return (
     <div className="relative overflow-hidden bg-off-white px-6 py-24">
+      <SectionTexture tone="light" />
       <VineCorner position="top-right" tone="light" />
-      <Reveal className="mx-auto max-w-2xl text-center">
+      <Reveal className="relative mx-auto max-w-2xl text-center">
         <p className="text-sm tracking-[0.3em] text-dourado uppercase">Galeria</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
           Registros da nossa jornada.

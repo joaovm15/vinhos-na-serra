@@ -2,6 +2,7 @@
 
 import { FormEvent } from "react";
 import { whatsappUrl } from "@/lib/whatsapp";
+import { CLICAVEL_SOLIDO } from "@/components/Button";
 
 export default function ContactForm() {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -59,10 +60,7 @@ export default function ContactForm() {
           className="border-b border-verde-serra/25 bg-transparent py-2 text-verde-serra outline-none focus:border-dourado"
         />
       </div>
-      <button
-        type="submit"
-        className="mt-4 w-fit rounded-[2px] bg-bordo px-8 py-3.5 text-xs tracking-[0.2em] text-off-white uppercase transition-colors hover:bg-carvao"
-      >
+      <button type="submit" className={`${CLICAVEL_SOLIDO} mt-4`}>
         Enviar pelo WhatsApp
       </button>
     </form>
