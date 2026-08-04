@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
         <div className="max-w-xs">
           <p className="flex items-center gap-2.5 text-off-white">
-            <TacaIcon className="h-5 w-5 text-dourado-claro" />
+            <TacaIcon className="h-5 w-5" />
             <span className="font-serif text-2xl">Vinhos na Serra</span>
           </p>
           <p className="mt-1 pl-[1.65rem] text-[0.6rem] tracking-[0.25em] text-areia/60 uppercase">
