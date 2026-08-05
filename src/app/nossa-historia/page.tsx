@@ -55,7 +55,7 @@ export default function NossaHistoriaPage() {
       <Reveal delay={250} className="mx-auto mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-dourado/30 pt-10">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
-            <p className="font-sans text-5xl font-medium tracking-tight text-dourado tabular-nums md:text-6xl">
+            <p className="font-numeros text-5xl font-medium tracking-tight text-dourado tabular-nums md:text-6xl">
               {stat.number}
             </p>
             <p className="mt-2 text-sm tracking-[0.1em] text-verde-serra/70 uppercase">

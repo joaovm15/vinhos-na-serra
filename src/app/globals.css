@@ -24,8 +24,17 @@
   --color-dourado-claro: #f0708a;
   --color-carvao: #000000;
 
-  --font-sans: var(--font-manrope);
-  --font-serif: var(--font-playfair);
+  /* As duas famílias da identidade são serifadas. Os nomes `sans`/`serif`
+     são só os slots do Tailwind — `font-sans` é o texto corrido (Caslon)
+     e `font-serif` são os títulos (Didot/Bodoni). */
+  --font-sans: var(--font-texto);
+  --font-serif: var(--font-display);
+
+  /* Só os indicadores numéricos. A identidade é toda serifada, mas
+     número serifado em corpo grande fica pesado — e isso já tinha sido
+     apontado. Pilha do sistema, então não custa download. */
+  --font-numeros: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 
 
   /* ——— Linguagem compartilhada dos elementos clicáveis ——— */

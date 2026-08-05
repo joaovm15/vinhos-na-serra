@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Manrope } from "next/font/google";
+import { Bodoni_Moda, Libre_Caslon_Text } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+/* Didot (títulos) e Big Caslon (texto) são as fontes da identidade, mas
+   ambas são comerciais. Bodoni Moda e Libre Caslon Text são as
+   equivalentes livres mais próximas de cada uma. */
+const bodoni = Bodoni_Moda({
+  variable: "--font-display",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const caslon = Libre_Caslon_Text({
+  variable: "--font-texto",
   subsets: ["latin"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
 });
 
 
@@ -30,7 +35,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${playfair.variable} ${manrope.variable} h-full antialiased`}
+      className={`${bodoni.variable} ${caslon.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <Header />
