@@ -52,7 +52,9 @@ export default function NossaHistoriaPage() {
         </p>
       </Reveal>
 
-      <Reveal delay={250} className="mx-auto mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-dourado/30 pt-10">
+      {/* Empilha no celular: em três colunas, "1.300+" não cabe na célula e
+          transborda por cima dos números vizinhos. */}
+      <Reveal delay={250} className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 border-t border-dourado/30 pt-10 sm:grid-cols-3 sm:gap-6">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
             <p className="font-numeros text-5xl font-medium tracking-tight text-dourado tabular-nums md:text-6xl">
