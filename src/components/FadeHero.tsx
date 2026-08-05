@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ThreeTacaIcon from "@/components/ThreeTacaIcon";
+import WordmarkVNS from "@/components/WordmarkVNS";
 
 export default function FadeHero() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -64,8 +65,8 @@ export default function FadeHero() {
       >
         <ThreeTacaIcon className="mb-3 h-auto w-56 text-off-white sm:w-80 md:w-96" />
 
-        <h1 className="font-titulo text-4xl font-extralight tracking-[0.16em] text-off-white uppercase sm:text-6xl sm:tracking-[0.3em] md:text-7xl">
-          Vinhos na Serra
+        <h1 className="w-full max-w-[19rem] sm:max-w-lg md:max-w-2xl">
+          <WordmarkVNS className="h-auto w-full text-off-white" />
         </h1>
 
         <p className="text-xs tracking-[0.2em] text-off-white uppercase sm:text-sm sm:tracking-[0.35em]">
