@@ -20,7 +20,7 @@ export default function GaleriaPage() {
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
           Momentos que contam nossa história.
         </h1>
-        <p className="mt-6 text-lg leading-relaxed text-pretty text-verde-serra/80">
+        <p className="mt-6 text-lg leading-relaxed text-balance text-verde-serra/80">
           Cada imagem revela um pouco da essência da Vinhos na Serra. Entre a adega, os encontros
           e as experiências compartilhadas, celebramos a arte de reunir pessoas em torno de bons
           rótulos, da alta gastronomia e de memórias que permanecem.

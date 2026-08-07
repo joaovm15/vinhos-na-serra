@@ -36,7 +36,8 @@ export default function EventoPage() {
             Dia 29 de agosto de 2026, das 12h às 21h, no Espaço Ville Verte, em Teresópolis.
           </p>
           <p className="mt-8 font-serif text-xl text-pretty text-dourado-claro md:text-2xl">
-            Pela primeira vez, o Vale dos Vinhedos desembarca no estado do Rio de Janeiro.
+            Pela primeira vez, o Vale dos Vinhedos desembarca no estado do{" "}
+            <span className="whitespace-nowrap">Rio de Janeiro</span>.
           </p>
           <p className="mt-6 text-pretty text-areia">
             A Adega e Confraria Vinhos na Serra, em parceria com a APROVALE (Associação dos
@@ -58,7 +59,7 @@ export default function EventoPage() {
             />
           </Reveal>
           <Reveal delay={150}>
-            <h2 className="text-h3 font-serif text-verde-serra">O evento contará com</h2>
+            <h2 className="text-h3 font-serif text-verde-serra">O evento contará com:</h2>
             <ul className="mt-6 space-y-4">
               {oferece.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-verde-serra/80">
@@ -81,9 +82,13 @@ export default function EventoPage() {
             <h2 className="text-h3 mb-8 text-center font-serif text-balance text-off-white">
               O Vale dos Vinhedos chega à Serra fluminense.
             </h2>
-            <p className="text-lg leading-relaxed text-pretty text-areia">
-              Com a pretensão de se tornar a referência de maior destaque da cultura do vinho
-              brasileiro fora da Serra Gaúcha, as três últimas edições do evento foram dedicadas
+            <p className="text-lg leading-relaxed text-justify text-areia hyphens-auto">
+              Com a pretensão de se tornar{" "}
+              <strong className="font-bold text-dourado-claro">
+                a referência de maior destaque da cultura do vinho brasileiro fora da Serra
+                Gaúcha
+              </strong>
+              , as três últimas edições do evento foram dedicadas
               exclusivamente aos produtores da Região de Altos Montes, localizada entre os
               municípios de Flores da Cunha e Nova Pádua. Agora, pela primeira vez, o público
               poderá conhecer os vinhos elaborados no principal destino do enoturismo do Brasil, o

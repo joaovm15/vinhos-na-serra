@@ -25,7 +25,7 @@ const dadosEnoturismo = [
 const pillars = [
   { label: "Origem", text: "Cada rótulo carrega o lugar exato de onde vem." },
   { label: "Qualidade", text: "Curadoria criteriosa, sem atalhos, rótulo por rótulo." },
-  { label: "Identidade", text: "Vinhos que não imitam — que têm voz própria." },
+  { label: "Identidade", text: "Vinhos que revelam autenticidade e diversidade." },
   { label: "Experiência", text: "O vinho como convite a estar presente." },
 ];
 
@@ -61,7 +61,7 @@ export default function Home() {
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
               Desde 2019, em Teresópolis, na região serrana do Rio de Janeiro, reunimos mais de
-              1.300 rótulos de mais de 130 vinícolas brasileiras em um espaço dedicado a valorizar
+              1.300 rótulos de 130 vinícolas brasileiras em um espaço dedicado a valorizar
               a vitivinicultura nacional e aproximar quem ama o vinho de quem o faz.
             </p>
             <Button href="/nossa-historia" variant="editorial" tone="verde-serra" className="mt-6">
@@ -218,7 +218,6 @@ export default function Home() {
           <h2 className="text-h1 font-serif text-balance text-off-white">
             Onde o vinho brasileiro encontra sua maior expressão
           </h2>
-          <p className="text-areia">Descubra a Vinhos na Serra.</p>
           <div className="mt-2 grid grid-cols-[max-content] justify-center gap-4 [&>a]:w-full sm:flex sm:flex-row sm:items-center sm:gap-8 sm:[&>a]:w-auto">
             <Button href="/contato" variant="editorial" tone="dourado">
               Fale conosco
