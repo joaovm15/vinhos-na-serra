@@ -173,7 +173,7 @@ export default function Home() {
             </p>
             <div className="mt-6">
               <Button href="/evento" variant="editorial" tone="dourado">
-                Mais sobre
+                Saiba mais
               </Button>
             </div>
           </Reveal>
