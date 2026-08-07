@@ -4,7 +4,7 @@ import VineCorner from "@/components/VineCorner";
 import EventVideoPlayer from "@/components/EventVideoPlayer";
 import SectionTexture from "@/components/SectionTexture";
 import { fourthEditionWineries } from "@/data/wineries";
-import { whatsappUrl } from "@/lib/whatsapp";
+import { INGRESSOS_URL } from "@/lib/evento";
 
 export const metadata = {
   title: "Evento | Vinhos na Serra",
@@ -63,7 +63,7 @@ export default function EventoPage() {
                 </li>
               ))}
             </ul>
-            <Button href={whatsappUrl("Olá! Quero saber mais sobre o 4º Encontro de Vinhos Brasileiros.")} variant="editorial" tone="bordo" className="mt-8">
+            <Button href={INGRESSOS_URL} variant="editorial" tone="bordo" className="mt-8">
               Quero participar
             </Button>
           </Reveal>
