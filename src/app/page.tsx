@@ -80,7 +80,7 @@ export default function Home() {
           <Reveal className="mx-auto w-full max-w-xs md:max-w-none">
             <EventVideoPlayer
               src="/videos/evento-4a-edicao.mp4"
-              poster="/images/evento/evento-01.jpg"
+              poster="/images/evento/poster-4a-edicao.jpg"
               className="aspect-[9/16] w-full"
             />
           </Reveal>
