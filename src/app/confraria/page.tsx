@@ -1,22 +1,20 @@
 import Reveal from "@/components/Reveal";
 import VineCorner from "@/components/VineCorner";
 import SectionTexture from "@/components/SectionTexture";
+import InfoBox from "@/components/InfoBox";
 
 export const metadata = {
   title: "Confraria | Vinhos na Serra",
 };
 
-const benefits = [
-  "Acesso antecipado a rótulos e safras limitadas",
-  "Convites exclusivos para degustações e eventos",
-  "Conteúdo e bastidores direto dos produtores parceiros",
-  "Uma relação mais próxima com quem faz o vinho brasileiro",
-];
+const valores = ["Pertencimento", "Memória", "Tradição"];
 
-const plans = [
-  { name: "Encosta", detail: "Acompanhe as novidades e eventos abertos." },
-  { name: "Terroir", detail: "Convites prioritários para degustações." },
-  { name: "Reserva", detail: "Acesso completo, incluindo bastidores da curadoria." },
+const marcas = [
+  "Maior adega especializada em vinhos brasileiros do país",
+  "Mais de 1.300 rótulos",
+  "Mais de 130 vinícolas parceiras",
+  "Uma comunidade que reúne pessoas, histórias e experiências",
+  "Referência para quem valoriza a cultura do vinho nacional",
 ];
 
 export default function ConfrariaPage() {
@@ -26,40 +24,43 @@ export default function ConfrariaPage() {
         <SectionTexture tone="dark" opacity={0.1} />
         <VineCorner position="top-left" tone="dark" />
         <VineCorner position="top-right" tone="dark" />
-        <Reveal className="relative mx-auto max-w-xl">
+        <Reveal className="relative mx-auto max-w-3xl">
           <p className="text-sm tracking-[0.3em] text-areia uppercase">Confraria</p>
-          <h1 className="text-h1 mt-4 font-serif text-off-white">Faça parte da nossa mesa.</h1>
-          <p className="mt-6 text-areia">
-            Um clube para quem quer estar mais perto do universo do vinho brasileiro — acesso a
-            novidades e uma relação direta com os produtores que selecionamos.
-          </p>
+          <h1 className="text-h1 mt-4 font-serif text-off-white">
+            A casa do vinho brasileiro.
+          </h1>
+
+          <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-3">
+            {valores.map((valor, i) => (
+              <Reveal key={valor} delay={i * 100}>
+                <InfoBox label={valor} tone="bordo" className="text-center" />
+              </Reveal>
+            ))}
+          </div>
         </Reveal>
       </section>
 
       <section className="relative overflow-hidden px-6 py-24">
         <SectionTexture tone="light" />
-        <div className="relative mx-auto max-w-4xl">
+        <div className="relative mx-auto max-w-3xl">
           <Reveal>
-            <h2 className="text-sm tracking-[0.2em] text-dourado uppercase">Benefícios</h2>
-            <ul className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {benefits.map((b) => (
-                <li key={b} className="border-t border-verde-serra/15 pt-4 text-verde-serra/80">
-                  {b}
+            <h2 className="text-h3 text-center font-serif text-verde-serra">
+              Uma confraria criada por apaixonados pelos vinhos produzidos no Brasil.
+            </h2>
+          </Reveal>
+
+          <Reveal delay={150} className="mt-14 border-t border-dourado/30 pt-10">
+            <ul className="space-y-5">
+              {marcas.map((marca) => (
+                <li
+                  key={marca}
+                  className="flex items-start gap-4 text-lg leading-relaxed text-verde-serra/80"
+                >
+                  <span className="mt-3 h-1 w-1 shrink-0 rounded-full bg-dourado" />
+                  {marca}
                 </li>
               ))}
             </ul>
-          </Reveal>
-
-          <Reveal delay={150} className="mt-20">
-            <h2 className="text-sm tracking-[0.2em] text-dourado uppercase">Níveis</h2>
-            <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-3">
-              {plans.map((plan) => (
-                <div key={plan.name} className="border-t border-dourado/30 pt-6">
-                  <p className="font-serif text-xl text-verde-serra">{plan.name}</p>
-                  <p className="mt-2 text-sm text-verde-serra/70">{plan.detail}</p>
-                </div>
-              ))}
-            </div>
           </Reveal>
         </div>
       </section>

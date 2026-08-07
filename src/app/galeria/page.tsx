@@ -18,10 +18,12 @@ export default function GaleriaPage() {
       <Reveal className="relative mx-auto max-w-2xl text-center">
         <p className="text-sm tracking-[0.3em] text-dourado uppercase">Galeria</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
-          Registros da nossa história.
+          Momentos que contam nossa história.
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
-          Momentos da adega, dos encontros e das pessoas que fazem parte da Vinhos na Serra.
+          Cada imagem revela um pouco da essência da Vinhos na Serra. Entre a adega, os encontros
+          e as experiências compartilhadas, celebramos a arte de reunir pessoas em torno de bons
+          rótulos, da alta gastronomia e de memórias que permanecem.
         </p>
       </Reveal>
 

@@ -108,36 +108,34 @@ export default function Home() {
       </section>
 
       {/* 4. A SERRA FLUMINENSE — ORIGEM */}
-      <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-verde-serra px-6 py-28 text-center md:py-36">
-        <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-verde-oliva via-verde-serra to-verde-profundo" />
-        <SectionTexture tone="dark" />
-        <div className="absolute inset-0 bg-verde-serra/30" />
+      <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-off-white px-6 py-28 text-center md:py-36">
+        <SectionTexture tone="light" />
 
         <Reveal className="relative z-10 flex max-w-3xl flex-col items-center gap-6">
-          <h2 className="text-h2 font-serif text-off-white">
+          <h2 className="text-h2 font-serif text-verde-serra">
             A força da Serra Fluminense no enoturismo brasileiro.
           </h2>
-          <p className="text-areia">
+          <p className="text-lg leading-relaxed text-verde-serra/80">
             A vitivinicultura da Região Serrana do Rio de Janeiro vive uma forte expansão e
             Teresópolis se consolida como um dos principais destinos para eventos do setor,
             movimentando uma cadeia produtiva que une agricultura, gastronomia, turismo e cultura.
           </p>
 
           <div className="mt-6 w-full">
-            <p className="text-sm tracking-[0.3em] text-dourado-claro uppercase">
+            <p className="text-sm tracking-[0.3em] text-dourado uppercase">
               Dados do estado do RJ
             </p>
             <div className="mt-8 grid grid-cols-1 gap-5 text-left sm:grid-cols-2">
               {dadosEnoturismo.map((dado) => (
-                <InfoBox key={dado.destaque} label={dado.destaque}>
+                <InfoBox key={dado.destaque} label={dado.destaque} tone="light">
                   {dado.texto}
                 </InfoBox>
               ))}
             </div>
-            <p className="mt-8 text-xs text-areia/60">Fonte: SEBRAE, 2025</p>
+            <p className="mt-8 text-xs text-verde-serra/60">Fonte: SEBRAE, 2025</p>
           </div>
 
-          <Button href="/evento" variant="editorial" tone="dourado" className="mt-2">
+          <Button href="/evento" variant="editorial" tone="verde-serra" className="mt-2">
             Conheça o evento
           </Button>
         </Reveal>

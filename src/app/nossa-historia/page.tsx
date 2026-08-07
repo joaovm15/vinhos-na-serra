@@ -17,7 +17,7 @@ const stats = [
 const pilares = [
   { label: "Vinho", text: "Curadoria, produtores, rótulos, terroirs e valorização da produção nacional." },
   { label: "Cultura", text: "Arte, música, gastronomia e território como camadas de significado." },
-  { label: "Experiência", text: "Ambiência, sensorialidade, atendimento e memória afetiva." },
+  { label: "Experiência", text: "Relacionamento, ambiência, sensorialidade, atendimento e memória afetiva." },
   { label: "Inovação", text: "Novos formatos, ativações, parcerias e expansão de mercado." },
 ];
 
