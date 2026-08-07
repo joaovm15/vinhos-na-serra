@@ -6,26 +6,12 @@ import VineCorner from "@/components/VineCorner";
 import FadeHero from "@/components/FadeHero";
 import PhotoDivider from "@/components/PhotoDivider";
 import SectionTexture from "@/components/SectionTexture";
-import { INSTAGRAM_URL } from "@/lib/social";
+import InfoBox from "@/components/InfoBox";
 
-const galleryPhotos = [
-  "/images/evento/evento-01.jpg",
-  "/images/evento/evento-02.jpg",
-  "/images/evento/evento-03.jpg",
-  "/images/evento/evento-04.jpg",
-  "/images/evento/evento-05.jpg",
-  "/images/evento/evento-06.jpg",
-  "/images/evento/evento-07-rodrigo-feital.jpg",
-  "/images/evento/evento-08-adega.jpg",
-  "/images/evento/evento-09.jpg",
-  "/images/evento/evento-10.jpg",
-  "/images/evento/evento-11.jpg",
-  "/images/evento/evento-12.jpg",
-];
 
 const dadosEnoturismo = [
   {
-    destaque: "40 projetos enoturísticos,",
+    destaque: "40 projetos enoturísticos",
     texto:
       "entre empreendimentos em operação e em implantação, distribuídos por 12 municípios.",
   },
@@ -52,27 +38,8 @@ export default function Home() {
         <FadeHero />
       </div>
 
-      {/* 2. MANIFESTO — IDENTIDADE */}
+      {/* 2. NOSSA ESSÊNCIA — IDENTIDADE */}
       <section className="relative overflow-hidden px-6 py-32">
-        <SectionTexture tone="light" />
-        <Reveal className="relative mx-auto max-w-xl text-center">
-          <h2 className="text-h2 font-serif text-verde-serra">
-            O vinho começa no cuidado com cada detalhe.
-          </h2>
-          <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
-            Começa na <span className="text-dourado">terra</span> de cada vinícola parceira, no{" "}
-            <span className="text-dourado">clima</span> que impõe seu próprio ritmo, no{" "}
-            <span className="text-dourado">tempo</span> que ninguém consegue apressar.
-          </p>
-          <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
-            Começa nas pessoas que aprenderam a reconhecer os melhores rótulos brasileiros e nas
-            histórias que cada garrafa carrega até chegar à sua mesa.
-          </p>
-        </Reveal>
-      </section>
-
-      {/* 3. NOSSA ESSÊNCIA — IDENTIDADE */}
-      <section className="relative overflow-hidden px-6 pb-32">
         <SectionTexture tone="light" />
         <VineCorner position="top-right" tone="light" />
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
@@ -106,47 +73,7 @@ export default function Home() {
 
       <PhotoDivider src="/images/evento/evento-06.jpg" alt="" />
 
-      {/* 4. A SERRA — ORIGEM */}
-      <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-verde-serra px-6 text-center">
-        <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-verde-oliva via-verde-serra to-verde-profundo" />
-        <SectionTexture tone="dark" />
-        <div className="absolute inset-0 bg-verde-serra/30" />
-
-        <Reveal className="relative z-10 flex max-w-3xl flex-col items-center gap-6">
-          <h2 className="text-h2 font-serif text-off-white">
-            A força da Serra Fluminense no enoturismo brasileiro.
-          </h2>
-          <p className="text-areia">
-            A vitivinicultura da Região Serrana do Rio de Janeiro vive uma forte expansão e
-            Teresópolis se consolida como um dos principais destinos para eventos do setor,
-            movimentando uma cadeia produtiva que une agricultura, gastronomia, turismo e cultura.
-          </p>
-
-          <div className="mt-6 w-full border-t border-dourado-claro/30 pt-8">
-            <p className="text-sm tracking-[0.3em] text-dourado-claro uppercase">
-              Dados do estado do RJ
-            </p>
-            <div className="mt-6 grid grid-cols-1 gap-6 text-left sm:grid-cols-2 sm:gap-10">
-              {dadosEnoturismo.map((dado) => (
-                <p key={dado.destaque} className="flex items-start gap-3 text-areia">
-                  <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-dourado-claro" />
-                  <span>
-                    <strong className="font-normal text-off-white">{dado.destaque}</strong>{" "}
-                    {dado.texto}
-                  </span>
-                </p>
-              ))}
-            </div>
-            <p className="mt-6 text-xs text-areia/60">Fonte: SEBRAE, 2025</p>
-          </div>
-
-          <Button href="/evento" variant="editorial" tone="dourado" className="mt-2">
-            Conheça o evento
-          </Button>
-        </Reveal>
-      </section>
-
-      {/* 4.5. 4ª EDIÇÃO — evento */}
+      {/* 3. 4ª EDIÇÃO — o evento em destaque */}
       <section className="relative overflow-hidden bg-verde-serra px-6 py-32">
         <SectionTexture tone="dark" />
         <div className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-[2fr_3fr]">
@@ -180,6 +107,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 4. A SERRA FLUMINENSE — ORIGEM */}
+      <section className="relative flex min-h-[85vh] items-center justify-center overflow-hidden bg-verde-serra px-6 py-28 text-center md:py-36">
+        <div className="absolute inset-0 bg-fixed bg-gradient-to-br from-verde-oliva via-verde-serra to-verde-profundo" />
+        <SectionTexture tone="dark" />
+        <div className="absolute inset-0 bg-verde-serra/30" />
+
+        <Reveal className="relative z-10 flex max-w-3xl flex-col items-center gap-6">
+          <h2 className="text-h2 font-serif text-off-white">
+            A força da Serra Fluminense no enoturismo brasileiro.
+          </h2>
+          <p className="text-areia">
+            A vitivinicultura da Região Serrana do Rio de Janeiro vive uma forte expansão e
+            Teresópolis se consolida como um dos principais destinos para eventos do setor,
+            movimentando uma cadeia produtiva que une agricultura, gastronomia, turismo e cultura.
+          </p>
+
+          <div className="mt-6 w-full">
+            <p className="text-sm tracking-[0.3em] text-dourado-claro uppercase">
+              Dados do estado do RJ
+            </p>
+            <div className="mt-8 grid grid-cols-1 gap-5 text-left sm:grid-cols-2">
+              {dadosEnoturismo.map((dado) => (
+                <InfoBox key={dado.destaque} label={dado.destaque}>
+                  {dado.texto}
+                </InfoBox>
+              ))}
+            </div>
+            <p className="mt-8 text-xs text-areia/60">Fonte: SEBRAE, 2025</p>
+          </div>
+
+          <Button href="/evento" variant="editorial" tone="dourado" className="mt-2">
+            Conheça o evento
+          </Button>
+        </Reveal>
+      </section>
+
       {/* 5. CURADORIA — VALORES */}
       <section className="relative overflow-hidden bg-verde-oliva px-6 py-32">
         <SectionTexture tone="dark" />
@@ -191,11 +154,10 @@ export default function Home() {
               Cada vinho tem uma história.
             </h2>
           </Reveal>
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {pillars.map((pillar, i) => (
-              <Reveal key={pillar.label} delay={i * 100} className="border-t border-dourado/30 pt-6">
-                <p className="font-serif text-xl text-dourado-claro">{pillar.label}</p>
-                <p className="mt-3 text-sm text-areia/90">{pillar.text}</p>
+              <Reveal key={pillar.label} delay={i * 100}>
+                <InfoBox label={pillar.label}>{pillar.text}</InfoBox>
               </Reveal>
             ))}
           </div>
@@ -255,42 +217,7 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* 9. INSTAGRAM */}
-      <section className="relative overflow-hidden px-6 pb-32">
-        <SectionTexture tone="light" />
-        <div className="relative mx-auto max-w-6xl">
-          <Reveal>
-            <h2 className="text-h2 mb-10 text-center font-serif text-verde-serra">
-              Acompanhe nossa história.
-            </h2>
-          </Reveal>
-          <Reveal delay={150}>
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-              {galleryPhotos.map((src, i) => (
-                <div key={src} className="group aspect-square overflow-hidden bg-areia">
-                  <Image
-                    src={src}
-                    alt={`Vinhos na Serra — registro do evento ${i + 1}`}
-                    width={400}
-                    height={400}
-                    className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
-                  />
-                </div>
-              ))}
-            </div>
-            <div className="mt-8 grid grid-cols-[max-content] justify-center gap-4 [&>a]:w-full sm:flex sm:flex-row sm:items-center sm:gap-8 sm:[&>a]:w-auto">
-              <Button href="/galeria" variant="editorial" tone="verde-serra">
-                Ver galeria completa
-              </Button>
-              <Button href={INSTAGRAM_URL} variant="editorial" tone="verde-serra">
-                Seguir no Instagram
-              </Button>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* 10. CTA FINAL — eco do Hero */}
+      {/* 9. CTA FINAL — eco do Hero */}
       <section className="relative flex min-h-[70vh] flex-col items-center justify-center gap-6 overflow-hidden px-6 text-center">
         <div className="absolute inset-0 bg-gradient-to-tr from-verde-profundo via-verde-serra to-verde-oliva" />
         <SectionTexture tone="dark" />

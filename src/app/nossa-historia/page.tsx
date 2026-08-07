@@ -2,6 +2,7 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import VineCorner from "@/components/VineCorner";
 import SectionTexture from "@/components/SectionTexture";
+import InfoBox from "@/components/InfoBox";
 
 export const metadata = {
   title: "Nossa História | Vinhos na Serra",
@@ -115,11 +116,10 @@ export default function NossaHistoriaPage() {
                 Nossos pilares.
               </h2>
             </Reveal>
-            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {pilares.map((pilar, i) => (
-                <Reveal key={pilar.label} delay={i * 100} className="border-t border-dourado/30 pt-6">
-                  <p className="font-serif text-xl text-dourado-claro">{pilar.label}</p>
-                  <p className="mt-3 text-sm text-areia/90">{pilar.text}</p>
+                <Reveal key={pilar.label} delay={i * 100}>
+                  <InfoBox label={pilar.label}>{pilar.text}</InfoBox>
                 </Reveal>
               ))}
             </div>
