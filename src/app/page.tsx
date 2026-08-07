@@ -6,7 +6,6 @@ import VineCorner from "@/components/VineCorner";
 import FadeHero from "@/components/FadeHero";
 import PhotoDivider from "@/components/PhotoDivider";
 import SectionTexture from "@/components/SectionTexture";
-import { experiences } from "@/data/experiences";
 import { INSTAGRAM_URL } from "@/lib/social";
 
 const galleryPhotos = [
@@ -45,7 +44,6 @@ const pillars = [
 ];
 
 export default function Home() {
-  const nextExperience = experiences[0];
 
   return (
     <div className="flex flex-col bg-off-white">
@@ -205,38 +203,6 @@ export default function Home() {
       </section>
 
       <PhotoDivider src="/images/evento/evento-03.jpg" alt="" />
-
-      {/* 6. EXPERIÊNCIAS */}
-      <section className="relative overflow-hidden bg-off-white px-6 py-32">
-        <SectionTexture tone="light" />
-        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
-          <Reveal>
-            <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
-              <Image
-                src="/images/evento/evento-04.jpg"
-                alt="Convidados reunidos em um evento da Vinhos na Serra"
-                width={900}
-                height={675}
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={150}>
-            <h2 className="text-h3 font-serif text-verde-serra">
-              O vinho também é sobre estar junto.
-            </h2>
-            <p className="mt-6 text-verde-serra/80">
-              Degustações, eventos e harmonizações que aproximam quem bebe de quem faz — como a
-              próxima: <span className="text-dourado">{nextExperience.name}</span>.
-            </p>
-            <Button href="/experiencias" variant="editorial" tone="verde-serra" className="mt-6">
-              Conheça nossas experiências
-            </Button>
-          </Reveal>
-        </div>
-      </section>
-
-      <PhotoDivider src="/images/evento/evento-09.jpg" alt="" />
 
       {/* 7. CONFRARIA */}
       <section className="relative overflow-hidden bg-bordo px-6 py-32 text-center">
