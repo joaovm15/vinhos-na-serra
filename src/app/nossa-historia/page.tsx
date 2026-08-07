@@ -13,6 +13,13 @@ const stats = [
   { number: "2019", label: "Fundação, em Teresópolis" },
 ];
 
+const pilares = [
+  { label: "Vinho", text: "Curadoria, produtores, rótulos, terroirs e valorização da produção nacional." },
+  { label: "Cultura", text: "Arte, música, gastronomia e território como camadas de significado." },
+  { label: "Experiência", text: "Ambiência, sensorialidade, atendimento e memória afetiva." },
+  { label: "Inovação", text: "Novos formatos, ativações, parcerias e expansão de mercado." },
+];
+
 const timeline = [
   {
     year: "2019",
@@ -54,7 +61,7 @@ export default function NossaHistoriaPage() {
 
       {/* Empilha no celular: em três colunas, "1.300+" não cabe na célula e
           transborda por cima dos números vizinhos. */}
-      <Reveal delay={250} className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 border-t border-dourado/30 pt-10 sm:grid-cols-3 sm:gap-6">
+      <Reveal delay={250} className="mx-auto mt-16 grid max-w-3xl grid-cols-1 gap-8 border-t border-dourado/30 pt-10 sm:grid-cols-3 sm:gap-6">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
             <p className="font-numeros text-5xl font-medium tracking-tight text-dourado tabular-nums md:text-6xl">
@@ -98,6 +105,27 @@ export default function NossaHistoriaPage() {
           vinho e quem o faz.
         </p>
       </Reveal>
+
+      <div className="-mx-6 mt-32 -mb-24">
+        <div className="relative overflow-hidden bg-verde-oliva px-6 py-24">
+          <SectionTexture tone="dark" />
+          <div className="relative mx-auto max-w-5xl">
+            <Reveal>
+              <h2 className="text-h3 mb-14 text-center font-serif text-off-white">
+                Nossos pilares.
+              </h2>
+            </Reveal>
+            <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {pilares.map((pilar, i) => (
+                <Reveal key={pilar.label} delay={i * 100} className="border-t border-dourado/30 pt-6">
+                  <p className="font-serif text-xl text-dourado-claro">{pilar.label}</p>
+                  <p className="mt-3 text-sm text-areia/90">{pilar.text}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

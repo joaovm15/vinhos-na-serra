@@ -10,7 +10,6 @@ import { CLICAVEL_CONTORNO } from "@/components/Button";
 const NAV_ITEMS = [
   { href: "/nossa-historia", label: "Nossa História" },
   { href: "/confraria", label: "Confraria" },
-  { href: "/experiencias", label: "Experiências" },
   { href: "/evento", label: "Evento" },
   { href: "/galeria", label: "Galeria" },
   { href: "/contato", label: "Contato" },

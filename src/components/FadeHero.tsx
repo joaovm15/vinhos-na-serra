@@ -84,7 +84,7 @@ export default function FadeHero() {
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-xs tracking-[0.2em] text-off-white/80 uppercase transition-opacity duration-150"
         style={{ opacity }}
       >
-        Role para descobrir
+        Deslize para descobrir
       </div>
     </section>
   );
