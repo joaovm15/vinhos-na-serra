@@ -6,7 +6,6 @@ import VineCorner from "@/components/VineCorner";
 import FadeHero from "@/components/FadeHero";
 import PhotoDivider from "@/components/PhotoDivider";
 import SectionTexture from "@/components/SectionTexture";
-import { experiences } from "@/data/experiences";
 import { INSTAGRAM_URL } from "@/lib/social";
 
 const galleryPhotos = [
@@ -24,6 +23,19 @@ const galleryPhotos = [
   "/images/evento/evento-12.jpg",
 ];
 
+const dadosEnoturismo = [
+  {
+    destaque: "40 projetos enoturísticos,",
+    texto:
+      "entre empreendimentos em operação e em implantação, distribuídos por 12 municípios.",
+  },
+  {
+    destaque: "70% dos entrevistados",
+    texto:
+      "consumiram vinho brasileiro nos últimos seis meses, enquanto 68,5% realizaram alguma compra no período.",
+  },
+];
+
 const pillars = [
   { label: "Origem", text: "Cada rótulo carrega o lugar exato de onde vem." },
   { label: "Qualidade", text: "Curadoria criteriosa, sem atalhos, rótulo por rótulo." },
@@ -32,7 +44,6 @@ const pillars = [
 ];
 
 export default function Home() {
-  const nextExperience = experiences[0];
 
   return (
     <div className="flex flex-col bg-off-white">
@@ -45,14 +56,16 @@ export default function Home() {
       <section className="relative overflow-hidden px-6 py-32">
         <SectionTexture tone="light" />
         <Reveal className="relative mx-auto max-w-xl text-center">
-          <h2 className="text-h2 font-serif text-verde-serra">O vinho começa muito antes da taça.</h2>
+          <h2 className="text-h2 font-serif text-verde-serra">
+            O vinho começa no cuidado com cada detalhe.
+          </h2>
           <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
             Começa na <span className="text-dourado">terra</span> de cada vinícola parceira, no{" "}
             <span className="text-dourado">clima</span> que impõe seu próprio ritmo, no{" "}
             <span className="text-dourado">tempo</span> que ninguém consegue apressar.
           </p>
           <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
-            Começa nas pessoas que aprenderam a reconhecer os melhores rótulos brasileiros, e nas
+            Começa nas pessoas que aprenderam a reconhecer os melhores rótulos brasileiros e nas
             histórias que cada garrafa carrega até chegar à sua mesa.
           </p>
         </Reveal>
@@ -77,12 +90,12 @@ export default function Home() {
           <Reveal delay={150}>
             <p className="text-sm tracking-[0.3em] text-dourado uppercase">A casa do vinho brasileiro</p>
             <h2 className="text-h3 mt-4 font-serif text-verde-serra">
-              Mais do que uma adega. A maior confraria de vinhos brasileiros do país.
+              A maior adega e confraria especializada em vinhos brasileiros do país
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
-              Desde 2019, em Teresópolis, reunimos mais de 1.300 rótulos de mais de 130 vinícolas
-              brasileiras — um espaço dedicado a valorizar a vitivinicultura nacional e aproximar
-              quem ama vinho de quem o faz.
+              Desde 2019, em Teresópolis, na região serrana do Rio de Janeiro, reunimos mais de
+              1.300 rótulos de mais de 130 vinícolas brasileiras em um espaço dedicado a valorizar
+              a vitivinicultura nacional e aproximar quem ama o vinho de quem o faz.
             </p>
             <Button href="/nossa-historia" variant="editorial" tone="verde-serra" className="mt-6">
               Conheça nossa história
@@ -99,16 +112,36 @@ export default function Home() {
         <SectionTexture tone="dark" />
         <div className="absolute inset-0 bg-verde-serra/30" />
 
-        <Reveal className="relative z-10 flex max-w-2xl flex-col items-center gap-6">
+        <Reveal className="relative z-10 flex max-w-3xl flex-col items-center gap-6">
           <h2 className="text-h2 font-serif text-off-white">
-            Onde a diversidade do Brasil encontra o vinho.
+            A força da Serra Fluminense no enoturismo brasileiro.
           </h2>
           <p className="text-areia">
-            De vinhedos de altitude a diferentes solos e climas, cada região do país imprime sua
-            própria identidade nos rótulos que selecionamos para você.
+            A vitivinicultura da Região Serrana do Rio de Janeiro vive uma forte expansão e
+            Teresópolis se consolida como um dos principais destinos para eventos do setor,
+            movimentando uma cadeia produtiva que une agricultura, gastronomia, turismo e cultura.
           </p>
-          <Button href="/a-serra" variant="editorial" tone="dourado" className="mt-2">
-            Descubra a Serra
+
+          <div className="mt-6 w-full border-t border-dourado-claro/30 pt-8">
+            <p className="text-sm tracking-[0.3em] text-dourado-claro uppercase">
+              Dados do estado do RJ
+            </p>
+            <div className="mt-6 grid grid-cols-1 gap-6 text-left sm:grid-cols-2 sm:gap-10">
+              {dadosEnoturismo.map((dado) => (
+                <p key={dado.destaque} className="flex items-start gap-3 text-areia">
+                  <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-dourado-claro" />
+                  <span>
+                    <strong className="font-normal text-off-white">{dado.destaque}</strong>{" "}
+                    {dado.texto}
+                  </span>
+                </p>
+              ))}
+            </div>
+            <p className="mt-6 text-xs text-areia/60">Fonte: SEBRAE, 2025</p>
+          </div>
+
+          <Button href="/evento" variant="editorial" tone="dourado" className="mt-2">
+            Conheça o evento
           </Button>
         </Reveal>
       </section>
@@ -130,20 +163,17 @@ export default function Home() {
               4ª Edição · Vinhos na Serra
             </p>
             <h2 className="text-h2 mt-4 font-serif text-off-white">
-              Nascemos como um encontro. Hoje caminhamos para ser um movimento.
+              Nascemos de um encontro. Hoje, somos um movimento.
             </h2>
             <p className="mt-4 text-areia">
-              Um movimento que valoriza o vinho brasileiro como patrimônio cultural, fortalece
-              produtores nacionais e cria experiências capazes de conectar pessoas, marcas e
-              territórios.
+              Um movimento que reconhece o vinho brasileiro como patrimônio cultural, valoriza o
+              trabalho dos produtores nacionais e promove experiências que aproximam pessoas,
+              marcas e territórios. Acreditamos que cada taça carrega histórias, identidade e
+              inovação.
             </p>
-            <p className="mt-4 text-sm text-areia/90 italic">Cultura em estado líquido.</p>
-            <div className="mt-6 grid grid-cols-[max-content] justify-center gap-4 [&>a]:w-full sm:flex sm:flex-row sm:items-center sm:gap-8 sm:[&>a]:w-auto">
+            <div className="mt-6">
               <Button href="/evento" variant="editorial" tone="dourado">
                 Conheça o evento
-              </Button>
-              <Button href="/contato" variant="editorial" tone="off-white">
-                Quero viver essa experiência
               </Button>
             </div>
           </Reveal>
@@ -174,37 +204,23 @@ export default function Home() {
 
       <PhotoDivider src="/images/evento/evento-03.jpg" alt="" />
 
-      {/* 6. EXPERIÊNCIAS */}
+      {/* 6. EXPERIÊNCIAS — aguardando o texto novo.
+          Quando ele chegar, volta ao formato de duas colunas:
+          md:grid-cols-[3fr_2fr] com a foto à esquerda e o texto à direita. */}
       <section className="relative overflow-hidden bg-off-white px-6 py-32">
         <SectionTexture tone="light" />
-        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
-          <Reveal>
-            <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
-              <Image
-                src="/images/evento/evento-04.jpg"
-                alt="Convidados reunidos em um evento da Vinhos na Serra"
-                width={900}
-                height={675}
-                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={150}>
-            <h2 className="text-h3 font-serif text-verde-serra">
-              O vinho também é sobre estar junto.
-            </h2>
-            <p className="mt-6 text-verde-serra/80">
-              Degustações, eventos e harmonizações que aproximam quem bebe de quem faz — como a
-              próxima: <span className="text-dourado">{nextExperience.name}</span>.
-            </p>
-            <Button href="/experiencias" variant="editorial" tone="verde-serra" className="mt-6">
-              Conheça nossas experiências
-            </Button>
-          </Reveal>
-        </div>
+        <Reveal className="relative mx-auto max-w-3xl">
+          <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
+            <Image
+              src="/images/evento/evento-04.jpg"
+              alt="Convidados reunidos em um evento da Vinhos na Serra"
+              width={900}
+              height={675}
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
+          </div>
+        </Reveal>
       </section>
-
-      <PhotoDivider src="/images/evento/evento-09.jpg" alt="" />
 
       {/* 7. CONFRARIA */}
       <section className="relative overflow-hidden bg-bordo px-6 py-32 text-center">
@@ -245,7 +261,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <h2 className="text-h2 mb-10 text-center font-serif text-verde-serra">
-              Acompanhe a nossa jornada.
+              Acompanhe nossa história.
             </h2>
           </Reveal>
           <Reveal delay={150}>

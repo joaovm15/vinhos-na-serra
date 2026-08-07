@@ -73,18 +73,15 @@ export default function FadeHero() {
           Adega e Confraria
         </p>
 
+        {/* fecha o lockup como no manual: wordmark, descritor e filete */}
         <div className="h-px w-10 bg-off-white/60" />
-
-        <p className="text-xs font-bold tracking-[0.15em] text-off-white uppercase sm:text-sm sm:tracking-[0.25em]">
-          A casa do vinho brasileiro
-        </p>
       </div>
 
       <div
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-xs tracking-[0.2em] text-off-white/80 uppercase transition-opacity duration-150"
         style={{ opacity }}
       >
-        Role para descobrir
+        Deslize para descobrir
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export default function GaleriaPage() {
       <Reveal className="relative mx-auto max-w-2xl text-center">
         <p className="text-sm tracking-[0.3em] text-dourado uppercase">Galeria</p>
         <h1 className="text-h1 mt-4 font-serif text-verde-serra">
-          Registros da nossa jornada.
+          Registros da nossa história.
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-verde-serra/80">
           Momentos da adega, dos encontros e das pessoas que fazem parte da Vinhos na Serra.
