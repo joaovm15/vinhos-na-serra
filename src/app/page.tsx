@@ -204,6 +204,24 @@ export default function Home() {
 
       <PhotoDivider src="/images/evento/evento-03.jpg" alt="" />
 
+      {/* 6. EXPERIÊNCIAS — aguardando o texto novo.
+          Quando ele chegar, volta ao formato de duas colunas:
+          md:grid-cols-[3fr_2fr] com a foto à esquerda e o texto à direita. */}
+      <section className="relative overflow-hidden bg-off-white px-6 py-32">
+        <SectionTexture tone="light" />
+        <Reveal className="relative mx-auto max-w-3xl">
+          <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
+            <Image
+              src="/images/evento/evento-04.jpg"
+              alt="Convidados reunidos em um evento da Vinhos na Serra"
+              width={900}
+              height={675}
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
+          </div>
+        </Reveal>
+      </section>
+
       {/* 7. CONFRARIA */}
       <section className="relative overflow-hidden bg-bordo px-6 py-32 text-center">
         <SectionTexture tone="dark" opacity={0.1} />
