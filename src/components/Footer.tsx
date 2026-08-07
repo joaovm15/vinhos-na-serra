@@ -27,7 +27,7 @@ function FooterLink({ href, children, external = false }: { href: string; childr
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden bg-verde-profundo text-areia">
-      <SectionTexture tone="dark" opacity={0.08} />
+      <SectionTexture tone="dark" opacity={0.06} />
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
         <div className="max-w-xs">
           <p className="flex items-center gap-2.5 text-off-white">

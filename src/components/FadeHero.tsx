@@ -40,7 +40,7 @@ export default function FadeHero() {
     >
       {/* padrão botânico — cobre o fundo inteiro, bem sutil, sem competir com o texto */}
       <div
-        className="absolute inset-0 opacity-[0.16]"
+        className="absolute inset-0 opacity-[0.11]"
         style={{
           backgroundImage: "url(/patterns/vinha-textura-dark.svg)",
           backgroundSize: "420px 420px",

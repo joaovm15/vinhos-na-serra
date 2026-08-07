@@ -17,7 +17,8 @@ export default function SectionTexture({
   size?: number;
 }) {
   // Fundos claros precisam de bem menos opacidade para o traço não pesar.
-  const finalOpacity = opacity ?? (tone === "dark" ? 0.14 : 0.05);
+  // No escuro, o traço off-white compete com o texto se subir muito.
+  const finalOpacity = opacity ?? (tone === "dark" ? 0.1 : 0.05);
 
   return (
     <div
