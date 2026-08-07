@@ -13,15 +13,11 @@ export const metadata = {
 const oferece = [
   "Degustação de rótulos selecionados de vinícolas brasileiras",
   "Experiência gastronômica premium",
-  "Ambiente exclusivo para celebrar o vinho brasileiro",
+  "Espaço sofisticado imerso à Mata Atlântica",
+  "Público altamente qualificado",
+  "Ambiente exclusivo para promover conexões, relacionamentos e bons negócios",
+  "Ativações estratégicas para marcas e consumidores",
   "Música ao vivo e ambientação sensorial",
-];
-
-const resultados = [
-  { number: "20", label: "Vinícolas participantes" },
-  { number: "120+", label: "Rótulos degustados" },
-  { number: "400+", label: "Pessoas presentes" },
-  { number: "< 1 mês", label: "Para esgotar os ingressos" },
 ];
 
 export default function EventoPage() {
@@ -31,14 +27,22 @@ export default function EventoPage() {
         <SectionTexture tone="dark" />
         <VineCorner position="top-left" tone="dark" />
         <VineCorner position="top-right" tone="dark" />
-        <Reveal className="relative mx-auto max-w-2xl">
+        <Reveal className="relative mx-auto max-w-3xl">
           <p className="text-sm tracking-[0.3em] text-areia uppercase">Evento</p>
-          <h1 className="text-h1 mt-4 font-serif text-off-white">
+          <h1 className="text-h1 mt-4 font-serif text-balance text-off-white">
             4º Encontro de Vinhos Brasileiros
           </h1>
-          <p className="mt-6 text-areia">
-            29 de agosto de 2026, no Ville Verte, em Teresópolis — um espaço afinado com a
-            proposta do evento e com o perfil de quem ama vinho brasileiro.
+          <p className="mt-6 text-lg text-pretty text-off-white">
+            Dia 29 de agosto de 2026, das 12h às 21h, no Espaço Ville Verte, em Teresópolis.
+          </p>
+          <p className="mt-8 font-serif text-xl text-pretty text-dourado-claro md:text-2xl">
+            Pela primeira vez, o Vale dos Vinhedos desembarca no estado do Rio de Janeiro.
+          </p>
+          <p className="mt-6 text-pretty text-areia">
+            A Adega e Confraria Vinhos na Serra, em parceria com a APROVALE (Associação dos
+            Produtores de Vinhos Finos do Vale dos Vinhedos), apresenta a quarta edição do Vinhos
+            na Serra fortalecendo a valorização do produto nacional reunindo mais de 130 rótulos
+            de vinhos brasileiros e 15 vinícolas da região.
           </p>
         </Reveal>
       </section>
@@ -72,26 +76,23 @@ export default function EventoPage() {
 
       <div className="relative overflow-hidden bg-verde-oliva px-6 py-24">
         <SectionTexture tone="dark" />
-        <div className="relative mx-auto max-w-5xl">
+        <div className="relative mx-auto max-w-3xl">
           <Reveal>
-            <h2 className="text-h3 mb-4 text-center font-serif text-off-white">
-              A edição anterior superou as expectativas.
+            <h2 className="text-h3 mb-8 text-center font-serif text-balance text-off-white">
+              O Vale dos Vinhedos chega à Serra fluminense.
             </h2>
-            <p className="mx-auto max-w-2xl text-center text-areia/90">
-              Um marco para o mercado de vinhos brasileiros — e um recorte do que esperar da
-              próxima edição.
+            <p className="text-lg leading-relaxed text-pretty text-areia">
+              Com a pretensão de se tornar a referência de maior destaque da cultura do vinho
+              brasileiro fora da Serra Gaúcha, as três últimas edições do evento foram dedicadas
+              exclusivamente aos produtores da Região de Altos Montes, localizada entre os
+              municípios de Flores da Cunha e Nova Pádua. Agora, pela primeira vez, o público
+              poderá conhecer os vinhos elaborados no principal destino do enoturismo do Brasil, o
+              Vale dos Vinhedos, que abrange os municípios de Bento Gonçalves, Garibaldi e Monte
+              Belo do Sul, na Serra Gaúcha. De forma inédita, uma das regiões mais tradicionais e
+              reconhecidas da vitivinicultura brasileira desembarca na Serra fluminense, em
+              Teresópolis.
             </p>
           </Reveal>
-          <div className="mt-14 grid grid-cols-2 gap-10 lg:grid-cols-4">
-            {resultados.map((r, i) => (
-              <Reveal key={r.label} delay={i * 100} className="border-t border-dourado/30 pt-6 text-center">
-                <p className="font-numeros text-4xl font-medium tracking-tight text-dourado-claro tabular-nums md:text-5xl">
-                  {r.number}
-                </p>
-                <p className="mt-2 text-sm text-areia/90">{r.label}</p>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </div>
 

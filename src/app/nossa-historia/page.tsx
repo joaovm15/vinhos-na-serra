@@ -51,8 +51,7 @@ export default function NossaHistoriaPage() {
 
       <Reveal delay={150} className="mx-auto mt-16 max-w-2xl text-center">
         <p className="text-lg leading-relaxed text-verde-serra/80">
-          Somos a maior adega e confraria especializada em vinhos brasileiros do país. Rafael
-          Feital, Rodrigo Feital e Leonardo Claussen já compartilhavam o interesse pelo universo
+          Rafael Feital, Rodrigo Feital e Leonardo Claussen já compartilhavam o interesse pelo universo
           do vinho quando decidiram se aprofundar na vitivinicultura brasileira. Ao descobrir a
           diversidade de terroirs, produtores, castas e a qualidade dos rótulos elaborados em
           diferentes regiões do país, fizeram uma escolha que mudaria suas trajetórias: dedicar-se

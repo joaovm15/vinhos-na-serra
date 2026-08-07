@@ -26,7 +26,7 @@ export default function ConfrariaPage() {
         <VineCorner position="top-right" tone="dark" />
         <Reveal className="relative mx-auto max-w-3xl">
           <p className="text-sm tracking-[0.3em] text-areia uppercase">Confraria</p>
-          <h1 className="text-h1 mt-4 font-serif text-off-white">
+          <h1 className="text-h1 mt-4 font-serif text-balance text-off-white">
             A casa do vinho brasileiro.
           </h1>
 

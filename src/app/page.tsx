@@ -87,13 +87,14 @@ export default function Home() {
 
           <Reveal delay={150}>
             <p className="text-sm tracking-[0.3em] text-areia uppercase">
-              4ª Edição · Vinhos na Serra
+              Dia 29 de agosto, vem aí:
             </p>
-            <h2 className="text-h2 mt-4 font-serif text-off-white">
-              Nascemos de um encontro. Hoje, somos um movimento.
+            <h2 className="text-h3 mt-4 font-serif text-balance text-off-white">
+              4ª edição do Vinhos na Serra terá como destaque o Vale dos Vinhedos, principal
+              região produtora de vinhos finos do Brasil
             </h2>
-            <p className="mt-4 text-areia">
-              Um movimento que reconhece o vinho brasileiro como patrimônio cultural, valoriza o
+            <p className="mt-6 text-pretty text-areia">
+              Um evento que reconhece o vinho brasileiro como patrimônio cultural, valoriza o
               trabalho dos produtores nacionais e promove experiências que aproximam pessoas,
               marcas e territórios. Acreditamos que cada taça carrega histórias, identidade e
               inovação.
@@ -134,10 +135,6 @@ export default function Home() {
             </div>
             <p className="mt-8 text-xs text-verde-serra/60">Fonte: SEBRAE, 2025</p>
           </div>
-
-          <Button href="/evento" variant="editorial" tone="verde-serra" className="mt-2">
-            Conheça o evento
-          </Button>
         </Reveal>
       </section>
 
@@ -164,22 +161,34 @@ export default function Home() {
 
       <PhotoDivider src="/images/evento/evento-03.jpg" alt="" />
 
-      {/* 6. EXPERIÊNCIAS — aguardando o texto novo.
-          Quando ele chegar, volta ao formato de duas colunas:
-          md:grid-cols-[3fr_2fr] com a foto à esquerda e o texto à direita. */}
+      {/* 6. DEPOIMENTO */}
       <section className="relative overflow-hidden bg-off-white px-6 py-32">
         <SectionTexture tone="light" />
-        <Reveal className="relative mx-auto max-w-3xl">
-          <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
-            <Image
-              src="/images/evento/evento-04.jpg"
-              alt="Convidados reunidos em um evento da Vinhos na Serra"
-              width={900}
-              height={675}
-              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-            />
-          </div>
-        </Reveal>
+        <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-[3fr_2fr]">
+          <Reveal>
+            <div className="group aspect-[4/3] w-full overflow-hidden rounded-xl bg-areia">
+              <Image
+                src="/images/evento/evento-04.jpg"
+                alt="Convidados reunidos em um evento da Vinhos na Serra"
+                width={900}
+                height={675}
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={150}>
+            <blockquote className="font-serif text-xl leading-relaxed text-balance text-verde-serra md:text-2xl">
+              “Estamos muito entusiasmados com o potencial econômico e turístico da nossa região,
+              especialmente por estarmos contribuindo para que o município de Teresópolis entre
+              definitivamente na rota nacional dos grandes eventos de vinhos. Nosso maior sonho é
+              ver o vinho nacional fazendo parte cada vez mais da mesa e da cultura dos
+              brasileiros.”
+            </blockquote>
+            <p className="mt-6 text-sm tracking-[0.15em] text-dourado uppercase">
+              Rodrigo Feital · sócio do projeto
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       {/* 7. CONFRARIA */}
@@ -199,22 +208,6 @@ export default function Home() {
         </Reveal>
       </section>
 
-      {/* 8. NOSSA HISTÓRIA — fechamento narrativo */}
-      <section className="relative overflow-hidden px-6 py-32">
-        <SectionTexture tone="light" />
-        <Reveal className="relative mx-auto max-w-xl text-center">
-          <h2 className="text-h2 font-serif text-verde-serra">Uma história que começou em 2019.</h2>
-          <p className="mt-8 text-lg leading-relaxed text-verde-serra/80">
-            De uma paixão compartilhada por três sócios ao centro de Teresópolis, construímos a
-            maior confraria de vinhos brasileiros do país — uma história que ainda está sendo
-            escrita a cada novo rótulo.
-          </p>
-          <Button href="/nossa-historia" variant="editorial" tone="verde-serra" className="mt-6">
-            Ler nossa história completa
-          </Button>
-        </Reveal>
-      </section>
-
       {/* 9. CTA FINAL — eco do Hero */}
       <section className="relative flex min-h-[70vh] flex-col items-center justify-center gap-6 overflow-hidden px-6 text-center">
         <div className="absolute inset-0 bg-gradient-to-tr from-verde-profundo via-verde-serra to-verde-oliva" />
@@ -222,7 +215,9 @@ export default function Home() {
         <div className="absolute inset-0 bg-verde-serra/30" />
 
         <Reveal className="relative z-10 flex flex-col items-center gap-6">
-          <h2 className="text-h1 font-serif text-off-white">Da Serra para a Taça.</h2>
+          <h2 className="text-h1 font-serif text-balance text-off-white">
+            Onde o vinho brasileiro encontra sua maior expressão
+          </h2>
           <p className="text-areia">Descubra a Vinhos na Serra.</p>
           <div className="mt-2 grid grid-cols-[max-content] justify-center gap-4 [&>a]:w-full sm:flex sm:flex-row sm:items-center sm:gap-8 sm:[&>a]:w-auto">
             <Button href="/contato" variant="editorial" tone="dourado">
