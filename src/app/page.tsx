@@ -243,7 +243,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <Reveal>
             <h2 className="text-h2 mb-10 text-center font-serif text-verde-serra">
-              Acompanhe a nossa jornada.
+              Acompanhe nossa história.
             </h2>
           </Reveal>
           <Reveal delay={150}>

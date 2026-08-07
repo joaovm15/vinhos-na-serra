@@ -13,7 +13,7 @@ export const experiences: Experience[] = [
     date: "15 de agosto de 2026",
     format: "Presencial",
     description:
-      "Uma jornada por rótulos tintos selecionados de vinícolas brasileiras, conduzida por nosso sommelier, com harmonização de queijos da região.",
+      "Um percurso por rótulos tintos selecionados de vinícolas brasileiras, conduzido por nosso sommelier, com harmonização de queijos da região.",
   },
   {
     slug: "visita-a-adega",
