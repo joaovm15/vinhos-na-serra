@@ -47,7 +47,7 @@ export default function Home() {
             <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
               <Image
                 src="/images/socios.jpg"
-                alt="Os sócios da Vinhos na Serra"
+                alt="Os sócios do Vinhos na Serra"
                 width={800}
                 height={600}
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
@@ -169,7 +169,7 @@ export default function Home() {
             <div className="group aspect-[4/3] w-full overflow-hidden rounded-xl bg-areia">
               <Image
                 src="/images/evento/evento-04.jpg"
-                alt="Convidados reunidos em um evento da Vinhos na Serra"
+                alt="Convidados reunidos em um evento do Vinhos na Serra"
                 width={900}
                 height={675}
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"

@@ -16,7 +16,7 @@ export const galeriaFotos: GaleriaFoto[] = [
   { src: "/images/evento/evento-10.jpg", alt: "Convidado no evento Vinhos na Serra" },
   { src: "/images/evento/evento-11.jpg", alt: "Taça sendo servida com garrafas ao fundo" },
   { src: "/images/evento/evento-12.jpg", alt: "Degustação de vinho branco no evento" },
-  { src: "/images/socios.jpg", alt: "Os sócios da Vinhos na Serra" },
+  { src: "/images/socios.jpg", alt: "Os sócios do Vinhos na Serra" },
   { src: "/images/socios-brinde.jpg", alt: "Rafael Feital, Rodrigo Feital e Leonardo Claussen brindando na adega" },
   { src: "/images/adega/detalhe-taca.jpg", alt: "Taça sendo degustada na adega" },
 ];
