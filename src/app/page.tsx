@@ -44,7 +44,7 @@ export default function Home() {
         <VineCorner position="top-right" tone="light" />
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
           <Reveal>
-            <div className="group aspect-[4/3] w-full overflow-hidden bg-areia">
+            <div className="group aspect-[4/3] w-full overflow-hidden rounded-xl bg-areia">
               <Image
                 src="/images/socios.jpg"
                 alt="Os sócios do Vinhos na Serra"
