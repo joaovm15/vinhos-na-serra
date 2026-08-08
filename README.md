@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vinhos na Serra
 
-## Getting Started
+Site institucional da **Vinhos na Serra** — adega e confraria especializada em vinhos
+brasileiros, em Teresópolis (RJ), e do evento anual de mesmo nome.
 
-First, run the development server:
+> A marca é tratada no **masculino**: "o Vinhos na Serra", "do Vinhos na Serra".
+
+## Stack
+
+| Item | Versão / observação |
+| --- | --- |
+| Next.js | 16 (App Router, sem `pages/`) |
+| React | 19 |
+| TypeScript | 5 |
+| Tailwind CSS | v4 — tokens em `src/app/globals.css`, **sem `tailwind.config.js`** |
+| Fontes | `next/font/google` — Bodoni Moda (títulos) + Libre Caslon Text (texto) |
+| Deploy | Vercel, a partir da branch `main` |
+
+Não há banco de dados, CMS nem API: todo o conteúdo é estático, escrito direto nos
+componentes ou em `src/data/`.
+
+## Rodando localmente
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run lint
+npm run build && npm run start   # verificação final antes de publicar
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estrutura
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/
+  app/                 uma pasta por rota (App Router)
+    layout.tsx         Header + Footer + botão de WhatsApp, fontes e metadata
+    globals.css        tokens de cor, fonte e tipografia (Tailwind v4 @theme)
+    icon.svg           favicon (monograma da marca)
+    page.tsx           home
+    nossa-historia/  confraria/  evento/  galeria/  contato/
+    a-serra/  experiencias/      ← existem, mas não estão linkadas (ver docs/backlog.md)
+  components/          componentes de UI e as marcas em SVG
+  data/                listas de conteúdo (vinícolas, galeria, experiências)
+  lib/                 constantes: endereço, WhatsApp, Instagram, link do Sympla
+  hooks/               hooks de UI
+public/
+  images/              fotos por contexto (evento, adega, hero, patrocinadores)
+  patterns/            texturas e ornamentos SVG da identidade
+  videos/              vídeos das edições do evento
+docs/                  documentação do projeto (comece por docs/README.md)
+convite/               gerador do convite em PDF (não faz parte do site)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Documentação
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [`AGENTS.md`](AGENTS.md) — convenções, armadilhas conhecidas e rotina de QA.
+  **Leia antes de mexer no código.**
+- [`docs/README.md`](docs/README.md) — índice da documentação.
+- [`docs/backlog.md`](docs/backlog.md) — o que está pendente, incluindo as logos das
+  patrocinadoras no rodapé.
+- [`docs/assets.md`](docs/assets.md) — onde cada arquivo vai e em que formato.
+- [`docs/identidade-visual.md`](docs/identidade-visual.md) — paleta, tipografia e as
+  marcas em SVG.
