@@ -20,6 +20,27 @@ const oferece = [
   "Música ao vivo e ambientação sensorial",
 ];
 
+const trechoUm = (
+  <>
+    Com a pretensão de se tornar{" "}
+    <strong className="font-bold text-dourado-claro">
+      a referência de maior destaque da cultura do vinho brasileiro fora da Serra Gaúcha
+    </strong>
+    , as três últimas edições do evento foram dedicadas exclusivamente aos produtores da Região de
+    Altos Montes, localizada entre os municípios de Flores da Cunha e Nova Pádua.
+  </>
+);
+
+const trechoDois = (
+  <>
+    Agora, pela primeira vez, o público poderá conhecer os vinhos elaborados no principal destino do
+    enoturismo do Brasil, o Vale dos Vinhedos, que abrange os municípios de Bento Gonçalves,
+    Garibaldi e Monte Belo do Sul, na Serra Gaúcha. De forma inédita, uma das regiões mais
+    tradicionais e reconhecidas da vitivinicultura brasileira desembarca na Serra fluminense, em
+    Teresópolis.
+  </>
+);
+
 export default function EventoPage() {
   return (
     <div className="bg-off-white">
@@ -82,21 +103,22 @@ export default function EventoPage() {
             <h2 className="text-h3 mb-8 text-center font-serif text-balance text-off-white">
               O Vale dos Vinhedos chega à Serra fluminense.
             </h2>
-            <p className="text-lg leading-relaxed text-justify text-areia hyphens-auto">
-              Com a pretensão de se tornar{" "}
-              <strong className="font-bold text-dourado-claro">
-                a referência de maior destaque da cultura do vinho brasileiro fora da Serra
-                Gaúcha
-              </strong>
-              , as três últimas edições do evento foram dedicadas
-              exclusivamente aos produtores da Região de Altos Montes, localizada entre os
-              municípios de Flores da Cunha e Nova Pádua. Agora, pela primeira vez, o público
-              poderá conhecer os vinhos elaborados no principal destino do enoturismo do Brasil, o
-              Vale dos Vinhedos, que abrange os municípios de Bento Gonçalves, Garibaldi e Monte
-              Belo do Sul, na Serra Gaúcha. De forma inédita, uma das regiões mais tradicionais e
-              reconhecidas da vitivinicultura brasileira desembarca na Serra fluminense, em
-              Teresópolis.
+            {/* desktop: um único parágrafo corrido */}
+            <p className="hidden text-lg leading-relaxed text-justify text-areia hyphens-auto sm:block">
+              {trechoUm} {trechoDois}
             </p>
+
+            {/* mobile: o mesmo texto em duas caixas */}
+            <div className="grid gap-5 sm:hidden">
+              {[trechoUm, trechoDois].map((trecho, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border border-off-white/15 bg-off-white/[0.045] p-6"
+                >
+                  <p className="leading-relaxed text-pretty text-areia hyphens-auto">{trecho}</p>
+                </div>
+              ))}
+            </div>
           </Reveal>
         </div>
       </div>
