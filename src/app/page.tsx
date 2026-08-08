@@ -44,7 +44,7 @@ export default function Home() {
         <VineCorner position="top-right" tone="light" />
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
           <Reveal>
-            <div className="group aspect-[4/3] w-full overflow-hidden rounded-xl bg-areia">
+            <div className="group aspect-[4/3] w-full overflow-hidden rounded-2xl bg-areia">
               <Image
                 src="/images/socios.jpg"
                 alt="Os sócios do Vinhos na Serra"
@@ -114,7 +114,8 @@ export default function Home() {
 
         <Reveal className="relative z-10 flex max-w-3xl flex-col items-center gap-6">
           <h2 className="text-h2 font-serif text-verde-serra">
-            A força da Serra Fluminense no enoturismo brasileiro.
+            A força da <span className="whitespace-nowrap">Serra Fluminense</span> no enoturismo
+            brasileiro.
           </h2>
           <p className="text-lg leading-relaxed text-verde-serra/80">
             A vitivinicultura da Região Serrana do Rio de Janeiro vive uma forte expansão e
