@@ -30,19 +30,15 @@ export default function Footer() {
     <footer className="relative overflow-hidden bg-verde-profundo text-areia">
       <SectionTexture tone="dark" opacity={0.06} />
       <div className="relative mx-auto flex max-w-6xl flex-col gap-10 px-6 py-16 md:flex-row md:justify-between">
-        <div className="max-w-xs">
+        <div className="max-w-xs mx-auto md:mx-0">
           {/* mesmo lockup da Hero, em escala reduzida */}
-          <div className="flex flex-col items-start">
+          <div className="flex flex-col items-center text-center">
             <ThreeTacaIcon className="h-auto w-28 text-off-white" />
             <WordmarkVNS className="mt-3 h-auto w-full max-w-[15rem] text-off-white" />
             <p className="mt-2 text-[0.6rem] tracking-[0.25em] text-areia/60 uppercase">
               Adega e Confraria
             </p>
           </div>
-          <p className="mt-4 text-sm text-areia/80">
-            Da Serra para a taça — uma experiência construída entre a terra, o tempo e a paixão
-            pelo vinho brasileiro.
-          </p>
         </div>
 
         <div className="flex flex-wrap gap-12 text-sm">
