@@ -53,8 +53,8 @@ export default function EventoPage() {
         <div className="relative mx-auto grid max-w-5xl grid-cols-1 items-center gap-12 md:grid-cols-[2fr_3fr]">
           <Reveal className="mx-auto w-full max-w-xs md:max-w-none">
             <EventVideoPlayer
-              src="/videos/evento-4a-edicao.mp4"
-              poster="/images/evento/poster-4a-edicao.jpg"
+              src="/videos/evento-pagina.mp4"
+              poster="/images/evento/poster-evento-pagina.jpg"
               className="aspect-[9/16] w-full"
             />
           </Reveal>
