@@ -98,8 +98,8 @@ export default function NossaHistoriaPage() {
         ))}
       </div>
 
-      <Reveal delay={150} className="mx-auto mt-20 max-w-2xl text-center">
-        <p className="text-lg leading-relaxed text-verde-serra/80">
+      <Reveal delay={150} className="mx-auto mt-20 max-w-3xl border-t border-dourado/30 pt-10 text-center">
+        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-verde-serra/80">
           Mais do que uma adega, a Vinhos na Serra se consolidou como um espaço de experiências,
           conhecimento e valorização da produção nacional — um ponto de encontro entre quem ama
           vinho e quem o faz.

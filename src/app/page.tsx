@@ -23,7 +23,7 @@ const dadosEnoturismo = [
 ];
 
 const pillars = [
-  { label: "Origem", text: "Cada rótulo revela o lugar exato de onde vem." },
+  { label: "Origem", text: "Cada rótulo traz consigo o lugar exato de onde vem." },
   { label: "Qualidade", text: "Curadoria criteriosa, sem atalhos. Garrafa por garrafa." },
   { label: "Identidade", text: "Vinhos que revelam autenticidade e diversidade." },
   { label: "Experiência", text: "O vinho como uma pausa para estar presente." },
@@ -199,7 +199,7 @@ export default function Home() {
         <Reveal className="relative mx-auto max-w-xl">
           <h2 className="text-h2 font-serif text-off-white">Faça parte da nossa mesa.</h2>
           <p className="mt-6 text-areia">
-            A Confraria é o convite para viver Vinhos na Serra por dentro — novidades,
+            A Confraria é o convite para viver o Vinhos na Serra por dentro — novidades,
             bastidores e uma relação direta com quem produz o vinho.
           </p>
           <Button href="/confraria" variant="editorial" tone="off-white" className="mt-8">
