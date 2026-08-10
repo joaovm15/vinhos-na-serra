@@ -65,8 +65,14 @@ export default function FadeHero() {
       >
         <ThreeTacaIcon className="mb-3 h-auto w-56 text-off-white sm:w-80 md:w-96" />
 
+        {/* O H1 é o logotipo vetorizado. O texto equivalente fica em `sr-only`
+            para leitores de tela e buscadores — some visualmente, mas é o
+            título real da página. */}
         <h1 className="w-full max-w-[19rem] sm:max-w-lg md:max-w-2xl">
-          <WordmarkVNS className="h-auto w-full text-off-white" />
+          <span className="sr-only">
+            Vinhos na Serra — adega e confraria de vinhos brasileiros em Teresópolis
+          </span>
+          <WordmarkVNS aria-hidden className="h-auto w-full text-off-white" />
         </h1>
 
         <p className="text-xs tracking-[0.2em] text-off-white uppercase sm:text-sm sm:tracking-[0.35em]">

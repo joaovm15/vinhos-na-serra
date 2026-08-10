@@ -5,10 +5,15 @@ import EventVideoPlayer from "@/components/EventVideoPlayer";
 import SectionTexture from "@/components/SectionTexture";
 import { fourthEditionWineries } from "@/data/wineries";
 import { INGRESSOS_URL } from "@/lib/evento";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd, { breadcrumbSchema, eventoSchema } from "@/components/JsonLd";
 
-export const metadata = {
-  title: "Evento | Vinhos na Serra",
-};
+export const metadata = pageMetadata({
+  title: "4º Encontro de Vinhos Brasileiros — 29 de agosto, Teresópolis",
+  description:
+    "A 4ª edição do Vinhos na Serra traz o Vale dos Vinhedos ao Rio de Janeiro: 15 vinícolas e mais de 130 rótulos, dia 29 de agosto de 2026, em Teresópolis.",
+  path: "/evento",
+});
 
 const oferece = [
   "Degustação de rótulos selecionados de vinícolas brasileiras",
@@ -44,6 +49,8 @@ const trechoDois = (
 export default function EventoPage() {
   return (
     <div className="bg-off-white">
+      <JsonLd data={breadcrumbSchema([{ name: "Evento", path: "/evento" }])} />
+      <JsonLd data={eventoSchema()} />
       <section className="relative overflow-hidden bg-verde-serra px-6 py-24 text-center">
         <SectionTexture tone="dark" />
         <VineCorner position="top-left" tone="dark" />
@@ -76,6 +83,7 @@ export default function EventoPage() {
             <EventVideoPlayer
               src="/videos/evento-pagina.mp4"
               poster="/images/evento/poster-evento-pagina.jpg"
+              label="Assistir ao vídeo do 4º Encontro de Vinhos Brasileiros"
               className="aspect-[9/16] w-full"
             />
           </Reveal>

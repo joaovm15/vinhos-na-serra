@@ -61,3 +61,5 @@ convite/               gerador do convite em PDF (não faz parte do site)
 - [`docs/assets.md`](docs/assets.md) — onde cada arquivo vai e em que formato.
 - [`docs/identidade-visual.md`](docs/identidade-visual.md) — paleta, tipografia e as
   marcas em SVG.
+- [`docs/seo.md`](docs/seo.md) — SEO técnico e as variáveis de ambiente a configurar
+  na Vercel (`NEXT_PUBLIC_SITE_URL`, `GOOGLE_SITE_VERIFICATION`).

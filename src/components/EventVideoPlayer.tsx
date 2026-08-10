@@ -6,10 +6,13 @@ export default function EventVideoPlayer({
   src,
   poster,
   className = "",
+  label = "Assistir ao vídeo do evento",
 }: {
   src: string;
   poster?: string;
   className?: string;
+  /** Rótulo do botão de play para leitores de tela. */
+  label?: string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -38,7 +41,7 @@ export default function EventVideoPlayer({
         <button
           type="button"
           onClick={play}
-          aria-label="Assistir ao vídeo da 4ª edição"
+          aria-label={label}
           className="absolute inset-0 flex items-center justify-center rounded-2xl bg-verde-serra/20 transition-colors hover:bg-verde-serra/10"
         >
           <span className="flex h-16 w-16 items-center justify-center rounded-full bg-off-white/95 text-verde-serra shadow-[0_2px_20px_rgba(0,0,0,0.35)] transition-transform group-hover:scale-105">

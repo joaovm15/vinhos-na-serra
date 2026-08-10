@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useScrolled } from "@/hooks/useScrolled";
 import MonogramaVS from "@/components/MonogramaVS";
 import { CLICAVEL_CONTORNO } from "@/components/Button";
@@ -21,6 +21,14 @@ export default function Header() {
   const scrolled = useScrolled(80);
   const solid = pathname !== "/" || scrolled;
 
+  /* Menu aberto no celular: fecha com Esc e trava a rolagem do fundo. */
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-500 ${
@@ -35,7 +43,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <nav className="hidden gap-2.5 md:flex">
+        <nav aria-label="Principal" className="hidden gap-2.5 md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
@@ -48,7 +56,10 @@ export default function Header() {
         </nav>
 
         <button
-          aria-label="Menu"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded={open}
+          aria-controls="menu-mobile"
           className="text-off-white md:hidden"
           onClick={() => setOpen(true)}
         >
@@ -57,10 +68,21 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-50 flex flex-col bg-verde-serra md:hidden">
+        <div
+          id="menu-mobile"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu"
+          className="fixed inset-0 z-50 flex flex-col bg-verde-serra md:hidden"
+        >
           <div className="flex h-20 items-center justify-between px-6">
             <MonogramaVS className="h-11 w-auto text-off-white" />
-            <button aria-label="Fechar menu" onClick={() => setOpen(false)} className="text-off-white">
+            <button
+              type="button"
+              aria-label="Fechar menu"
+              onClick={() => setOpen(false)}
+              className="text-off-white"
+            >
               <CloseIcon />
             </button>
           </div>

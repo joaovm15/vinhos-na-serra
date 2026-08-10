@@ -5,14 +5,20 @@ import VineCorner from "@/components/VineCorner";
 import SectionTexture from "@/components/SectionTexture";
 import { galeriaFotos } from "@/data/galeria";
 import { INSTAGRAM_URL } from "@/lib/social";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd, { breadcrumbSchema } from "@/components/JsonLd";
 
-export const metadata = {
-  title: "Galeria | Vinhos na Serra",
-};
+export const metadata = pageMetadata({
+  title: "Galeria",
+  description:
+    "Fotos da adega, dos encontros e das edições do evento Vinhos na Serra, em Teresópolis.",
+  path: "/galeria",
+});
 
 export default function GaleriaPage() {
   return (
     <div className="relative overflow-hidden bg-off-white px-6 py-24">
+      <JsonLd data={breadcrumbSchema([{ name: "Galeria", path: "/galeria" }])} />
       <SectionTexture tone="light" />
       <VineCorner position="top-right" tone="light" />
       <Reveal className="relative mx-auto max-w-2xl text-center">
@@ -40,7 +46,8 @@ export default function GaleriaPage() {
                 width={600}
                 height={800}
                 quality={85}
-                loading={i < 6 ? "eager" : "lazy"}
+                sizes="(min-width: 768px) 33vw, 50vw"
+                loading={i < 4 ? "eager" : "lazy"}
                 className="h-auto w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
             </div>

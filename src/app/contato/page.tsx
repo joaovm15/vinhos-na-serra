@@ -5,14 +5,20 @@ import SectionTexture from "@/components/SectionTexture";
 import { WHATSAPP_DISPLAY, whatsappUrl } from "@/lib/whatsapp";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from "@/lib/social";
 import { ADDRESS } from "@/lib/address";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd, { breadcrumbSchema } from "@/components/JsonLd";
 
-export const metadata = {
-  title: "Contato | Vinhos na Serra",
-};
+export const metadata = pageMetadata({
+  title: "Contato",
+  description:
+    "Fale com o Vinhos na Serra por WhatsApp ou visite a adega na Várzea, em Teresópolis (RJ).",
+  path: "/contato",
+});
 
 export default function ContatoPage() {
   return (
     <div className="relative overflow-hidden bg-off-white px-6 py-24">
+      <JsonLd data={breadcrumbSchema([{ name: "Contato", path: "/contato" }])} />
       <SectionTexture tone="light" />
       <Reveal className="relative mx-auto max-w-2xl text-center">
         <p className="text-sm tracking-[0.3em] text-dourado uppercase">Contato</p>

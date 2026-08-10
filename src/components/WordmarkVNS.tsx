@@ -9,14 +9,23 @@
  *
  * Herda a cor via currentColor.
  */
-export default function WordmarkVNS({ className = "" }: { className?: string }) {
+export default function WordmarkVNS({
+  className = "",
+  "aria-hidden": ariaHidden = false,
+}: {
+  className?: string;
+  /* Quando o texto equivalente já existe ao lado (como no H1 da Hero), o
+     desenho vira decoração e não deve ser anunciado duas vezes. */
+  "aria-hidden"?: boolean;
+}) {
   return (
     <svg
       viewBox="216.77 257.30 408.29 35.57"
       fill="currentColor"
       className={className}
-      role="img"
-      aria-label="Vinhos na Serra"
+      {...(ariaHidden
+        ? { "aria-hidden": true }
+        : { role: "img", "aria-label": "Vinhos na Serra" })}
     >
       <path fillRule="evenodd" d="M 516.015625 291.492188 L 535.535156 291.492188 L 535.535156 290.613281 L 516.898438 290.613281 L 516.898438 274.382812 L 528.671875 274.382812 L 528.671875 273.5 L 516.898438 273.5 L 516.898438 258.980469 L 535.535156 258.980469 L 535.535156 258.101562 L 516.015625 258.101562 Z M 516.015625 291.492188 " />
       <path fillRule="nonzero" d="M 256.679688 290.542969 L 256.679688 259.203125 L 248.941406 259.203125 L 248.734375 258.324219 L 265.507812 258.324219 L 265.304688 259.203125 L 257.558594 259.203125 L 257.558594 290.542969 L 265.304688 290.542969 L 265.507812 291.421875 L 248.734375 291.421875 L 248.941406 290.542969 Z M 256.679688 290.542969 " />

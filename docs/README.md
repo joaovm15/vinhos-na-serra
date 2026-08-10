@@ -3,6 +3,8 @@
 ## Para quem vai mexer no código agora
 
 - [`../AGENTS.md`](../AGENTS.md) — convenções, armadilhas conhecidas e rotina de QA.
+- [`seo.md`](seo.md) — metadata, sitemap, robots, dados estruturados e as variáveis de
+  ambiente que precisam ser configuradas na Vercel.
 - [`assets.md`](assets.md) — onde colocar imagens, vídeos e logos, e em que formato.
 - [`identidade-visual.md`](identidade-visual.md) — paleta, tipografia e as marcas em SVG.
 - [`backlog.md`](backlog.md) — pendências e decisões em aberto.

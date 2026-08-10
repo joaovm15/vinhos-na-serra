@@ -1,9 +1,18 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import SectionTexture from "@/components/SectionTexture";
+import { pageMetadata } from "@/lib/seo";
 
+/* Página fora da navegação: mantida no ar, mas sem indexação enquanto não
+   voltar para o menu (ver docs/backlog.md). */
 export const metadata = {
-  title: "A Serra | Vinhos na Serra",
+  ...pageMetadata({
+    title: "A Serra",
+    description:
+      "Vinhedos de altitude, clima e solo: como a diversidade brasileira aparece nos rótulos que o Vinhos na Serra seleciona.",
+    path: "/a-serra",
+  }),
+  robots: { index: false, follow: true },
 };
 
 const blocks = [

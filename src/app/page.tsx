@@ -50,6 +50,7 @@ export default function Home() {
                 alt="Os sócios do Vinhos na Serra"
                 width={800}
                 height={600}
+                sizes="(min-width: 768px) 50vw, 100vw"
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
             </div>
@@ -81,6 +82,7 @@ export default function Home() {
             <EventVideoPlayer
               src="/videos/evento-4a-edicao.mp4"
               poster="/images/evento/poster-4a-edicao.jpg"
+              label="Assistir ao vídeo da 4ª edição do Vinhos na Serra"
               className="aspect-[9/16] w-full"
             />
           </Reveal>
@@ -173,6 +175,7 @@ export default function Home() {
                 alt="Convidados reunidos em um evento do Vinhos na Serra"
                 width={900}
                 height={675}
+                sizes="(min-width: 768px) 60vw, 100vw"
                 className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
             </div>

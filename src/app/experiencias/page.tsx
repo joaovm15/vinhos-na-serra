@@ -2,9 +2,18 @@ import Reveal from "@/components/Reveal";
 import VineCorner from "@/components/VineCorner";
 import SectionTexture from "@/components/SectionTexture";
 import { experiences } from "@/data/experiences";
+import { pageMetadata } from "@/lib/seo";
 
+/* Página fora da navegação: mantida no ar, mas sem indexação enquanto não
+   voltar para o menu (ver docs/backlog.md). */
 export const metadata = {
-  title: "Experiências | Vinhos na Serra",
+  ...pageMetadata({
+    title: "Experiências",
+    description:
+      "Degustações, visitas guiadas e encontros promovidos pelo Vinhos na Serra em Teresópolis.",
+    path: "/experiencias",
+  }),
+  robots: { index: false, follow: true },
 };
 
 const diferenciais = [

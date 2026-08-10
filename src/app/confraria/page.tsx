@@ -2,10 +2,15 @@ import Reveal from "@/components/Reveal";
 import VineCorner from "@/components/VineCorner";
 import SectionTexture from "@/components/SectionTexture";
 import InfoBox from "@/components/InfoBox";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd, { breadcrumbSchema } from "@/components/JsonLd";
 
-export const metadata = {
-  title: "Confraria | Vinhos na Serra",
-};
+export const metadata = pageMetadata({
+  title: "Confraria",
+  description:
+    "A confraria do Vinhos na Serra reúne mais de 1.300 rótulos de 130 vinícolas brasileiras e uma comunidade que valoriza a cultura do vinho nacional.",
+  path: "/confraria",
+});
 
 const valores = ["Pertencimento", "Memória", "Tradição"];
 
@@ -20,6 +25,7 @@ const marcas = [
 export default function ConfrariaPage() {
   return (
     <div className="bg-off-white">
+      <JsonLd data={breadcrumbSchema([{ name: "Confraria", path: "/confraria" }])} />
       <section className="relative overflow-hidden bg-bordo px-6 py-24 text-center">
         <SectionTexture tone="dark" opacity={0.1} />
         <VineCorner position="top-left" tone="dark" />

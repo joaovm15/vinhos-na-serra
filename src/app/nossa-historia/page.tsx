@@ -3,10 +3,15 @@ import Reveal from "@/components/Reveal";
 import VineCorner from "@/components/VineCorner";
 import SectionTexture from "@/components/SectionTexture";
 import InfoBox from "@/components/InfoBox";
+import { pageMetadata } from "@/lib/seo";
+import JsonLd, { breadcrumbSchema } from "@/components/JsonLd";
 
-export const metadata = {
-  title: "Nossa História | Vinhos na Serra",
-};
+export const metadata = pageMetadata({
+  title: "Nossa história",
+  description:
+    "Como três amigos transformaram o gosto por vinho brasileiro na maior confraria do gênero no país, em Teresópolis, desde 2019.",
+  path: "/nossa-historia",
+});
 
 const stats = [
   { number: "1.300+", label: "Rótulos" },
@@ -39,6 +44,7 @@ const timeline = [
 export default function NossaHistoriaPage() {
   return (
     <div className="relative overflow-hidden bg-off-white px-6 py-24">
+      <JsonLd data={breadcrumbSchema([{ name: "Nossa história", path: "/nossa-historia" }])} />
       <SectionTexture tone="light" />
       <VineCorner position="top-left" tone="light" />
       <VineCorner position="top-right" tone="light" />
@@ -81,6 +87,7 @@ export default function NossaHistoriaPage() {
             alt="Rafael Feital, Rodrigo Feital e Leonardo Claussen brindando na adega"
             width={1200}
             height={800}
+            sizes="(min-width: 768px) 768px, 100vw"
             className="h-full w-full object-cover"
           />
         </div>
