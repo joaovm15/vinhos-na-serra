@@ -49,7 +49,8 @@ normalmente, então nada quebra.
   monocromática clara** (branca ou off-white) de cada logo. Logo colorida em
   fundo escuro quebra a unidade da faixa.
 - **Recorte**: sem moldura, sem fundo, sem margem sobrando. A altura é
-  normalizada no CSS (32px no celular, 40px a partir do desktop).
+  normalizada no CSS (48px no celular, 64px a partir do desktop; o patrocínio
+  entra maior, 64/96px).
 
 As dez logos estão instaladas: `genesis.png`, `consevitis.png`,
 `vinho-brasileiro.png`, `vale-dos-vinhedos.png`, `ville-verte.png`,

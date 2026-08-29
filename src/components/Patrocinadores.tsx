@@ -33,7 +33,7 @@ export default function Patrocinadores() {
                 <p className="text-sm tracking-[0.2em] text-off-white uppercase md:text-xs">
                   {grupo.titulo}
                 </p>
-                <ul className="mt-6 flex flex-1 flex-wrap items-center gap-x-8 gap-y-6">
+                <ul className="mt-6 flex flex-1 flex-wrap items-center gap-x-10 gap-y-8">
                   {grupo.marcas.map((marca) => (
                     <li key={marca.nome}>
                       <LogoApoiador marca={marca} destaque={grupo.destaque} />
@@ -50,9 +50,14 @@ export default function Patrocinadores() {
 }
 
 function LogoApoiador({ marca, destaque = false }: { marca: Apoiador; destaque?: boolean }) {
-  /* Uma única classe de altura por caso — duas competindo, o Tailwind resolve
-     pela ordem do CSS gerado e não pela ordem escrita aqui. */
-  const altura = destaque ? "h-11 sm:h-14" : "h-8 sm:h-10";
+  /* Uma única classe de altura e uma de largura máxima por caso — duas
+     competindo, o Tailwind resolve pela ordem do CSS gerado e não pela ordem
+     escrita aqui.
+     A largura máxima existe porque logo muito deitada (a Mérica, por exemplo)
+     fica dominando a faixa quando só a altura é normalizada. */
+  const tamanho = destaque
+    ? "h-16 max-w-[220px] sm:h-24 sm:max-w-[280px]"
+    : "h-12 max-w-[150px] sm:h-16 sm:max-w-[190px]";
   return (
     <a
       href={marca.url}
@@ -67,15 +72,15 @@ function LogoApoiador({ marca, destaque = false }: { marca: Apoiador; destaque?:
           alt={marca.nome}
           width={320}
           height={120}
-          /* Altura fixa e largura livre: assim logos de proporções diferentes
-             ficam com o mesmo peso visual na faixa. */
-          className={`w-auto object-contain ${altura}`}
+          /* Altura normalizada e largura livre até o limite: assim logos de
+             proporções diferentes ficam com o mesmo peso visual na faixa. */
+          className={`w-auto object-contain ${tamanho}`}
         />
       ) : (
         /* Sem arquivo de logo ainda: o nome segura o lugar e o link funciona. */
         <span
           className={`tracking-[0.12em] text-areia uppercase ${
-            destaque ? "text-base sm:text-lg" : "text-sm"
+            destaque ? "text-lg sm:text-xl" : "text-sm sm:text-base"
           }`}
         >
           {marca.nome}
