@@ -4,6 +4,7 @@ import InfoBox from "@/components/InfoBox";
 import VineCorner from "@/components/VineCorner";
 import SectionTexture from "@/components/SectionTexture";
 import CatalogoGrade from "@/components/catalogo/CatalogoGrade";
+import Patrocinadores from "@/components/Patrocinadores";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { AVISO, PASSOS } from "@/lib/catalogo";
 import { categorias, itensDoCatalogo } from "@/data/catalogo";
@@ -139,6 +140,8 @@ export default function CatalogoSection() {
           </p>
         </Reveal>
       </section>
+
+      <Patrocinadores />
     </div>
   );
 }

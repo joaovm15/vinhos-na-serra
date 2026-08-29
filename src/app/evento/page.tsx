@@ -7,6 +7,7 @@ import { fourthEditionWineries } from "@/data/wineries";
 import { INGRESSOS_URL } from "@/lib/evento";
 import { pageMetadata } from "@/lib/seo";
 import JsonLd, { breadcrumbSchema, eventoSchema } from "@/components/JsonLd";
+import Patrocinadores from "@/components/Patrocinadores";
 
 export const metadata = pageMetadata({
   title: "4º Encontro de Vinhos Brasileiros — 29 de agosto, Teresópolis",
@@ -152,6 +153,8 @@ export default function EventoPage() {
           </Reveal>
         </div>
       </section>
+
+      <Patrocinadores />
     </div>
   );
 }

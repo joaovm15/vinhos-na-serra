@@ -36,17 +36,32 @@ Os dois vídeos somam ~15 MB e são servidos direto de `public/` — é o item m
 site. Antes de adicionar um terceiro, ver a nota sobre hospedagem em
 [`backlog.md`](backlog.md).
 
-## Logos de patrocinadoras (pasta já criada, ainda vazia)
+## Logos de patrocinadoras e apoiadoras
 
-Destino: `public/images/patrocinadores/`.
+Destino: `public/images/patrocinadores/`. A faixa já existe e já está no ar em
+`/evento` (e na página de catálogo) — falta só o arquivo de cada marca. Enquanto
+o arquivo não entra, a faixa mostra o nome da marca em texto e o link funciona
+normalmente, então nada quebra.
 
-- **Formato**: SVG sempre que a marca fornecer; PNG com fundo transparente como segunda
-  opção (altura mínima de 400px).
-- **Versão**: as logos vão aparecer no rodapé, que é verde escuro — pedir/usar a **versão
-  monocromática clara** (branca ou off-white) de cada marca. Logo colorida em fundo
-  escuro quebra a unidade visual do rodapé.
-- **Nome do arquivo**: `<nome-da-marca>.svg`, em minúsculas e com hífen.
-- **Recorte**: sem moldura, sem fundo, sem margem sobrando — o espaçamento é dado no CSS.
-- Cada logo precisa do nome da marca (para o `alt`) e, se houver, do link do site.
+- **Formato**: SVG sempre que a marca fornecer; PNG com fundo transparente como
+  segunda opção (altura mínima de 400px).
+- **Versão**: a faixa fica sobre o verde escuro da marca — use a **versão
+  monocromática clara** (branca ou off-white) de cada logo. Logo colorida em
+  fundo escuro quebra a unidade da faixa.
+- **Recorte**: sem moldura, sem fundo, sem margem sobrando. A altura é
+  normalizada no CSS (32px no celular, 40px a partir do desktop).
 
-O plano de implementação do bloco no rodapé está em [`backlog.md`](backlog.md).
+Nomes esperados (é só descomentar o campo `logo` em `src/data/patrocinadores.ts`):
+
+| Marca | Arquivo |
+| --- | --- |
+| Gênesis Empreendimentos | `genesis.png` |
+| Consevitis-RS | `consevitis.png` |
+| Vinho Brasileiro | `vinho-brasileiro.png` |
+| Vale dos Vinhedos | `vale-dos-vinhedos.png` |
+| Ville Verte | `ville-verte.png` |
+| Água Levy | `agua-levy.png` |
+| 3 Corações | `3-coracoes.png` |
+| Burrata Bistrô | `burrata.png` |
+| Velluto Gelato | `velluto-gelato.png` |
+| Mérica | `merica.png` |

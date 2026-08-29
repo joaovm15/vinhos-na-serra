@@ -5,43 +5,26 @@ do site.
 
 ---
 
-## 1. Logos de patrocinadoras e parceiras no rodapé — *próxima entrega*
+## 1. Arquivos das logos de patrocínio e apoio — *só falta o arquivo*
 
-**O que:** faixa de logos no rodapé, com as patrocinadoras do evento e as marcas
-parceiras. Ainda não foi feita porque os arquivos das logos não chegaram.
+A faixa de patrocínio e apoio já está pronta e publicada em `/evento` (e na
+página de catálogo): moldura arredondada sobre o verde da marca, três grupos
+— Patrocínio, Apoio Institucional e Apoio — separados por filete, cada marca
+clicável com o link certo, empilhando no celular.
 
-**Pré-requisitos (com quem toca comercial):**
-- arquivo de cada logo, de preferência SVG, em versão monocromática clara — o rodapé é
-  verde escuro (`verde-profundo`). Especificação completa em [`assets.md`](assets.md).
-- nome exato de cada marca (vira o `alt`) e link do site, quando houver;
-- se há hierarquia (patrocinador master × apoiador) ou se todas entram no mesmo tamanho.
+O que falta: o **arquivo de logo de cada marca**. Enquanto não chega, a faixa
+mostra o nome em texto e o link continua funcionando.
 
-**Como implementar quando os arquivos chegarem:**
+Para incluir: coloque o arquivo em `public/images/patrocinadores/` e descomente
+o campo `logo` da marca em `src/data/patrocinadores.ts`. Nomes esperados e
+especificação de formato em [`assets.md`](assets.md).
 
-1. Colocar os arquivos em `public/images/patrocinadores/`.
-2. Criar `src/data/patrocinadores.ts`:
-   ```ts
-   export type Patrocinador = {
-     nome: string;
-     logo: string;   // caminho em /images/patrocinadores/
-     url?: string;
-   };
+Pendências de conteúdo:
 
-   export const patrocinadores: Patrocinador[] = [];
-   ```
-3. Criar `src/components/Patrocinadores.tsx`: título curto ("Patrocinadores" ou
-   "Realização e apoio") no mesmo estilo dos títulos de coluna do rodapé
-   (`text-sm tracking-widest text-dourado-claro uppercase`), e as logos numa grade
-   `flex flex-wrap items-center justify-center gap-x-10 gap-y-8`.
-   - altura fixa por logo (`h-8` ou `h-10` + `w-auto`) para normalizar tamanhos;
-   - `opacity-80 transition hover:opacity-100` dá unidade a logos de pesos diferentes;
-   - se a logo tiver link, envolver em `<a target="_blank" rel="noopener noreferrer">`.
-4. Montar em `src/components/Footer.tsx` **entre** o bloco principal e a barra de
-   copyright, separado por `border-t border-off-white/10`.
-5. Se a lista estiver vazia, o componente deve retornar `null` — assim ele pode ser
-   montado antes de as logos chegarem.
-
-Conferir depois em 320 / 390 / 768 / 1440 (ver rotina de QA no `AGENTS.md`).
+- **Vinho Brasileiro** ficou com o mesmo link da Consevitis (`consevitis-rs.com.br/pt`),
+  que foi o endereço informado. Confirmar se a marca tem site próprio.
+- Definir se há hierarquia de tamanho entre patrocinador master e apoiadores, ou
+  se todas as logos entram com o mesmo peso (hoje entram iguais).
 
 ---
 
