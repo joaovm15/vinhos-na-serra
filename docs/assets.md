@@ -10,6 +10,7 @@ absoluto a partir da raiz de `public/` (`/images/...`, `/videos/...`).
 | `public/images/hero/` | fotos de topo | assunto: `vista-serra.jpg` |
 | `public/images/evento/` | fotos das edições e posters de vídeo | `evento-NN.jpg`, `poster-<video>.jpg` |
 | `public/images/adega/` | fotos da adega | assunto: `detalhe-taca.jpg` |
+| `public/images/catalogo/` | fotos dos rótulos do catálogo | `<slug-do-rotulo>.jpg` |
 | `public/images/patrocinadores/` | logos de patrocinadoras e parceiras | `<nome-da-marca>.svg` |
 | `public/patterns/` | texturas e ornamentos da identidade | `vinha-<uso>-<dark\|light>.svg` |
 | `public/videos/` | vídeos do evento | `evento-<contexto>.mp4` |

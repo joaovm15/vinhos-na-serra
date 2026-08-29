@@ -19,6 +19,7 @@ todo texto está no código. Visão geral e comandos no [`README.md`](README.md)
 | Endereço, WhatsApp, Instagram, link do Sympla | `src/lib/` |
 | Lista de vinícolas / fotos da galeria / experiências | `src/data/` |
 | Menu, rodapé, botão de WhatsApp | `src/components/Header.tsx`, `Footer.tsx`, `WhatsAppButton.tsx` |
+| Rótulos do catálogo (hoje desligado) | `src/data/catalogo.ts`; a chave `CATALOG_ENABLED` fica em `src/lib/catalogo.ts` |
 | Logo, monograma, taças, folha | `src/components/WordmarkVNS.tsx`, `MonogramaVS.tsx`, `ThreeTacaIcon.tsx`, `TacaIcon.tsx`, `LeafMark.tsx` |
 
 ## Convenções

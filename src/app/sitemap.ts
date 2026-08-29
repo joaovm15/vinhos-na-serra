@@ -8,6 +8,10 @@ import { SITE_URL } from "@/lib/site";
  * mas não são linkadas por nenhum menu e estão marcadas como `noindex`
  * (ver `docs/backlog.md`). Se voltarem à navegação, basta acrescentá-las
  * aqui e remover o `robots` da metadata de cada uma.
+ *
+ * `/catalogo` também não entra: a rota só existe quando `CATALOG_ENABLED`
+ * estiver ligada (`src/lib/catalogo.ts`). Ao publicar o catálogo, acrescente
+ * `{ path: "/catalogo", priority: 0.8, changeFrequency: "monthly" }` aqui.
  */
 const ROTAS: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1, changeFrequency: "monthly" },
