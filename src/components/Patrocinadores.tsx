@@ -36,7 +36,7 @@ export default function Patrocinadores() {
                 <ul className="mt-6 flex flex-1 flex-wrap items-center gap-x-8 gap-y-6">
                   {grupo.marcas.map((marca) => (
                     <li key={marca.nome}>
-                      <LogoApoiador marca={marca} />
+                      <LogoApoiador marca={marca} destaque={grupo.destaque} />
                     </li>
                   ))}
                 </ul>
@@ -49,7 +49,10 @@ export default function Patrocinadores() {
   );
 }
 
-function LogoApoiador({ marca }: { marca: Apoiador }) {
+function LogoApoiador({ marca, destaque = false }: { marca: Apoiador; destaque?: boolean }) {
+  /* Uma única classe de altura por caso — duas competindo, o Tailwind resolve
+     pela ordem do CSS gerado e não pela ordem escrita aqui. */
+  const altura = destaque ? "h-11 sm:h-14" : "h-8 sm:h-10";
   return (
     <a
       href={marca.url}
@@ -66,11 +69,17 @@ function LogoApoiador({ marca }: { marca: Apoiador }) {
           height={120}
           /* Altura fixa e largura livre: assim logos de proporções diferentes
              ficam com o mesmo peso visual na faixa. */
-          className="h-8 w-auto object-contain sm:h-10"
+          className={`w-auto object-contain ${altura}`}
         />
       ) : (
         /* Sem arquivo de logo ainda: o nome segura o lugar e o link funciona. */
-        <span className="text-sm tracking-[0.12em] text-areia uppercase">{marca.nome}</span>
+        <span
+          className={`tracking-[0.12em] text-areia uppercase ${
+            destaque ? "text-base sm:text-lg" : "text-sm"
+          }`}
+        >
+          {marca.nome}
+        </span>
       )}
     </a>
   );

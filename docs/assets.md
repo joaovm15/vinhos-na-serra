@@ -51,17 +51,33 @@ normalmente, então nada quebra.
 - **Recorte**: sem moldura, sem fundo, sem margem sobrando. A altura é
   normalizada no CSS (32px no celular, 40px a partir do desktop).
 
-Nomes esperados (é só descomentar o campo `logo` em `src/data/patrocinadores.ts`):
+Estado atual — sete logos instaladas, três ainda em texto:
 
-| Marca | Arquivo |
-| --- | --- |
-| Gênesis Empreendimentos | `genesis.png` |
-| Consevitis-RS | `consevitis.png` |
-| Vinho Brasileiro | `vinho-brasileiro.png` |
-| Vale dos Vinhedos | `vale-dos-vinhedos.png` |
-| Ville Verte | `ville-verte.png` |
-| Água Levy | `agua-levy.png` |
-| 3 Corações | `3-coracoes.png` |
-| Burrata Bistrô | `burrata.png` |
-| Velluto Gelato | `velluto-gelato.png` |
-| Mérica | `merica.png` |
+| Marca | Arquivo | Situação |
+| --- | --- | --- |
+| Gênesis Empreendimentos | `genesis.png` | ✅ instalada |
+| Vinho Brasileiro | `vinho-brasileiro.png` | ✅ instalada |
+| Vale dos Vinhedos | `vale-dos-vinhedos.png` | ✅ instalada |
+| Ville Verte | `ville-verte.png` | ✅ instalada |
+| Água Levy | `agua-levy.png` | ✅ instalada |
+| 3 Corações | `3-coracoes.png` | ✅ instalada |
+| Mérica | `merica.png` | ✅ instalada |
+| Consevitis-RS | `consevitis.png` | ⏳ falta o original |
+| Burrata Bistrô | `burrata.png` | ⏳ falta o original |
+| Velluto Gelato | `velluto-gelato.png` | ⏳ falta o original |
+
+Para instalar as que faltam: coloque o arquivo com esse nome na pasta e descomente
+o campo `logo` da marca em `src/data/patrocinadores.ts`.
+
+## Tratamento aplicado nas logos
+
+Os arquivos recebidos passam por um preparo antes de entrar no site — nenhuma
+etapa redesenha a marca:
+
+1. RGB forçado para branco puro, preservando o canal alfa;
+2. níveis no alfa (corte em 60/190) para firmar as bordas do traço;
+3. recorte da moldura transparente, para todas terem o mesmo peso óptico;
+4. redução para 240px de altura (6× o tamanho de exibição), com LANCZOS.
+
+Logo que chega como **contorno vazado** (só a silhueta, sem preenchimento) não
+serve: no tamanho da faixa ela desaparece. Foi o caso da Velluto.

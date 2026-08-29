@@ -5,26 +5,28 @@ do site.
 
 ---
 
-## 1. Arquivos das logos de patrocínio e apoio — *só falta o arquivo*
+## 1. Três logos ainda em texto
 
-A faixa de patrocínio e apoio já está pronta e publicada em `/evento` (e na
-página de catálogo): moldura arredondada sobre o verde da marca, três grupos
-— Patrocínio, Apoio Institucional e Apoio — separados por filete, cada marca
-clicável com o link certo, empilhando no celular.
+A faixa de patrocínio e apoio está publicada em `/evento` e na página de catálogo,
+com as dez marcas e os links corretos. Sete já entram com a logo; **Consevitis-RS,
+Burrata Bistrô e Velluto Gelato** ainda aparecem com o nome em texto, porque os
+arquivos recebidos não servem:
 
-O que falta: o **arquivo de logo de cada marca**. Enquanto não chega, a faixa
-mostra o nome em texto e o link continua funcionando.
+- **Consevitis** e **Burrata**: só chegaram redesenhos borrados da faixa de
+  referência, ilegíveis em qualquer tamanho;
+- **Velluto**: veio como contorno vazado, que some no tamanho de exibição.
+  Tentativa de preencher o miolo por processamento vazou nas falhas do traço.
 
-Para incluir: coloque o arquivo em `public/images/patrocinadores/` e descomente
-o campo `logo` da marca em `src/data/patrocinadores.ts`. Nomes esperados e
-especificação de formato em [`assets.md`](assets.md).
+Falta o arquivo original de cada uma, de preferência SVG ou PNG transparente em
+alta. Como instalar: [`assets.md`](assets.md).
 
-Pendências de conteúdo:
+> **Atenção:** no pacote recebido, o arquivo chamado `burrata` era na verdade a
+> marca da **3 Corações** (os três grãos formando o coração). Se vier um pacote
+> novo, confira nome × marca antes de instalar.
 
-- **Vinho Brasileiro** ficou com o mesmo link da Consevitis (`consevitis-rs.com.br/pt`),
-  que foi o endereço informado. Confirmar se a marca tem site próprio.
-- Definir se há hierarquia de tamanho entre patrocinador master e apoiadores, ou
-  se todas as logos entram com o mesmo peso (hoje entram iguais).
+Pendência de conteúdo: **Vinho Brasileiro** ficou com o mesmo link da Consevitis
+(`consevitis-rs.com.br/pt`), que foi o endereço informado. Confirmar se a marca
+tem site próprio.
 
 ---
 
