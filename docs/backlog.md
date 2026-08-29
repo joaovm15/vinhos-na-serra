@@ -5,28 +5,14 @@ do site.
 
 ---
 
-## 1. Três logos ainda em texto
+## 1. Um link a confirmar na faixa de apoio
 
-A faixa de patrocínio e apoio está publicada em `/evento` e na página de catálogo,
-com as dez marcas e os links corretos. Sete já entram com a logo; **Consevitis-RS,
-Burrata Bistrô e Velluto Gelato** ainda aparecem com o nome em texto, porque os
-arquivos recebidos não servem:
+A faixa de patrocínio e apoio está completa em `/evento` e na página de catálogo:
+as dez marcas com a logo oficial, todas clicáveis.
 
-- **Consevitis** e **Burrata**: só chegaram redesenhos borrados da faixa de
-  referência, ilegíveis em qualquer tamanho;
-- **Velluto**: veio como contorno vazado, que some no tamanho de exibição.
-  Tentativa de preencher o miolo por processamento vazou nas falhas do traço.
-
-Falta o arquivo original de cada uma, de preferência SVG ou PNG transparente em
-alta. Como instalar: [`assets.md`](assets.md).
-
-> **Atenção:** no pacote recebido, o arquivo chamado `burrata` era na verdade a
-> marca da **3 Corações** (os três grãos formando o coração). Se vier um pacote
-> novo, confira nome × marca antes de instalar.
-
-Pendência de conteúdo: **Vinho Brasileiro** ficou com o mesmo link da Consevitis
-(`consevitis-rs.com.br/pt`), que foi o endereço informado. Confirmar se a marca
-tem site próprio.
+Falta confirmar um dado: **Vinho Brasileiro** ficou com o mesmo link da Consevitis
+(`consevitis-rs.com.br/pt`), que foi o endereço informado. Verificar se a marca tem
+site próprio — o campo fica em `src/data/patrocinadores.ts`.
 
 ---
 

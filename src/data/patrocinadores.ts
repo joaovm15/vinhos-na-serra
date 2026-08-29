@@ -1,10 +1,13 @@
 /**
  * Faixa de patrocínio e apoio do evento.
  *
- * Para incluir a logo de uma marca: coloque o arquivo em
+ * As dez logos foram recortadas da arte oficial da faixa e convertidas para
+ * branco com fundo transparente (ver `docs/assets.md`).
+ *
+ * Para incluir ou trocar a logo de uma marca: coloque o arquivo em
  * `public/images/patrocinadores/` e preencha o campo `logo` com o caminho.
- * Enquanto o campo estiver vazio, a faixa mostra o nome da marca em texto —
- * o link continua funcionando e nada quebra. Detalhes em `docs/assets.md`.
+ * Sem `logo`, a faixa mostra o nome da marca em texto — o link continua
+ * funcionando e nada quebra.
  */
 
 export type Apoiador = {
@@ -40,9 +43,7 @@ export const gruposDeApoio: GrupoApoio[] = [
       {
         nome: "Consevitis-RS",
         url: "https://www.consevitis-rs.com.br/pt",
-        // Sem arquivo utilizável ainda — só chegou um redesenho borrado da faixa
-        // de referência, ilegível em qualquer tamanho. Falta o original.
-        // logo: "/images/patrocinadores/consevitis.png",
+        logo: "/images/patrocinadores/consevitis.png",
       },
       {
         // Link informado igual ao da Consevitis — confirmar o endereço próprio.
@@ -78,17 +79,12 @@ export const gruposDeApoio: GrupoApoio[] = [
       {
         nome: "Burrata Bistrô",
         url: "https://www.instagram.com/burrata.bistro",
-        // Sem arquivo utilizável ainda: no pacote recebido, o arquivo chamado
-        // "burrata" era na verdade a marca da 3 Corações, e o monograma da
-        // Burrata só veio num redesenho ilegível. Falta o original.
-        // logo: "/images/patrocinadores/burrata.png",
+        logo: "/images/patrocinadores/burrata.png",
       },
       {
         nome: "Velluto Gelato",
         url: "https://vellutogelato.com.br",
-        // Sem arquivo utilizável ainda — o que chegou é o contorno vazado da
-        // marca, que some no tamanho de exibição. Falta o original.
-        // logo: "/images/patrocinadores/velluto-gelato.png",
+        logo: "/images/patrocinadores/velluto-gelato.png",
       },
       {
         nome: "Mérica",

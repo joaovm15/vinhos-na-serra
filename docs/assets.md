@@ -51,23 +51,18 @@ normalmente, então nada quebra.
 - **Recorte**: sem moldura, sem fundo, sem margem sobrando. A altura é
   normalizada no CSS (32px no celular, 40px a partir do desktop).
 
-Estado atual — sete logos instaladas, três ainda em texto:
+As dez logos estão instaladas: `genesis.png`, `consevitis.png`,
+`vinho-brasileiro.png`, `vale-dos-vinhedos.png`, `ville-verte.png`,
+`agua-levy.png`, `3-coracoes.png`, `burrata.png`, `velluto-gelato.png` e
+`merica.png`.
 
-| Marca | Arquivo | Situação |
-| --- | --- | --- |
-| Gênesis Empreendimentos | `genesis.png` | ✅ instalada |
-| Vinho Brasileiro | `vinho-brasileiro.png` | ✅ instalada |
-| Vale dos Vinhedos | `vale-dos-vinhedos.png` | ✅ instalada |
-| Ville Verte | `ville-verte.png` | ✅ instalada |
-| Água Levy | `agua-levy.png` | ✅ instalada |
-| 3 Corações | `3-coracoes.png` | ✅ instalada |
-| Mérica | `merica.png` | ✅ instalada |
-| Consevitis-RS | `consevitis.png` | ⏳ falta o original |
-| Burrata Bistrô | `burrata.png` | ⏳ falta o original |
-| Velluto Gelato | `velluto-gelato.png` | ⏳ falta o original |
+Para trocar qualquer uma: substitua o arquivo com o mesmo nome. Se apagar o
+arquivo, tire também o campo `logo` da marca em `src/data/patrocinadores.ts` —
+sem ele, a faixa volta a mostrar o nome em texto, com o link funcionando.
 
-Para instalar as que faltam: coloque o arquivo com esse nome na pasta e descomente
-o campo `logo` da marca em `src/data/patrocinadores.ts`.
+> **Ao trocar um arquivo, apague `.next/` antes de conferir.** O otimizador de
+> imagens do Next guarda a versão antiga em cache e continua servindo ela,
+> mesmo com o arquivo novo no lugar. Isso já enganou uma revisão aqui.
 
 ## Tratamento aplicado nas logos
 
@@ -79,5 +74,14 @@ etapa redesenha a marca:
 3. recorte da moldura transparente, para todas terem o mesmo peso óptico;
 4. redução para 240px de altura (6× o tamanho de exibição), com LANCZOS.
 
-Logo que chega como **contorno vazado** (só a silhueta, sem preenchimento) não
-serve: no tamanho da faixa ela desaparece. Foi o caso da Velluto.
+As nove primeiras vieram recortadas da arte oficial da faixa (o PNG de 2171px
+enviado pronto), segmentada por gaps de coluna no canal alfa. A Mérica veio em
+arquivo separado, na versão colorida, e foi convertida para branco pelo mesmo
+caminho — RGB branco preservando o alfa.
+
+Duas armadilhas de origem, para não repetir:
+
+- logo em **contorno vazado** (só a silhueta, sem preenchimento) some no tamanho
+  da faixa; preencher o miolo por processamento vaza nas falhas do traço;
+- logo **reamostrada de uma faixa comprimida** volta borrada e não recupera. O
+  caminho certo é sempre a arte em alta ou o arquivo original da marca.
