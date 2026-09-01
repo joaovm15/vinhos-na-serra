@@ -5,25 +5,28 @@ import ThreeTacaIcon from "@/components/ThreeTacaIcon";
 import SectionTexture from "@/components/SectionTexture";
 import { CLICAVEL_CONTORNO, CLICAVEL_SOLIDO } from "@/components/Button";
 import {
-  CHAVE_BLOQUEIO,
-  CHAVE_MAIOR,
+  ATRIBUTO_HTML,
+  CHAVE_RESPOSTA,
+  RESPOSTA_MAIOR,
+  RESPOSTA_MENOR,
   TEXTO_BLOQUEIO,
   TEXTO_PERGUNTA,
   VERIFICACAO_IDADE_ENABLED,
 } from "@/lib/idade";
 
-type Estado = "carregando" | "perguntando" | "liberado" | "bloqueado";
+type Estado = "perguntando" | "liberado" | "bloqueado";
 
-/** O que já está gravado no navegador. Só roda no cliente. */
-function lerDecisao(): Estado {
+/** O que já foi respondido nesta sessão. Só roda no cliente. */
+function lerResposta(): Estado {
   if (!VERIFICACAO_IDADE_ENABLED) return "liberado";
   /* Navegador com armazenamento bloqueado não pode travar o site: em caso de
      erro, a pergunta simplesmente aparece de novo. */
   try {
-    if (window.sessionStorage.getItem(CHAVE_BLOQUEIO) === "1") return "bloqueado";
-    if (window.localStorage.getItem(CHAVE_MAIOR) === "1") return "liberado";
+    const r = window.sessionStorage.getItem(CHAVE_RESPOSTA);
+    if (r === RESPOSTA_MAIOR) return "liberado";
+    if (r === RESPOSTA_MENOR) return "bloqueado";
   } catch {
-    /* sem armazenamento: pergunta a cada visita */
+    /* sem armazenamento: pergunta sempre */
   }
   return "perguntando";
 }
@@ -31,26 +34,26 @@ function lerDecisao(): Estado {
 /* Nada muda esse valor por fora da página, então não há o que assinar. */
 const semAssinatura = () => () => {};
 
-/** No servidor não existe navegador: renderiza nada até a hidratação. */
-const noServidor = (): Estado => "carregando";
+/** No servidor a pergunta é sempre renderizada: é ela que evita a piscada. */
+const noServidor = (): Estado => "perguntando";
 
 /**
  * Porta de entrada do site: pergunta a idade e, se for menor, bloqueia.
  *
- * Fica montado no layout raiz, então vale para todas as rotas. A verificação
- * acontece no navegador, depois da página carregada — o HTML servido continua
- * completo, e nem o SEO nem os buscadores são afetados.
+ * Montado no layout raiz, vale para todas as rotas. O bloco já vem no HTML
+ * servido — o script do `<head>` esconde antes da primeira pintura quando a
+ * pessoa já respondeu nesta sessão.
  */
 export default function VerificacaoIdade() {
-  const gravado = useSyncExternalStore(semAssinatura, lerDecisao, noServidor);
+  const gravado = useSyncExternalStore(semAssinatura, lerResposta, noServidor);
   const [escolha, setEscolha] = useState<Estado | null>(null);
   const estado = escolha ?? gravado;
   const primeiroBotao = useRef<HTMLButtonElement>(null);
 
-  /* Com a pergunta ou o bloqueio na tela, o fundo não rola. */
+  /* Com a pergunta ou o bloqueio na tela, o fundo não rola. Antes da
+     hidratação quem trava é o CSS, pelo atributo no `<html>`. */
   useEffect(() => {
-    const travado = estado === "perguntando" || estado === "bloqueado";
-    if (!travado) return;
+    if (estado === "liberado") return;
     const anterior = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     primeiroBotao.current?.focus();
@@ -59,33 +62,32 @@ export default function VerificacaoIdade() {
     };
   }, [estado]);
 
-  const confirmar = useCallback(() => {
+  const responder = useCallback((resposta: Estado) => {
     try {
-      window.localStorage.setItem(CHAVE_MAIOR, "1");
+      window.sessionStorage.setItem(
+        CHAVE_RESPOSTA,
+        resposta === "liberado" ? RESPOSTA_MAIOR : RESPOSTA_MENOR
+      );
     } catch {
-      /* sem armazenamento: a pergunta volta na próxima visita */
+      /* sem armazenamento: a pergunta volta na próxima página */
     }
-    setEscolha("liberado");
+    /* Mantém o atributo em dia: é ele que o CSS usa para soltar a rolagem e
+       esconder o bloco enquanto o React ainda não removeu o nó. */
+    document.documentElement.setAttribute(
+      ATRIBUTO_HTML,
+      resposta === "liberado" ? "liberado" : "bloqueado"
+    );
+    setEscolha(resposta);
   }, []);
 
-  const recusar = useCallback(() => {
-    try {
-      /* `sessionStorage` de propósito: o bloqueio dura só esta sessão, então um
-         clique errado não deixa a pessoa trancada para sempre. */
-      window.sessionStorage.setItem(CHAVE_BLOQUEIO, "1");
-    } catch {
-      /* sem armazenamento: o bloqueio vale só nesta página */
-    }
-    setEscolha("bloqueado");
-  }, []);
-
-  if (estado === "carregando" || estado === "liberado") return null;
+  if (!VERIFICACAO_IDADE_ENABLED || estado === "liberado") return null;
 
   const bloqueado = estado === "bloqueado";
   const texto = bloqueado ? TEXTO_BLOQUEIO : TEXTO_PERGUNTA;
 
   return (
     <div
+      id="verificacao-idade"
       role="dialog"
       aria-modal="true"
       aria-labelledby="verificacao-idade-titulo"
@@ -112,14 +114,14 @@ export default function VerificacaoIdade() {
             <button
               ref={primeiroBotao}
               type="button"
-              onClick={confirmar}
+              onClick={() => responder("liberado")}
               className={`${CLICAVEL_SOLIDO} w-full max-w-xs`}
             >
               {TEXTO_PERGUNTA.sim}
             </button>
             <button
               type="button"
-              onClick={recusar}
+              onClick={() => responder("bloqueado")}
               className={`${CLICAVEL_CONTORNO} w-full max-w-xs border-off-white/30 py-3 text-off-white hover:border-off-white hover:bg-off-white/10`}
             >
               {TEXTO_PERGUNTA.nao}

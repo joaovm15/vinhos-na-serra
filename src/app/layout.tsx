@@ -7,6 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import VerificacaoIdade from "@/components/VerificacaoIdade";
 import JsonLd, { organizationSchema, websiteSchema } from "@/components/JsonLd";
 import { OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/site";
+import { SCRIPT_IDADE, VERIFICACAO_IDADE_ENABLED } from "@/lib/idade";
 
 /* Didot (títulos) e Big Caslon (texto) são as fontes da identidade, mas
    ambas são comerciais. Bodoni Moda e Libre Caslon Text são as
@@ -84,6 +85,13 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${bodoni.variable} ${caslon.variable} h-full antialiased`}
     >
+      {/* Roda antes da primeira pintura: quem já respondeu a idade nesta sessão
+          não vê a tela verde piscar. */}
+      {VERIFICACAO_IDADE_ENABLED && (
+        <head>
+          <script dangerouslySetInnerHTML={{ __html: SCRIPT_IDADE }} />
+        </head>
+      )}
       <body className="flex min-h-full flex-col font-sans">
         {/* Só aparece ao navegar por teclado; pula o menu e vai ao conteúdo. */}
         <a

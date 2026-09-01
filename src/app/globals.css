@@ -95,3 +95,16 @@ body {
 .animate-fade-in {
   animation: fade-in 400ms ease-out;
 }
+
+/* ——— Verificação de maioridade ———
+   O bloco vem no HTML servido para não haver piscada de conteúdo antes da
+   pergunta. Um script no `<head>` marca o `<html>` quando a pessoa já
+   respondeu nesta sessão, e estas regras resolvem tudo antes da primeira
+   pintura — sem esperar o JavaScript da página. */
+html[data-idade="liberado"] #verificacao-idade {
+  display: none;
+}
+
+html:not([data-idade="liberado"]) body {
+  overflow: hidden;
+}
