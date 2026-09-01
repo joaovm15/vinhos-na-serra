@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import VerificacaoIdade from "@/components/VerificacaoIdade";
 import JsonLd, { organizationSchema, websiteSchema } from "@/components/JsonLd";
 import { OG_IMAGE, SITE_DESCRIPTION, SITE_NAME, SITE_URL, absoluteUrl } from "@/lib/site";
 
@@ -97,6 +98,8 @@ export default function RootLayout({
         </main>
         <Footer />
         <WhatsAppButton />
+        {/* Porta de entrada: a pergunta de maioridade cobre o site inteiro. */}
+        <VerificacaoIdade />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
       </body>

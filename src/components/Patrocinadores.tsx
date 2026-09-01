@@ -17,20 +17,22 @@ export default function Patrocinadores() {
       <SectionTexture tone="dark" />
 
       <Reveal className="relative mx-auto max-w-6xl">
-        <div className="rounded-[2rem] border border-off-white/20 px-6 py-10 sm:px-10">
-          <div className="flex flex-col gap-10 md:flex-row md:items-stretch md:justify-center">
+        <div className="rounded-[2rem] border border-off-white/20 px-8 py-10 sm:px-12 lg:px-14">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-stretch lg:justify-center">
             {gruposDeApoio.map((grupo, i) => (
               <div
                 key={grupo.titulo}
-                /* No desktop o filete separa os grupos; no celular, uma linha
-                   no topo faz o mesmo papel. O primeiro grupo não leva nenhum. */
+                /* As três colunas só entram a partir de `lg`: em 768px cada uma
+                   ficaria com ~230px e a logo do patrocínio encostava na borda.
+                   Até lá, os grupos ficam empilhados, separados por uma linha.
+                   O primeiro grupo não leva separador nenhum. */
                 className={`flex flex-col ${
                   i === 0
                     ? ""
-                    : "border-t border-off-white/15 pt-8 md:border-t-0 md:border-l md:pt-0 md:pl-10"
+                    : "border-t border-off-white/15 pt-8 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-12"
                 }`}
               >
-                <p className="text-sm tracking-[0.2em] text-off-white uppercase md:text-xs">
+                <p className="text-sm tracking-[0.2em] text-off-white uppercase lg:text-xs">
                   {grupo.titulo}
                 </p>
                 <ul className="mt-6 flex flex-1 flex-wrap items-center gap-x-10 gap-y-8">
@@ -57,7 +59,9 @@ function LogoApoiador({ marca, destaque = false }: { marca: Apoiador; destaque?:
      fica dominando a faixa quando só a altura é normalizada. */
   const tamanho = destaque
     ? "h-16 max-w-[220px] sm:h-24 sm:max-w-[280px]"
-    : "h-12 max-w-[150px] sm:h-16 sm:max-w-[190px]";
+    : marca.peso === "menor"
+      ? "h-9 max-w-[110px] sm:h-12 sm:max-w-[145px]"
+      : "h-12 max-w-[150px] sm:h-16 sm:max-w-[190px]";
   return (
     <a
       href={marca.url}

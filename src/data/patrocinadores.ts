@@ -16,6 +16,12 @@ export type Apoiador = {
   url: string;
   /** Caminho em /images/patrocinadores/. Sem ele, entra o nome em texto. */
   logo?: string;
+  /**
+   * Ajuste fino de peso visual. Logo muito deitada (lettering largo e baixo)
+   * pesa mais que as outras mesmo com a altura normalizada — `"menor"` entra
+   * num degrau abaixo para equilibrar a faixa.
+   */
+  peso?: "menor";
 };
 
 export type GrupoApoio = {
@@ -90,6 +96,7 @@ export const gruposDeApoio: GrupoApoio[] = [
         nome: "Mérica",
         url: "https://www.mericalog.com",
         logo: "/images/patrocinadores/merica.png",
+        peso: "menor",
       },
     ],
   },

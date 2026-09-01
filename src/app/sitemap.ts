@@ -9,9 +9,8 @@ import { SITE_URL } from "@/lib/site";
  * (ver `docs/backlog.md`). Se voltarem à navegação, basta acrescentá-las
  * aqui e remover o `robots` da metadata de cada uma.
  *
- * `/catalogo` também não entra: a rota só existe quando `CATALOG_ENABLED`
- * estiver ligada (`src/lib/catalogo.ts`). Ao publicar o catálogo, acrescente
- * `{ path: "/catalogo", priority: 0.8, changeFrequency: "monthly" }` aqui.
+ * `/exclusivoparavoce` também não entra, e não deve entrar: é a página de
+ * campanha acessada por QR Code, marcada como `noindex`.
  */
 const ROTAS: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
   { path: "/", priority: 1, changeFrequency: "monthly" },

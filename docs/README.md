@@ -7,8 +7,9 @@
   ambiente que precisam ser configuradas na Vercel.
 - [`assets.md`](assets.md) — onde colocar imagens, vídeos e logos, e em que formato.
 - [`identidade-visual.md`](identidade-visual.md) — paleta, tipografia e as marcas em SVG.
-- [`catalogo.md`](catalogo.md) — a seção de catálogo, hoje desligada: como ligar e
-  como cadastrar os rótulos.
+- [`exclusivoparavoce.md`](exclusivoparavoce.md) — a página de campanha pós-evento,
+  acessada por QR Code: como ligar e desligar.
+- [`verificacao-idade.md`](verificacao-idade.md) — o pop-up de maioridade que abre o site.
 - [`backlog.md`](backlog.md) — pendências e decisões em aberto.
 
 ## Histórico do projeto (fase de concepção, mantido como referência)
