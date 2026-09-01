@@ -16,12 +16,37 @@ site próprio — o campo fica em `src/data/patrocinadores.ts`.
 
 ---
 
-## 2. Definir o domínio oficial — *bloqueia a indexação*
+## 2. Domínio e certificado — *bloqueia a indexação e assusta quem entra pelo QR Code*
 
-`NEXT_PUBLIC_SITE_URL` ainda não está configurada na Vercel. Sem ela, canonical,
-sitemap e Open Graph usam o domínio `*.vercel.app`. Definir a variável com o domínio
-final, escolher no painel da Vercel qual versão é a principal (com ou sem `www`) e
-refazer o deploy. Detalhes em [`seo.md`](seo.md).
+Dois sintomas, uma causa só: o domínio próprio ainda não está fechado na Vercel.
+
+**a) `NEXT_PUBLIC_SITE_URL` não está configurada.** Sem ela, canonical, sitemap e
+Open Graph usam o domínio `*.vercel.app`. Detalhes em [`seo.md`](seo.md).
+
+**b) Quem lê o QR Code vê "a conexão não é particular".** Esse aviso é do navegador,
+não do site: o certificado HTTPS não confere com o endereço acessado. O código do
+site não tem como corrigir isso — quem emite o certificado é a Vercel, e só para os
+domínios cadastrados no projeto. Ordem de verificação:
+
+1. **Qual endereço exato está no QR Code?** Se for `http://…`, refazer o QR com
+   `https://…`. Se for `www.` e a Vercel só tem o domínio sem `www` (ou o contrário),
+   o certificado não cobre a variante — cadastrar as duas no projeto.
+2. **Vercel → Project → Settings → Domains:** o domínio precisa aparecer com o
+   certificado emitido (sem "Invalid Configuration" nem "Pending"). Se estiver
+   pendente, é DNS: o registro `A`/`CNAME` no registrador (Registro.br, se for
+   `.com.br`) ainda não aponta para a Vercel, ou não propagou.
+3. **O certificado leva alguns minutos** depois do DNS entrar. Aviso que persiste
+   por horas é configuração errada, não demora.
+4. Se o domínio estiver atrás de um proxy/CDN de terceiros (Cloudflare em modo
+   "Flexible", por exemplo), o certificado servido é o do proxy — ajustar lá.
+
+Depois de resolver: escolher no painel qual versão é a principal (com ou sem `www`),
+definir `NEXT_PUBLIC_SITE_URL` com ela, refazer o deploy e reimprimir/regerar o QR
+Code apontando para essa mesma versão — assim não há nem redirecionamento nem aviso.
+
+> Enquanto isso, um QR apontando para a URL `*.vercel.app` do projeto funciona com
+> HTTPS válido, sem aviso nenhum. Serve de plano B se o material for reimpresso antes
+> de o domínio ficar pronto.
 
 ---
 
